@@ -14,6 +14,10 @@ class GfxMgr:
 
     def tick(self, dt):
         self.root.renderOneFrame()
+        if self.joystick1 == None:
+           print "No Joy1"
+        if self.joystick2 == None:
+           print "No Joy2"
 
     def stop(self):
         self.cleanUp()
@@ -96,11 +100,29 @@ class GfxMgr:
  
         # Now InputManager is initialized for use. Keyboard and Mouse objects
         # must still be initialized separately
+
+        self.joystick1 = None
+        self.joystick2 = None
         try:
             self.keyboard = self.inputManager.createInputObjectKeyboard(OIS.OISKeyboard, False)
             self.mouse = self.inputManager.createInputObjectMouse(OIS.OISMouse, False)
         except Exception, e:
             raise e
+
+        try:
+            self.joystick1 = self.inputManager.createInputObjectJoyStick(OIS.OISJoyStick, True)
+        except Exception, e:
+            self.joystick1 = None
+            print "No JoyStick1"
+
+
+        try:
+            self.joystick2 = self.inputManager.createInputObjectJoyStick(OIS.OISJoyStick, True)
+        except Exception, e:
+            self.joystick2 = None
+            print "No JoyStick2"
+
+
  
     def startRenderLoop(self):
         self.root.renderOneFrame
