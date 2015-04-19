@@ -105,19 +105,6 @@ class GfxMgr:
         except Exception, e:
             raise e
 
-        try:
-            self.joystick1 = self.inputManager.createInputObjectJoyStick(OIS.OISJoyStick, True)
-        except Exception, e:
-            self.joystick1 = None
-            print "No JoyStick1"
-
-
-        try:
-            self.joystick2 = self.inputManager.createInputObjectJoyStick(OIS.OISJoyStick, True)
-        except Exception, e:
-            self.joystick2 = None
-            print "No JoyStick2"
-
 
  
     def startRenderLoop(self):

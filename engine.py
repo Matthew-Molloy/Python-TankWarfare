@@ -30,13 +30,13 @@ class Engine(object):
         self.selectionMgr = selectionMgr.SelectionMgr(self)
         self.selectionMgr.init()
 
-        import controlMgr
-        self.controlMgr = controlMgr.ControlMgr(self)
-        self.controlMgr.init()
-
         import soundMgr
         self.soundMgr = soundMgr.SoundMgr(self)
         self.soundMgr.init()
+
+        import controlMgr
+        self.controlMgr = controlMgr.ControlMgr(self)
+        self.controlMgr.init()
 
         import gameMgr
         self.gameMgr = gameMgr.GameMgr(self)

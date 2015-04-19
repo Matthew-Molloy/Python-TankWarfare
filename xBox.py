@@ -8,30 +8,24 @@ class JoyEvent:
     INVALID         = 6
 
 class JoyButtons: # XBox Controller, the buttons need to be checked
-    BACK       = 0
-    A          = 1
-    B          = 2
-    X          = 3
-    Y          = 4
-    LEFT       = 5
-    RIGHT      = 6
-    START      = 7
-    XBOX       = 8
-    LEFT_AXIS  = 9
-    RIGHT_AXIS = 10
-    POV        = 11
-
-    NUM     = 12
-    LIST    = [BACK, A, B, X, Y, LEFT, RIGHT, START, XBOX, LEFT_AXIS, RIGHT_AXIS, POV]
+    A       = 0
+    B       = 1
+    X       = 2
+    Y       = 3
+    LB      = 4
+    RB      = 5
+    BACK    = 6
+    START   = 7
+    XBOX    = 8
+    LC      = 9
+    RC      = 10
 
 class JoyAxes: # XBox Controller
     LEFT_LEFTRIGHT    = 0
     LEFT_UPDOWN       = 1
-    LEFT_LEFT         = 2
+    LT                = 2
     RIGHT_LEFTRIGHT   = 3
     RIGHT_UPDOWN      = 4
-    RIGHT_RIGHT       = 5
-    NUM               = 6
+    RT                = 5
 
-    LIST    = [LEFT_LEFTRIGHT, LEFT_UPDOWN, LEFT_LEFT, RIGHT_LEFTRIGHT, RIGHT_UPDOWN, RIGHT_RIGHT]
 

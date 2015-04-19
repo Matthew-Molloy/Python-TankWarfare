@@ -1,23 +1,38 @@
+from contextlib import contextmanager
 import ogre.renderer.OGRE as ogre
 import ogre.io.OIS as OIS
 import platform
+import pygame
+import sys, os
 from xBox import JoyAxes
 from xBox import JoyButtons
 
-class ControlMgr(ogre.FrameListener,OIS.JoyStickListener):
+@contextmanager
+def suppress_stdout():
+   with open(os.devnull, "w") as devnull:
+     old_stdout = sys.stdout
+     sys.stdout = devnull
+     try:
+        yield
+     finally:
+        sys.stdout = old_stdout
+
+class ControlMgr(ogre.FrameListener):
 
     def __init__(self, engine):
         ogre.FrameListener.__init__(self)
         self.engine = engine
         self.gfx = self.engine.gfxMgr
+        self.sound = self.engine.soundMgr
         self.entityMgr = self.engine.entityMgr
         pass
 
     def init(self):
+
+        self.joyStick1 = None
+        self.joyStick2 = None
         self.keyboard = self.gfx.keyboard
         self.mouse = self.gfx.mouse
-        self.joyStick1 = self.gfx.joystick1
-        self.joyStick2 = self.gfx.joystick2
         self.gfx.root.addFrameListener(self)
         self.mouseDown = False
  
@@ -27,6 +42,21 @@ class ControlMgr(ogre.FrameListener,OIS.JoyStickListener):
         # Set the rotation and movement speed.
         self.rotate = 0.13
         self.move = 250
+
+        pygame.init()
+        pygame.joystick.init()
+
+        self.joyNum = pygame.joystick.get_count()
+        if self.joyNum == 1:
+           self.joyStick1 = pygame.joystick.Joystick(0)
+           self.joyStick1.init()
+
+        if self.joyNum == 2:
+           self.joyStick1 = pygame.joystick.Joystick(0)
+           self.joyStick1.init()
+           self.joyStick2 = pygame.joystick.Joystick(1)
+           self.joyStick2.init()
+
         pass
 
     def tick(self, dt):
@@ -37,14 +67,9 @@ class ControlMgr(ogre.FrameListener,OIS.JoyStickListener):
 
  
     def frameStarted(self, frameEvent):
- 
         # Capture and update each input device.
         self.keyboard.capture()
         self.mouse.capture()
-        if self.joyStick1:
-           self.joyStick1.capture()
-        if self.joyStick2:
-           self.joyStick2.capture()
  
         # Get the current mouse state.
         currMouse = self.mouse.getMouseState()
@@ -81,8 +106,6 @@ class ControlMgr(ogre.FrameListener,OIS.JoyStickListener):
                ent.node.showBoundingBox(True)
 
 #--------------------------------------------------------------------------------------
-        
-        #print str(self.selectedEntIndex), selectedEnt.id
         import utils
 
         # Speed Up
@@ -116,26 +139,61 @@ class ControlMgr(ogre.FrameListener,OIS.JoyStickListener):
               selectedEnt.desiredHeading -= selectedEnt.deltaYaw
               selectedEnt.desiredHeading = utils.fixAngle(selectedEnt.desiredHeading)
               print "Turn right", selectedEnt.desiredHeading
-
-        #print self.selectedEnt.uiname, selectedEnt.id, str(selectedEnt.vel)
-
-        if self.joyStick2:
-                joyState = self.joyStick2.getJoyStickState()
-
-                if joyState.mAxes[JoyAxes.LEFT_LEFTRIGHT].abs > 10000:
-	         for selectedEnt in self.entityMgr.selectedEntIndecies:
-                  selectedEnt.desiredHeading -= selectedEnt.deltaYaw
-                  selectedEnt.desiredHeading = utils.fixAngle(selectedEnt.desiredHeading)
-                  print "Turn right", selectedEnt.desiredHeading
-
-
-                if joyState.mButtons[JoyButtons.A]:
-	         for selectedEnt in self.entityMgr.selectedEntIndecies:
-                  selectedEnt.desiredHeading += selectedEnt.deltaYaw
-                  selectedEnt.desiredHeading = utils.fixAngle(selectedEnt.desiredHeading)
-                  print "Turn left", selectedEnt.desiredHeading
  #-------------------------------------------------------------------------------------
- 
+
+        for event in pygame.event.get():
+            if self.joyStick1:
+               self.tank = self.entityMgr.ents[0]
+               if self.joyStick1.get_axis(JoyAxes.LEFT_LEFTRIGHT) > .5:
+                  self.toggle = 0.2
+                  self.tank.desiredHeading -= self.tank.deltaYaw
+                  self.tank.desiredHeading = utils.fixAngle(self.tank.desiredHeading)
+
+               if self.joyStick1.get_axis(JoyAxes.LEFT_LEFTRIGHT) < -.5:
+                  self.toggle = 0.2
+                  self.tank.desiredHeading += self.tank.deltaYaw
+                  self.tank.desiredHeading = utils.fixAngle(self.tank.desiredHeading)
+
+               if self.joyStick1.get_axis(JoyAxes.LEFT_UPDOWN) > .5:
+                  self.toggle = 0.2
+                  self.tank.desiredSpeed = utils.clamp(self.tank.desiredSpeed - self.tank.deltaSpeed, 0, self.tank.maxSpeed)
+
+               if self.joyStick1.get_axis(JoyAxes.LEFT_UPDOWN) < -.5:
+                  self.toggle = 0.2
+                  self.tank.desiredSpeed = utils.clamp(self.tank.desiredSpeed + self.tank.deltaSpeed, 0, self.tank.maxSpeed)
+
+               if self.joyStick1.get_axis(JoyAxes.RT) > 0:
+                  self.toggle = 0.2
+                  self.sound.shoot()
+
+            if self.joyStick2:
+               self.tank = self.entityMgr.ents[1]
+               if self.joyStick2.get_axis(JoyAxes.LEFT_LEFTRIGHT) > .5:
+                  self.toggle = 0.2
+                  self.tank.desiredHeading -= self.tank.deltaYaw
+                  self.tank.desiredHeading = utils.fixAngle(self.tank.desiredHeading)
+
+               if self.joyStick2.get_axis(JoyAxes.LEFT_LEFTRIGHT) < -.5:
+                  self.toggle = 0.2
+                  self.tank.desiredHeading += self.tank.deltaYaw
+                  self.tank.desiredHeading = utils.fixAngle(self.tank.desiredHeading)
+
+               if self.joyStick2.get_axis(JoyAxes.LEFT_UPDOWN) > .5:
+                  self.toggle = 0.2
+                  self.tank.desiredSpeed = utils.clamp(self.tank.desiredSpeed - self.tank.deltaSpeed, 0, self.tank.maxSpeed)
+
+               if self.joyStick2.get_axis(JoyAxes.LEFT_UPDOWN) < -.5:
+                  self.toggle = 0.2
+                  self.tank.desiredSpeed = utils.clamp(self.tank.desiredSpeed + self.tank.deltaSpeed, 0, self.tank.maxSpeed)
+
+               if self.joyStick2.get_axis(JoyAxes.RT) > 0:
+                  self.toggle = 0.2
+                  self.sound.shoot()
+
+
+
+
+
         return True
 
     def frameEnded(self, evt):
