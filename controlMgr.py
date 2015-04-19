@@ -1,8 +1,10 @@
 import ogre.renderer.OGRE as ogre
 import ogre.io.OIS as OIS
 import platform
+from xBox import JoyAxes
+from xBox import JoyButtons
 
-class ControlMgr(ogre.FrameListener):
+class ControlMgr(ogre.FrameListener,OIS.JoyStickListener):
 
     def __init__(self, engine):
         ogre.FrameListener.__init__(self)
@@ -14,6 +16,8 @@ class ControlMgr(ogre.FrameListener):
     def init(self):
         self.keyboard = self.gfx.keyboard
         self.mouse = self.gfx.mouse
+        self.joyStick1 = self.gfx.joystick1
+        self.joyStick2 = self.gfx.joystick2
         self.gfx.root.addFrameListener(self)
         self.mouseDown = False
  
@@ -37,6 +41,10 @@ class ControlMgr(ogre.FrameListener):
         # Capture and update each input device.
         self.keyboard.capture()
         self.mouse.capture()
+        if self.joyStick1:
+           self.joyStick1.capture()
+        if self.joyStick2:
+           self.joyStick2.capture()
  
         # Get the current mouse state.
         currMouse = self.mouse.getMouseState()
@@ -47,6 +55,7 @@ class ControlMgr(ogre.FrameListener):
         # Update the toggle timer.
         if self.toggle >= 0:
             self.toggle -= frameEvent.timeSinceLastFrame
+
  
         # Handle only Tab selection
         if self.toggle < 0 and self.keyboard.isKeyDown(OIS.KC_TAB):
@@ -110,6 +119,21 @@ class ControlMgr(ogre.FrameListener):
 
         #print self.selectedEnt.uiname, selectedEnt.id, str(selectedEnt.vel)
 
+        if self.joyStick2:
+                joyState = self.joyStick2.getJoyStickState()
+
+                if joyState.mAxes[JoyAxes.LEFT_LEFTRIGHT].abs > 10000:
+	         for selectedEnt in self.entityMgr.selectedEntIndecies:
+                  selectedEnt.desiredHeading -= selectedEnt.deltaYaw
+                  selectedEnt.desiredHeading = utils.fixAngle(selectedEnt.desiredHeading)
+                  print "Turn right", selectedEnt.desiredHeading
+
+
+                if joyState.mButtons[JoyButtons.A].abs:
+	         for selectedEnt in self.entityMgr.selectedEntIndecies:
+                  selectedEnt.desiredHeading += selectedEnt.deltaYaw
+                  selectedEnt.desiredHeading = utils.fixAngle(selectedEnt.desiredHeading)
+                  print "Turn left", selectedEnt.desiredHeading
  #-------------------------------------------------------------------------------------
  
         return True

@@ -14,10 +14,6 @@ class GfxMgr:
 
     def tick(self, dt):
         self.root.renderOneFrame()
-        if self.joystick1 == None:
-           print "No Joy1"
-        if self.joystick2 == None:
-           print "No Joy2"
 
     def stop(self):
         self.cleanUp()
