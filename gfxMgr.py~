@@ -63,13 +63,17 @@ class GfxMgr:
         ogre.TextureManager.getSingleton().setDefaultNumMipmaps(5)
         ogre.ResourceGroupManager.getSingleton().initialiseAllResourceGroups()
  
-    # Now, create a scene here. Three things that MUST BE done are sceneManager, camera and
-    # viewport initializations
+
     def setupScene(self):
         self.sceneManager = self.root.createSceneManager(ogre.ST_GENERIC, "Default SceneManager")
         self.camera = self.sceneManager.createCamera("Camera")
 	self.camera.setPosition(ogre.Vector3(0, 50, 500))
-        viewPort = self.root.getAutoCreatedWindow().addViewport(self.camera)
+        self.camera1 = self.sceneManager.createCamera("Camera1")
+	self.camera1.setPosition(ogre.Vector3(0, 50, 500))
+
+        viewPort = self.root.getAutoCreatedWindow().addViewport(self.camera,1,0,0,1,0.5)
+
+        viewPort = self.root.getAutoCreatedWindow().addViewport(self.camera1,2,0,0.5,1,0.5)
 
 
         plane = ogre.Plane ((0, 1, 0), 0)
@@ -94,29 +98,11 @@ class GfxMgr:
         paramList.extend(t)
         self.inputManager = OIS.createPythonInputSystem(paramList)
  
-        # Now InputManager is initialized for use. Keyboard and Mouse objects
-        # must still be initialized separately
-
-        self.joystick1 = None
-        self.joystick2 = None
         try:
             self.keyboard = self.inputManager.createInputObjectKeyboard(OIS.OISKeyboard, False)
             self.mouse = self.inputManager.createInputObjectMouse(OIS.OISMouse, False)
         except Exception, e:
             raise e
-
-        try:
-            self.joystick1 = self.inputManager.createInputObjectJoyStick(OIS.OISJoyStick, True)
-        except Exception, e:
-            self.joystick1 = None
-            print "No JoyStick1"
-
-
-        try:
-            self.joystick2 = self.inputManager.createInputObjectJoyStick(OIS.OISJoyStick, True)
-        except Exception, e:
-            self.joystick2 = None
-            print "No JoyStick2"
 
 
  
