@@ -4,6 +4,7 @@
 from vector import MyVector
 from physics import Physics
 from render  import Renderable
+import ogre.renderer.OGRE as ogre
 class Entity:
 
 
@@ -51,6 +52,25 @@ class CVN68(Entity):
         self.desiredHeading = 0
         self.speed = 0
         self.heading = 0
+
+    def tick(self, dtime):
+        for aspect in self.aspects:
+            aspect.tick(dtime)
+        self.checkCollision(dtime)
+
+    def checkCollision(self, dtime):
+        # checkValue indicates the distance from the target ent to the collision spot of the current ent
+        # the cube will stop 70 pixels from the the cigarette mesh
+        checkValue = 70
+        for key, target in self.engine.entityMgr.ents.items():
+            if target.uiname == 'DDG51':
+                diffZ = target.pos.z - self.pos.z
+                diffX = target.pos.x - self.pos.x
+                self.distance = ogre.Math.Sqrt(ogre.Math.Sqr(diffZ) + ogre.Math.Sqr(diffX))
+                print self.distance.valueDegrees()
+                if self.distance.valueDegrees() < checkValue:
+                    print "Collision"
+                    self.speed = 0
 
 
 class CIGARETTE(Entity):
@@ -150,6 +170,25 @@ class DDG51(Entity):
         self.desiredHeading = 0
         self.speed = 0
         self.heading = 0
+
+    def tick(self, dtime):
+        for aspect in self.aspects:
+            aspect.tick(dtime)
+        self.checkCollision(dtime)
+
+    def checkCollision(self, dtime):
+        # checkValue indicates the distance from the target ent to the collision spot of the current ent
+        # the cube will stop 70 pixels from the the cigarette mesh
+        checkValue = 70
+        for key, target in self.engine.entityMgr.ents.items():
+            if target.uiname == 'CVN68':
+                diffZ = target.pos.z - self.pos.z
+                diffX = target.pos.x - self.pos.x
+                self.distance = ogre.Math.Sqrt(ogre.Math.Sqr(diffZ) + ogre.Math.Sqr(diffX))
+                print self.distance.valueDegrees()
+                if self.distance.valueDegrees() < checkValue:
+                    print "Collision"
+                    self.speed = 0
 
 class ALIENSHIP(Entity):
     def __init__(self, id, pos = MyVector(0,0,0), vel = MyVector(0, 0, 0), yaw = 0):
