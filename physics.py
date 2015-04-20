@@ -28,3 +28,4 @@ class Physics:
         dheading = utils.clamp(angleDiff, -timeScaledRotation, timeScaledRotation)
 
         self.ent.heading += dheading
+

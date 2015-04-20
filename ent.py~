@@ -45,7 +45,7 @@ class CVN68(Entity):
         self.uiname = 'CVN68'
         self.eid = id
         self.acceleration = 2
-        self.turningRate  = 0.05
+        self.turningRate  = 0.3
         self.maxSpeed = 20
         self.desiredSpeed = 0
         self.desiredHeading = 0

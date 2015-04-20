@@ -16,7 +16,7 @@ class SoundMgr:
       Background = pygame.mixer.Sound("mars.ogg")
       self.Shoot1      = pygame.mixer.Sound("shoot1.ogg")
       self.Shoot2      = pygame.mixer.Sound("shoot2.ogg")
-      Background.play(loops = 5)
+      Background.play(loops = -1)
 
     def shoot1(self):
       self.Shoot1.play()

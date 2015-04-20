@@ -163,7 +163,6 @@ class ControlMgr(ogre.FrameListener):
                   self.tank.desiredSpeed = utils.clamp(self.tank.desiredSpeed + self.tank.deltaSpeed, 0, self.tank.maxSpeed)
 
                if self.joyStick1.get_axis(JoyAxes.RT) > 0:
-                  self.toggle = 0.2
                   self.sound.shoot1()
 
             if self.joyStick2:
@@ -187,7 +186,6 @@ class ControlMgr(ogre.FrameListener):
                   self.tank.desiredSpeed = utils.clamp(self.tank.desiredSpeed + self.tank.deltaSpeed, 0, self.tank.maxSpeed)
 
                if self.joyStick2.get_axis(JoyAxes.RT) > 0:
-                  self.toggle = 0.2
                   self.sound.shoot2()
 
 
@@ -203,5 +201,4 @@ class ControlMgr(ogre.FrameListener):
     def frameRenderingQueued(self, evt):
         pass
         return True;
-
 
