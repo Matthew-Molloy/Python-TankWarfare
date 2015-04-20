@@ -24,6 +24,7 @@ class ControlMgr(ogre.FrameListener):
         self.engine = engine
         self.gfx = self.engine.gfxMgr
         self.sound = self.engine.soundMgr
+	self.widget = self.engine.widgetMgr
         self.entityMgr = self.engine.entityMgr
         pass
 
@@ -164,7 +165,7 @@ class ControlMgr(ogre.FrameListener):
 
                if self.joyStick1.get_axis(JoyAxes.RT) > 0:
                   self.toggle = 0.2
-                  self.sound.shoot()
+                  self.sound.shoot1()
 
             if self.joyStick2:
                self.tank = self.entityMgr.ents[1]
@@ -188,7 +189,7 @@ class ControlMgr(ogre.FrameListener):
 
                if self.joyStick2.get_axis(JoyAxes.RT) > 0:
                   self.toggle = 0.2
-                  self.sound.shoot()
+                  self.sound.shoot2()
 
 
 

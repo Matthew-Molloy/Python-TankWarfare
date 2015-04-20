@@ -56,7 +56,7 @@ class GfxMgr:
  
     # Create the render window
     def createRenderWindow(self):
-        self.root.initialise(True, "AS5")
+        self.renderWindow = self.root.initialise(True, "AS5")
  
     # Initialize the resources here (which were read from resources.cfg in defineResources()
     def initializeResourceGroups(self):
@@ -74,7 +74,7 @@ class GfxMgr:
 
         viewPort = self.root.getAutoCreatedWindow().addViewport(self.camera,1,0,0,1,0.5)
 
-        viewPort = self.root.getAutoCreatedWindow().addViewport(self.camera1,2,0,0.5,1,0.5)
+        viewPortOne = self.root.getAutoCreatedWindow().addViewport(self.camera1,2,0,0.5,1,0.5)
 
 
         plane = ogre.Plane ((0, 1, 0), 0)
