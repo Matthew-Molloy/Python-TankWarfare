@@ -7,12 +7,12 @@ class WidgetMgr:
         pass
 
     def init(self):
-	self.width = self.engine.gfxMgr.renderWindow.getWidth()
-	self.height = self.engine.gfxMgr.renderWindow.getHeight()
+	self.width = self.engine.gfxMgr.camera.getViewport().getActualWidth()
+	self.height = self.engine.gfxMgr.camera.getViewport().getActualHeight()
 	self.overlayManager = ogre.OverlayManager.getSingleton()
 	self.panel = self.overlayManager.createOverlayElement("Panel", "myNewPanel")
 	self.panel.setMetricsMode(ogre.GMM_PIXELS)#RELATIVE_ASPECT_ADJUSTED)
-        self.panel.setPosition(-1, 50)
+        self.panel.setPosition(0, 0)
         self.panel.setDimensions(self.width, self.height)        
         self.panel.setMaterialName("ECSLENT/UI")
         
@@ -22,9 +22,10 @@ class WidgetMgr:
 	self.panel.show()
 
     def tick(self, dt):
-	print "HEIGHT: " , self.height
-	print "WIDTH: " , self.width
-        pass
+	self.width = self.engine.gfxMgr.camera.getViewport().getActualWidth()
+	self.height = self.engine.gfxMgr.camera.getViewport().getActualHeight()
+        self.panel.setPosition(0,0)
+        self.setDimensions(self.width,self.height)
 
     def stop(self):
         pass
