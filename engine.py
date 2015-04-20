@@ -34,6 +34,10 @@ class Engine(object):
         self.soundMgr = soundMgr.SoundMgr(self)
         self.soundMgr.init()
 
+	import widgetMgr
+        self.widgetMgr = widgetMgr.WidgetMgr(self)
+        self.widgetMgr.init()
+
         import controlMgr
         self.controlMgr = controlMgr.ControlMgr(self)
         self.controlMgr.init()
@@ -50,6 +54,7 @@ class Engine(object):
         self.gameMgr.stop()
         self.controlMgr.stop()
         self.netMgr.stop()
+	self.widgetMgr.stop()
         self.keepRunning = False
 
     def run(self):
@@ -70,6 +75,7 @@ class Engine(object):
             self.netMgr.tick(dtime)
             self.inputMgr.tick(dtime)
             self.selectionMgr.tick(dtime)
+	    self.widgetMgr.tick(dtime)
             self.controlMgr.tick(dtime)
             self.gameMgr.tick(dtime)
             

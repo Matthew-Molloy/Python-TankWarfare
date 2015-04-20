@@ -24,6 +24,7 @@ class ControlMgr(ogre.FrameListener):
         self.engine = engine
         self.gfx = self.engine.gfxMgr
         self.sound = self.engine.soundMgr
+	self.widget = self.engine.widgetMgr
         self.entityMgr = self.engine.entityMgr
         pass
 

@@ -56,7 +56,7 @@ class GfxMgr:
  
     # Create the render window
     def createRenderWindow(self):
-        self.root.initialise(True, "AS5")
+        self.renderWindow = self.root.initialise(True, "AS5")
  
     # Initialize the resources here (which were read from resources.cfg in defineResources()
     def initializeResourceGroups(self):
