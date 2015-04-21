@@ -25,7 +25,7 @@ class EntityMgr:
 
 
     def createEnt(self, entType, pos = MyVector(0,0,0), yaw = 0):
-        ent = entType(self.nEnts, pos = pos, yaw = yaw)
+        ent = entType(self.nEnts, engine = self.engine, pos = pos, yaw = yaw)
         gfxNode = self.createGent(ent.uiname + str(self.nEnts), ent.mesh, ent.pos, ent.heading)
         ent.node = gfxNode
 
