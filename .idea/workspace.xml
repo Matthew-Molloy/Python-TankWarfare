@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="81ac75e6-6ced-45fe-a962-0ff43b80de1c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ent.py" afterPath="$PROJECT_DIR$/ent.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/entityMgr.py" afterPath="$PROJECT_DIR$/entityMgr.py" />
     </list>
     <ignored path="cs381final.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,8 +39,8 @@
       <file leaf-file-name="ent.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ent.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5863192" vertical-offset="420" max-vertical-offset="3465">
-              <caret line="55" column="28" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.53745925" vertical-offset="2430" max-vertical-offset="3450">
+              <caret line="187" column="28" selection-start-line="187" selection-start-column="28" selection-end-line="187" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -83,8 +82,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="606" />
-    <option name="y" value="160" />
+    <option name="x" value="388" />
+    <option name="y" value="109" />
     <option name="width" value="1053" />
     <option name="height" value="732" />
   </component>
@@ -135,7 +134,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/cubecollision" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="tests" factoryName="py.test">
@@ -273,7 +272,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="606" y="160" width="1053" height="732" extended-state="0" />
+    <frame x="388" y="109" width="1053" height="732" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -362,8 +361,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ent.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5863192" vertical-offset="420" max-vertical-offset="3465">
-          <caret line="55" column="28" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.53745925" vertical-offset="2430" max-vertical-offset="3450">
+          <caret line="187" column="28" selection-start-line="187" selection-start-column="28" selection-end-line="187" selection-end-column="28" />
           <folding />
         </state>
       </provider>

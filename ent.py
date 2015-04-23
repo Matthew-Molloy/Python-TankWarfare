@@ -63,7 +63,6 @@ class CVN68(Entity):
 
     def checkCollision(self, dtime):
         # checkValue indicates the distance from the target ent to the collision spot of the current ent
-        # the cube will stop 70 pixels from the the cigarette mesh
         for key, target in self.engine.entityMgr.ents.items():
             if target.uiname == 'DDG51':
                 diffZ = target.pos.z - self.pos.z
@@ -73,9 +72,9 @@ class CVN68(Entity):
                 if self.distance.valueDegrees() < target.checkValue:
                     print "Collision"
                     self.speed = 0
-                    self.acceleration = 0
                     self.desiredSpeed = 0
-
+                    self.pos.z -= 2
+                    self.pos.x -= 2
 
 
 class CIGARETTE(Entity):
@@ -185,7 +184,6 @@ class DDG51(Entity):
 
     def checkCollision(self, dtime):
         # checkValue indicates the distance from the target ent to the collision spot of the current ent
-        # the cube will stop 70 pixels from the the cigarette mesh
         for key, target in self.engine.entityMgr.ents.items():
             if target.uiname == 'CVN68':
                 diffZ = target.pos.z - self.pos.z
@@ -196,7 +194,8 @@ class DDG51(Entity):
                     print "Collision"
                     self.speed = 0
                     self.desiredSpeed = 0
-                    self.acceleration = 0
+                    self.pos.z -= 2
+                    self.pos.x -= 2
 
 class ALIENSHIP(Entity):
     def __init__(self, id, pos = MyVector(0,0,0), vel = MyVector(0, 0, 0), yaw = 0):
