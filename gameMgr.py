@@ -21,7 +21,7 @@ class GameMgr:
             print "GameMgr Creating", str(entType)
             ent = self.engine.entityMgr.createEnt(entType, pos = Vector3(x, 0, 0))
             print "GameMgr Created: ", ent.uiname, ent.eid
-            x += 300
+            x += 700
 
 
     def tick(self, dt):

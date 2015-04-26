@@ -43,6 +43,9 @@ class ControlMgr(ogre.FrameListener):
         # Set the rotation and movement speed.
         self.rotate = 0.13
         self.move = 250
+        self.tank  = self.entityMgr.ents[0]
+        self.tank1 = self.entityMgr.ents[1]
+
 
         pygame.init()
         pygame.joystick.init()
@@ -107,20 +110,21 @@ class ControlMgr(ogre.FrameListener):
                ent.node.showBoundingBox(True)
 
 #--------------------------------------------------------------------------------------
-        import utils
 
         # Speed Up
         if  self.toggle < 0 and self.keyboard.isKeyDown(OIS.KC_UP):
            self.toggle = 0.2
 	   for selectedEnt in self.entityMgr.selectedEntIndecies:
-              selectedEnt.desiredSpeed = utils.clamp(selectedEnt.desiredSpeed + selectedEnt.deltaSpeed, 0, selectedEnt.maxSpeed)
+              selectedEnt.desiredSpeed += selectedEnt.deltaSpeed
+              selectedEnt.collision = False
               print "Speeding UP", selectedEnt.desiredSpeed
 
         # Slow down
         if  self.toggle < 0 and self.keyboard.isKeyDown(OIS.KC_DOWN):
            self.toggle = 0.2
 	   for selectedEnt in self.entityMgr.selectedEntIndecies:
-              selectedEnt.desiredSpeed = utils.clamp(selectedEnt.desiredSpeed - selectedEnt.deltaSpeed, 0, selectedEnt.maxSpeed)
+              selectedEnt.desiredSpeed -= selectedEnt.deltaSpeed
+              selectedEnt.collision = False
               print "Slowing down", selectedEnt.desiredSpeed
 
 
@@ -129,7 +133,6 @@ class ControlMgr(ogre.FrameListener):
            self.toggle = 0.2
 	   for selectedEnt in self.entityMgr.selectedEntIndecies:
               selectedEnt.desiredHeading += selectedEnt.deltaYaw
-              selectedEnt.desiredHeading = utils.fixAngle(selectedEnt.desiredHeading)
               print "Turn left", selectedEnt.desiredHeading
 
             
@@ -138,53 +141,26 @@ class ControlMgr(ogre.FrameListener):
            self.toggle = 0.2
 	   for selectedEnt in self.entityMgr.selectedEntIndecies:
               selectedEnt.desiredHeading -= selectedEnt.deltaYaw
-              selectedEnt.desiredHeading = utils.fixAngle(selectedEnt.desiredHeading)
               print "Turn right", selectedEnt.desiredHeading
  #-------------------------------------------------------------------------------------
 
         for event in pygame.event.get():
             if self.joyStick1:
-               self.tank = self.entityMgr.ents[0]
-               if self.joyStick1.get_axis(JoyAxes.LEFT_LEFTRIGHT) > .5:
-                  self.toggle = 0.2
-                  self.tank.desiredHeading -= self.tank.deltaYaw
-                  self.tank.desiredHeading = utils.fixAngle(self.tank.desiredHeading)
-
-               if self.joyStick1.get_axis(JoyAxes.LEFT_LEFTRIGHT) < -.5:
-                  self.toggle = 0.2
-                  self.tank.desiredHeading += self.tank.deltaYaw
-                  self.tank.desiredHeading = utils.fixAngle(self.tank.desiredHeading)
-
-               if self.joyStick1.get_axis(JoyAxes.LEFT_UPDOWN) > .5:
-                  self.toggle = 0.2
-                  self.tank.desiredSpeed = utils.clamp(self.tank.desiredSpeed - self.tank.deltaSpeed, 0, self.tank.maxSpeed)
-
-               if self.joyStick1.get_axis(JoyAxes.LEFT_UPDOWN) < -.5:
-                  self.toggle = 0.2
-                  self.tank.desiredSpeed = utils.clamp(self.tank.desiredSpeed + self.tank.deltaSpeed, 0, self.tank.maxSpeed)
+               temp = self.joyStick1.get_axis(JoyAxes.LEFT_LEFTRIGHT)
+               temp1 = self.joyStick1.get_axis(JoyAxes.LEFT_UPDOWN)
+               self.tank.desiredSpeed = self.tank.deltaSpeed * -temp1
+               self.tank.collision = False
+               self.tank.desiredHeading -= self.tank.deltaYaw * temp
 
                if self.joyStick1.get_axis(JoyAxes.RT) > 0:
                   self.sound.shoot1()
 
             if self.joyStick2:
-               self.tank = self.entityMgr.ents[1]
-               if self.joyStick2.get_axis(JoyAxes.LEFT_LEFTRIGHT) > .5:
-                  self.toggle = 0.2
-                  self.tank.desiredHeading -= self.tank.deltaYaw
-                  self.tank.desiredHeading = utils.fixAngle(self.tank.desiredHeading)
-
-               if self.joyStick2.get_axis(JoyAxes.LEFT_LEFTRIGHT) < -.5:
-                  self.toggle = 0.2
-                  self.tank.desiredHeading += self.tank.deltaYaw
-                  self.tank.desiredHeading = utils.fixAngle(self.tank.desiredHeading)
-
-               if self.joyStick2.get_axis(JoyAxes.LEFT_UPDOWN) > .5:
-                  self.toggle = 0.2
-                  self.tank.desiredSpeed = utils.clamp(self.tank.desiredSpeed - self.tank.deltaSpeed, 0, self.tank.maxSpeed)
-
-               if self.joyStick2.get_axis(JoyAxes.LEFT_UPDOWN) < -.5:
-                  self.toggle = 0.2
-                  self.tank.desiredSpeed = utils.clamp(self.tank.desiredSpeed + self.tank.deltaSpeed, 0, self.tank.maxSpeed)
+               temp = self.joyStick2.get_axis(JoyAxes.LEFT_LEFTRIGHT)
+               temp1 = self.joyStick2.get_axis(JoyAxes.LEFT_UPDOWN)
+               self.tank1.desiredSpeed = self.tank1.deltaSpeed * -temp1
+               self.tank1.collision = False
+               self.tank1.desiredHeading -= self.tank1.deltaYaw * temp
 
                if self.joyStick2.get_axis(JoyAxes.RT) > 0:
                   self.sound.shoot2()

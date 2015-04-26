@@ -38,13 +38,13 @@ class Engine(object):
         self.widgetMgr = widgetMgr.WidgetMgr(self)
         self.widgetMgr.init()
 
-        import controlMgr
-        self.controlMgr = controlMgr.ControlMgr(self)
-        self.controlMgr.init()
-
         import gameMgr
         self.gameMgr = gameMgr.GameMgr(self)
         self.gameMgr.init()
+
+        import controlMgr
+        self.controlMgr = controlMgr.ControlMgr(self)
+        self.controlMgr.init()
 
 
     def stop(self):

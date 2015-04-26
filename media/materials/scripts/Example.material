@@ -1352,7 +1352,7 @@ material Examples/Rockwall
 	}
 }
 
-material Examples/Borg
+material Examples/Camo
 {
 	technique
 	{
@@ -1360,7 +1360,7 @@ material Examples/Borg
 		{
 			texture_unit
 			{
-				texture borg.jpg
+				texture main.tga
 			}
 		}
 	}

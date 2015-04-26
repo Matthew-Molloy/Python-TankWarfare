@@ -9,38 +9,24 @@ import math
 class Physics:
     def __init__(self, ent):
         self.ent = ent
-        self.lamb = .0001
         
     def tick(self, dtime):
-        if self.ent.speed > (self.ent.desiredSpeed - self.lamb) and self.ent.speed < (self.ent.desiredSpeed + self.lamb):
-            pass
-
-        elif self.ent.speed < -self.ent.maxSpeed:
-            pass
-          
-        elif self.ent.speed < self.ent.desiredSpeed:
-            self.ent.speed += self.ent.acceleration * dtime
-
-        elif self.ent.speed > self.ent.desiredSpeed:
-            self.ent.speed -= self.ent.acceleration * dtime
-
-
-
-
         #----------position-----------------------------------
-        #print "Physics tick", dtime(self.ent.heading)) * self.ent.speed
+        timeScaledAcceleration = self.ent.acceleration * dtime
+        self.ent.speed += utils.clamp( self.ent.desiredSpeed - self.ent.speed, -timeScaledAcceleration, timeScaledAcceleration)
 
-        self.ent.vel.x = math.degrees(math.cos(math.radians(self.ent.heading + self.ent.yawOffset))) * self.ent.speed
+        self.ent.vel.x = math.degrees(math.cos(math.radians(-self.ent.heading + self.ent.yawOffset))) * self.ent.speed 
+        self.ent.vel.z = math.degrees(math.sin(math.radians(-self.ent.heading + self.ent.yawOffset))) * self.ent.speed
+        self.ent.vel.y = 0
 
-        self.ent.vel.z = -math.degrees(math.sin(math.radians(self.ent.heading + self.ent.yawOffset))) * self.ent.speed 
-        self.ent.pos = self.ent.pos + (self.ent.vel * dtime)
-        self.ent.pos = self.ent.pos + (self.ent.vel * dtime)
+          self.ent.pos = self.ent.pos + (self.ent.vel * dtime)
+
         #------------heading----------------------------------
+        if self.ent.desiredHeading > 360:
+           self.ent.desiredHeading -= 360
+        if self.ent.desiredHeading < 0:
+           self.ent.desiredHeading += 360
 
-        if self.ent.desiredHead > 360:
-           self.ent.desiredHead -= 360
-        if self.ent.desiredHead < 0:
-           self.ent.desiredHead += 360
-            #print self.ent.desiredHead, '    ', self.ent.heading
-        self.ent.yaw = (self.ent.desiredHead - self.ent.heading)
-        self.ent.heading = self.ent.desiredHead
+        self.ent.yaw = (self.ent.desiredHeading - self.ent.heading)
+        self.ent.heading = self.ent.desiredHeading
+

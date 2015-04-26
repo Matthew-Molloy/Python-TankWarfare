@@ -36,7 +36,7 @@ class Engine(object):
 
 	import widgetMgr
         self.widgetMgr = widgetMgr.WidgetMgr(self)
-        self.soundMgr.init()
+        self.widgetMgr.init()
 
         import controlMgr
         self.controlMgr = controlMgr.ControlMgr(self)

@@ -1352,6 +1352,19 @@ material Examples/Rockwall
 	}
 }
 
+material Examples/Camo
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture main.tga
+			}
+		}
+	}
+}
 material Examples/Aureola
 {
 	technique
