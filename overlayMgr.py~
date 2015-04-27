@@ -7,6 +7,7 @@ class OverlayMgr:
     def init(self):
         self.overlayMgr = False
         self.showMenu = True
+        self.engine.controlMgr.initTanks()
 
     def displayMainMenu(self):
         self.entityMgr = self.engine.entityMgr
@@ -114,7 +115,6 @@ class OverlayMgr:
             buttons.hide()
             self.overlay.hide()
             self.showMenu = False
-            self.engine.controlMgr.initTanks()
 
         if self.engine.inputMgr.instructionsCheck == True and self.engine.inputMgr.startCheck == False:
             instructions = self.overlayMgr.getOverlayElement("InstructionScreen")

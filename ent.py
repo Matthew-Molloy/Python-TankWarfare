@@ -111,6 +111,11 @@ class DDG51(Entity):
                     self.speed = 0
                     self.desiredSpeed = 0
 
+    def shoot(self):
+        ent = self.engine.entityMgr.createEnt(CannonBall, pos = MyVector(self.pos.x,250,self.pos.z))
+        
+        ent.desiredHeading = self.desiredHeading
+
 class CannonBall(Entity):
     def __init__(self, id, engine, pos = MyVector(0,0,0), vel = MyVector(0, 0, 0), yaw = 0):
         Entity.__init__(self, id, engine = engine, pos = pos, vel = vel, yaw = yaw)

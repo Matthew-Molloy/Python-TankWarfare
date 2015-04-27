@@ -70,12 +70,9 @@ class GfxMgr:
         self.sceneManager = self.root.createSceneManager(ogre.ST_GENERIC, "Default SceneManager")
 
         self.camera = self.sceneManager.createCamera("Camera")
-	self.camera.setPosition(ogre.Vector3(0, 500, -400))
-        self.camera.lookAt((0,0,800))
-
         self.camera1 = self.sceneManager.createCamera("Camera1")
-	self.camera1.setPosition(ogre.Vector3(0, 500, -400))
-        self.camera1.lookAt((0,0,800))
+        self.camera.setPosition(ogre.Vector3(0, 50, 500))
+        self.camera.lookAt(0,50,0)
 
         self.viewPort = self.root.getAutoCreatedWindow().addViewport(self.camera,1,0,0,1,1)
 
@@ -112,13 +109,14 @@ class GfxMgr:
         self.root.renderOneFrame()
 
     def setupGameViews(self):
-        self.viewPort.setDimensions(0,0,1,0.5)
-        self.camera.setPosition(ogre.Vector3(0, 50, 500))
-        self.camera1 = self.sceneManager.createCamera("Camera1")
-        self.camera1.setPosition(ogre.Vector3(0, 50, -500))
-        self.camera1.lookAt((0,0,0))
-        self.camera.lookAt((0,0,0))
 
+
+        self.viewPort.setDimensions(0,0,1,0.5)
+	self.camera.setPosition(ogre.Vector3(0, 500, -400))
+        self.camera.lookAt((0,0,800))
+
+	self.camera1.setPosition(ogre.Vector3(0, 500, -400))
+        self.camera1.lookAt((700,0,800))
         viewPortOne = self.root.getAutoCreatedWindow().addViewport(self.camera1,2,0,0.5,1,0.5)
  
     # In the end, clean everything up (= delete)

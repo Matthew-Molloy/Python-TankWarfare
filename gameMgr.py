@@ -5,6 +5,7 @@ class GameMgr:
     def __init__(self, engine):
         self.engine = engine
         print "starting Game mgr"
+        self.game1()
         pass
 
     def init(self):
@@ -13,7 +14,6 @@ class GameMgr:
 
     def loadLevel(self):
         self.engine.gfxMgr.setupGameViews()
-        self.game1()
         
 
     def game1(self):

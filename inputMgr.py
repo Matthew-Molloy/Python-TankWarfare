@@ -83,10 +83,8 @@ class InputMgr(ogre.FrameListener):
                     #emptylist
                     while len(self.entMgr.selectedEntIndecies) > 0:
                         a = self.entMgr.selectedEntIndecies.pop()
-                        a.node.showBoundingBox(False)
                     self.entMgr.selectedEntIndecies.append(currentEntity)
                     self.entMgr.selectedEnt = currentEntity
-                    currentEntity.node.showBoundingBox(True)
             else:
                 while len(self.entMgr.selectedEntIndecies) > 0:
                     a = self.entMgr.selectedEntIndecies.pop()

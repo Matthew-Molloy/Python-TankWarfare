@@ -27,8 +27,8 @@ class ControlMgr(ogre.FrameListener):
         self.sound = self.engine.soundMgr
         self.widget = self.engine.widgetMgr
         self.entityMgr = self.engine.entityMgr
-        self.tank = False
-        self.tank1 = False
+        self.tank = None
+        self.tank1 = None
         pass
 
     def init(self):
@@ -42,10 +42,16 @@ class ControlMgr(ogre.FrameListener):
 
         # Key and mouse state tracking.
         self.toggle = 0
+        self.toggle1 = 0
         self.mouseDown = False
         # Set the rotation and movement speed.
         self.rotate = 0.13
         self.move = 250
+
+        self.tank = self.entityMgr.ents[0]
+        self.tank1 = self.entityMgr.ents[1]
+        self.tank1.node.attachObject (self.gfx.camera1)
+        self.tank.node.attachObject (self.gfx.camera)
 
         pygame.init()
         pygame.joystick.init()
@@ -64,11 +70,7 @@ class ControlMgr(ogre.FrameListener):
         pass
 
     def initTanks(self):
-        self.tank = self.entityMgr.ents[0]
-        self.tank1 = self.entityMgr.ents[1]
-        self.tank.node.attachObject (self.gfx.camera)
-        self.tank1.node.attachObject (self.gfx.camera1)
-
+        pass
     def tick(self, dt):
         pass
 
@@ -90,6 +92,9 @@ class ControlMgr(ogre.FrameListener):
         # Update the toggle timer.
         if self.toggle >= 0:
             self.toggle -= frameEvent.timeSinceLastFrame
+
+        if self.toggle1 >= 0:
+            self.toggle1 -= frameEvent.timeSinceLastFrame
 
 
         # Handle only Tab selection
@@ -157,7 +162,8 @@ class ControlMgr(ogre.FrameListener):
                 self.tank.desiredSpeed = self.tank.deltaSpeed * -temp1
                 self.tank.collision = False
                 self.tank.desiredHeading -= self.tank.deltaYaw * temp
-                if self.joyStick1.get_axis(JoyAxes.RT) > 0:
+                if self.joyStick1.get_axis(JoyAxes.RT) > 0 and self.toggle < 0:
+                  self.toggle = 2
                   self.sound.shoot1()
                   self.tank.shoot()
 
@@ -168,8 +174,10 @@ class ControlMgr(ogre.FrameListener):
                 self.tank1.collision = False
                 self.tank1.desiredHeading -= self.tank1.deltaYaw * temp
 
-                if self.joyStick2.get_axis(JoyAxes.RT) > 0:
+                if self.joyStick2.get_axis(JoyAxes.RT) > 0 and self.toggle1 < 0:
+                    self.toggle1 = 2
                     self.sound.shoot2()
+                    self.tank1.shoot()
 
         return True
 
