@@ -76,7 +76,7 @@ class CVN68(Entity):
 
     def shoot(self):
         ent = self.engine.entityMgr.createEnt(CannonBall, pos = MyVector(self.pos.x,250,self.pos.z))
-        ent.node.scale = (0.1,2,0.005)
+        
         ent.desiredHeading = self.desiredHeading
 
 

@@ -5,6 +5,7 @@ import platform
 class GfxMgr:
     def __init__(self, engine):
         self.engine = engine
+        self.overlayMgr = self.engine.overlayMgr
         pass
 
     def init(self):
@@ -25,6 +26,7 @@ class GfxMgr:
         self.setupRenderSystem()
         self.createRenderWindow()
         self.initializeResourceGroups()
+        self.overlayMgr.displayMainMenu()
         self.setupScene()
         self.setupInputSystem()
         self.startRenderLoop()
@@ -75,15 +77,12 @@ class GfxMgr:
 	self.camera1.setPosition(ogre.Vector3(0, 500, -400))
         self.camera1.lookAt((0,0,800))
 
-        viewPort = self.root.getAutoCreatedWindow().addViewport(self.camera,1,0,0,1,0.5)
-
-        viewPortOne = self.root.getAutoCreatedWindow().addViewport(self.camera1,2,0,0.5,1,0.5)
+        self.viewPort = self.root.getAutoCreatedWindow().addViewport(self.camera,1,0,0,1,1)
 
 
-        plane = ogre.Plane ((0, 1, 0), 0)
+        self.plane = ogre.Plane ((0, 1, 0), 0)
         meshManager = ogre.MeshManager.getSingleton ()
-        meshManager.createPlane ('Ground', 'General', plane,
-10000, 10000, 20, 20, True, 1, 5, 5, (0, 0, 1))
+        meshManager.createPlane ('Ground', 'General', self.plane, 10000, 10000, 20, 20, True, 1, 5, 5, (0, 0, 1))
         ent = self.sceneManager.createEntity('GroundEntity', 'Ground')
         self.sceneManager.getRootSceneNode().createChildSceneNode ().attachObject (ent)
         ent.setMaterialName ("Examples/GrassFloor")
@@ -107,15 +106,20 @@ class GfxMgr:
             self.mouse = self.inputManager.createInputObjectMouse(OIS.OISMouse, False)
         except Exception, e:
             raise e
-
-
- 
-    def startRenderLoop(self):
-        self.root.renderOneFrame
  
     # This is the rendering loop
     def startRenderLoop(self):
         self.root.renderOneFrame()
+
+    def setupGameViews(self):
+        self.viewPort.setDimensions(0,0,1,0.5)
+        self.camera.setPosition(ogre.Vector3(0, 50, 500))
+        self.camera1 = self.sceneManager.createCamera("Camera1")
+        self.camera1.setPosition(ogre.Vector3(0, 50, -500))
+        self.camera1.lookAt((0,0,0))
+        self.camera.lookAt((0,0,0))
+
+        viewPortOne = self.root.getAutoCreatedWindow().addViewport(self.camera1,2,0,0.5,1,0.5)
  
     # In the end, clean everything up (= delete)
     def cleanUp(self):

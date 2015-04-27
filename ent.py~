@@ -114,7 +114,7 @@ class DDG51(Entity):
 class CannonBall(Entity):
     def __init__(self, id, engine, pos = MyVector(0,0,0), vel = MyVector(0, 0, 0), yaw = 0):
         Entity.__init__(self, id, engine = engine, pos = pos, vel = vel, yaw = yaw)
-        self.mesh = 'cigarette.mesh'
+        self.mesh = 'sphere.mesh'
         self.uiname = 'CBALL'
         self.eid = id
         self.yawOffset = 90
