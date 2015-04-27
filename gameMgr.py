@@ -8,10 +8,11 @@ class GameMgr:
         pass
 
     def init(self):
-        self.loadLevel()
+        pass
 
 
     def loadLevel(self):
+        self.engine.gfxMgr.setupGameViews()
         self.game1()
         
 
