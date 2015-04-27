@@ -18,7 +18,7 @@ class Entity:
         self.vel = vel
         self.mesh = mesh
         self.node = None
-        self.deltaSpeed = 1
+        self.deltaSpeed = 5
         self.deltaYaw   = .5
         self.speed = 0.0
         self.heading = 0.0
@@ -74,6 +74,10 @@ class CVN68(Entity):
                     self.speed = 0
                     self.desiredSpeed = 0
 
+    def shoot(self):
+        ent = self.engine.entityMgr.createEnt(CannonBall, pos = MyVector(self.pos.x,250,self.pos.z))
+        ent.node.scale = (0.1,2,0.005)
+        ent.desiredHeading = self.desiredHeading
 
 
 class DDG51(Entity):
@@ -82,6 +86,7 @@ class DDG51(Entity):
         self.mesh = 'tank.mesh'
         self.uiname = 'DDG51'
         self.eid = id
+        self.yawOffset = 90
         self.acceleration = 5
         self.turningRate = 0.2
         self.maxSpeed = 32
@@ -106,3 +111,22 @@ class DDG51(Entity):
                     self.speed = 0
                     self.desiredSpeed = 0
 
+class CannonBall(Entity):
+    def __init__(self, id, engine, pos = MyVector(0,0,0), vel = MyVector(0, 0, 0), yaw = 0):
+        Entity.__init__(self, id, engine = engine, pos = pos, vel = vel, yaw = yaw)
+        self.mesh = 'cigarette.mesh'
+        self.uiname = 'CBALL'
+        self.eid = id
+        self.yawOffset = 90
+        self.acceleration = 5
+        self.turningRate = 0.2
+        self.maxSpeed = 32
+        self.desiredSpeed = 5
+        self.desiredHeading = 0
+        self.speed = 0
+        self.heading = 0
+        self.engine = engine
+        self.checkValue = 150
+
+    def checkCollision(self, dtime):
+       pass

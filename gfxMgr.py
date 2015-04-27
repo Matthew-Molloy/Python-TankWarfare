@@ -66,11 +66,14 @@ class GfxMgr:
 
     def setupScene(self):
         self.sceneManager = self.root.createSceneManager(ogre.ST_GENERIC, "Default SceneManager")
+
         self.camera = self.sceneManager.createCamera("Camera")
-	self.camera.setPosition(ogre.Vector3(0, 50, 500))
+	self.camera.setPosition(ogre.Vector3(0, 500, -400))
+        self.camera.lookAt((0,0,800))
+
         self.camera1 = self.sceneManager.createCamera("Camera1")
-	self.camera1.setPosition(ogre.Vector3(0, 50, -500))
-        self.camera1.lookAt((0,0,0))
+	self.camera1.setPosition(ogre.Vector3(0, 500, -400))
+        self.camera1.lookAt((0,0,800))
 
         viewPort = self.root.getAutoCreatedWindow().addViewport(self.camera,1,0,0,1,0.5)
 

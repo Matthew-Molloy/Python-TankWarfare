@@ -45,6 +45,8 @@ class ControlMgr(ogre.FrameListener):
         self.move = 250
         self.tank  = self.entityMgr.ents[0]
         self.tank1 = self.entityMgr.ents[1]
+        self.tank.node.attachObject (self.gfx.camera)
+        self.tank1.node.attachObject (self.gfx.camera1)
 
 
         pygame.init()
@@ -154,6 +156,7 @@ class ControlMgr(ogre.FrameListener):
 
                if self.joyStick1.get_axis(JoyAxes.RT) > 0:
                   self.sound.shoot1()
+                  self.tank.shoot()
 
             if self.joyStick2:
                temp = self.joyStick2.get_axis(JoyAxes.LEFT_LEFTRIGHT)
@@ -164,9 +167,6 @@ class ControlMgr(ogre.FrameListener):
 
                if self.joyStick2.get_axis(JoyAxes.RT) > 0:
                   self.sound.shoot2()
-
-
-
 
 
         return True
