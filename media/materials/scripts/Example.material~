@@ -306,6 +306,34 @@ material Examples/CloudySky
 		}
 	}
 }
+material Examples/Camo1
+{
+	technique
+	{
+		pass
+		{
+
+			texture_unit
+			{
+				texture camo-white.jpg
+			}
+		}
+	}
+}
+material Examples/Camo2
+{
+	technique
+	{
+		pass
+		{
+
+			texture_unit
+			{
+				texture M1_ABRAM.bmp
+			}
+		}
+	}
+}
 material Examples/RustySteel
 {
 	technique

@@ -12,6 +12,7 @@ class Entity:
     
     def __init__(self, id, engine, pos = MyVector(0,0,0), mesh = 'robot.mesh', vel = MyVector(0, 0, 0), yaw = 0):
         self.id = id
+	self.material = None
         self.yawOffset = 0
         self.collision = False
         self.pos = pos
@@ -47,6 +48,7 @@ class CVN68(Entity):
     def __init__(self, id, engine, pos = MyVector(0,0,0), vel = MyVector(0, 0, 0), yaw = 0):
         Entity.__init__(self, id, engine = engine, pos = pos, vel = vel, yaw = yaw)
         self.mesh = 'tank.mesh'
+	self.material = "Examples/Camo2"
         self.uiname = 'CVN68'
         self.eid = id
         self.yawOffset = 90
@@ -84,6 +86,7 @@ class DDG51(Entity):
     def __init__(self, id, engine, pos = MyVector(0,0,0), vel = MyVector(0, 0, 0), yaw = 0):
         Entity.__init__(self, id, engine = engine, pos = pos, vel = vel, yaw = yaw)
         self.mesh = 'tank.mesh'
+	self.material = "Examples/Camo1"
         self.uiname = 'DDG51'
         self.eid = id
         self.yawOffset = 90
@@ -120,6 +123,7 @@ class CannonBall(Entity):
     def __init__(self, id, engine, pos = MyVector(0,0,0), vel = MyVector(0, 0, 0), yaw = 0):
         Entity.__init__(self, id, engine = engine, pos = pos, vel = vel, yaw = yaw)
         self.mesh = 'sphere.mesh'
+	self.material = "Examples/CannonBall"
         self.uiname = 'CBALL'
         self.eid = id
         self.yawOffset = 90

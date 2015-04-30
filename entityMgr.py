@@ -26,7 +26,7 @@ class EntityMgr:
 
     def createEnt(self, entType, pos = MyVector(0,0,0), yaw = 0):
         ent = entType(self.nEnts, engine = self.engine, pos = pos, yaw = yaw)
-        gfxNode = self.createGent(ent.uiname + str(self.nEnts), ent.mesh, ent.pos, ent.heading)
+        gfxNode = self.createGent(ent.uiname + str(self.nEnts), ent.mesh, ent.pos, ent.heading, ent.material)
         ent.node = gfxNode
 
         self.ents[self.nEnts] = ent;
@@ -51,8 +51,9 @@ class EntityMgr:
     def getSelected(self):
         return self.selectedEnt
 
-    def createGent(self, mid, mmesh, mpos, myaw):
+    def createGent(self, mid, mmesh, mpos, myaw, mmaterial):
         e = self.sceneManager.createEntity(mid, mmesh)
+	e.setMaterialName(mmaterial)
         fileRoot = mmesh.split('.')
         materialName = fileRoot[0]+".material"
         node = self.sceneManager.getRootSceneNode().createChildSceneNode(mid + 'node', mpos)
