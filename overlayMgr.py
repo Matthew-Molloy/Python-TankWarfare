@@ -110,9 +110,11 @@ class OverlayMgr:
         if self.engine.inputMgr.startCheck == True:
             buttons = self.overlayMgr.getOverlayElement("Buttons")
             menu = self.overlayMgr.getOverlayElement("Menu")
+	    gameHUD = self.overlayMgr.getOverlayElement("myNewPanel")
             menu.hide()
             buttons.hide()
-            self.overlay.hide()
+	    gameHUD.show()
+            #self.overlay.hide()
             self.showMenu = False
             self.engine.controlMgr.initTanks()
 

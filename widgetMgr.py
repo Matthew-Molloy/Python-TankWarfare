@@ -19,7 +19,7 @@ class WidgetMgr:
 	self.overlay = self.overlayManager.create("myOverlay")
 	self.overlay.add2D(self.panel)
 	self.overlay.show()
-	self.panel.show()
+	self.panel.hide()
 
     def tick(self, dt):
 	self.width = self.engine.gfxMgr.camera.getViewport().getActualWidth()
