@@ -334,6 +334,20 @@ material Examples/Camo2
 		}
 	}
 }
+material Examples/Camo2
+{
+	technique
+	{
+		pass
+		{
+
+			texture_unit
+			{
+				texture egyptrockyfull.jpg
+			}
+		}
+	}
+}
 material Examples/RustySteel
 {
 	technique

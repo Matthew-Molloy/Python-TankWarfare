@@ -334,7 +334,7 @@ material Examples/Camo2
 		}
 	}
 }
-material Examples/Camo2
+material Examples/CannonBall
 {
 	technique
 	{
