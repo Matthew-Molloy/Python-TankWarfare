@@ -1,6 +1,5 @@
 import ogre.renderer.OGRE as ogre
 import ogre.io.OIS as OIS
-import platform
 
 
 class InputMgr(ogre.FrameListener):
@@ -60,7 +59,7 @@ class InputMgr(ogre.FrameListener):
                 self.engine.gameMgr.loadLevel()
 
             currentItem = None
-            #empty selected entities
+            # empty selected entities
             for item in result:
                 if item.movable:
                     if not (item.movable.getName() == "Camera") and not (item.movable.getName() == 'GroundEntity'):

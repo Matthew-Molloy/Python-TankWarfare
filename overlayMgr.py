@@ -1,5 +1,6 @@
 import ogre.renderer.OGRE as ogre
 
+
 class OverlayMgr:
     def __init__(self, engine):
         self.engine = engine
@@ -26,7 +27,7 @@ class OverlayMgr:
         self.panel = self.overlayMgr.createOverlayElement("Panel", "Menu")
         self.panel.setPosition(0, 0)
         self.panel.setDimensions(1, 1)
-        #self.panel.setMaterialName("spacePlane2")
+        # self.panel.setMaterialName("spacePlane2")
 
         #  Create a button panel
         self.panel2 = self.overlayMgr.createOverlayElement("Panel", "Buttons")
@@ -110,11 +111,11 @@ class OverlayMgr:
         if self.engine.inputMgr.startCheck == True:
             buttons = self.overlayMgr.getOverlayElement("Buttons")
             menu = self.overlayMgr.getOverlayElement("Menu")
-	    gameHUD = self.overlayMgr.getOverlayElement("myNewPanel")
+            gameHUD = self.overlayMgr.getOverlayElement("myNewPanel")
             menu.hide()
             buttons.hide()
-	    gameHUD.show()
-            #self.overlay.hide()
+            gameHUD.show()
+            # self.overlay.hide()
             self.showMenu = False
             self.engine.controlMgr.initTanks()
 

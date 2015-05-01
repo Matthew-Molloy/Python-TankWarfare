@@ -1,28 +1,22 @@
-import ogre.renderer.OGRE as ogre
-import ogre.io.OIS as OIS
-import platform
-
-class SelectionMgr(ogre.FrameListener):
+class SelectionMgr():
     def __init__(self, engine):
-        ogre.FrameListener.__init__(self)
         self.engine = engine
         self.gfx = self.engine.gfxMgr
         self.entityMgr = self.engine.entityMgr
         pass
 
     def init(self):
-        self.gfx.root.addFrameListener(self)
         pass
 
-    def startCheck( self, point ):
+    def startCheck(self, point):
         if point.x <= 111.0 and point.x >= -112.0 and point.z >= -950.0 and point.z <= -535.0:
             return True
 
-    def instructionsCheck( self, point ):
+    def instructionsCheck(self, point):
         if point.x <= 39.7 and point.x >= -75.4 and point.z >= 83.61 and point.z <= 110.46:
             return True
 
-    def creditsCheck( self, point ):
+    def creditsCheck(self, point):
         if point.x <= -2.88 and point.x >= -75.94 and point.z >= 128.1 and point.z <= 151.88:
             return True
 
@@ -31,10 +25,5 @@ class SelectionMgr(ogre.FrameListener):
 
     def stop(self):
         pass
-
-    def frameStarted(self, frameEvent):
-        for uid, ent in self.entityMgr.ents.iteritems():
-            ent.tick(frameEvent.timeSinceLastFrame)
-        return True
 
 

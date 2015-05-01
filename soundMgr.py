@@ -6,23 +6,21 @@ class SoundMgr:
         pass
 
     def init(self):
-        
-      import pygame
-      from pygame import *
-      import sys
+        import pygame
+        from pygame import *
 
-      pygame.init()
-      pygame.mixer.init()
-      Background = pygame.mixer.Sound("mars.ogg")
-      self.Shoot1      = pygame.mixer.Sound("shoot1.ogg")
-      self.Shoot2      = pygame.mixer.Sound("shoot2.ogg")
-      Background.play(loops = -1)
+        pygame.init()
+        pygame.mixer.init()
+        Background = pygame.mixer.Sound("mars.ogg")
+        self.Shoot1 = pygame.mixer.Sound("shoot1.ogg")
+        self.Shoot2 = pygame.mixer.Sound("shoot2.ogg")
+        Background.play(loops=-1)
 
     def shoot1(self):
-      self.Shoot1.play()
+        self.Shoot1.play()
 
     def shoot2(self):
-      self.Shoot2.play()
+        self.Shoot2.play()
 
     def tick(self, dt):
         pass
