@@ -1,4 +1,6 @@
 from vector import Vector3
+from vector import MyVector
+import ent
 
 
 class GameMgr:
@@ -20,14 +22,27 @@ class GameMgr:
         x = 0
         for entType in self.engine.entityMgr.entTypes:
             print "GameMgr Creating", str(entType)
-            ent = self.engine.entityMgr.createEnt(entType, pos=Vector3(x, 0, 0))
-            ent.setMaterial("Examples/Camo1")
-            print "GameMgr Created: ", ent.uiname, ent.eid
+            entity = self.engine.entityMgr.createEnt(entType, pos=Vector3(x, 0, 0))
+            entity.setMaterial("Examples/Camo1")
+            print "GameMgr Created: ", entity.uiname, entity.eid
             x += 700
-            ent = self.engine.entityMgr.createEnt(entType, pos=Vector3(x, 0, 0))
-            ent.setMaterial("Examples/Camo2")
-            print "GameMgr Created: ", ent.uiname, ent.eid
+            entity = self.engine.entityMgr.createEnt(entType, pos=Vector3(x, 0, 0))
+            entity.setMaterial("Examples/Camo2")
+            print "GameMgr Created: ", entity.uiname, entity.eid
+        self.loadMap()
 
+    def loadMap(self):
+        entityMgr = self.engine.entityMgr
+        wallMaterial = "Examples/CannonBall"
+        #Create 4 walls at edge of map
+        entity = entityMgr.createEnt(ent.OutterWall, pos=MyVector(-5000,100,0),yaw=90)
+        entity.setMaterial(wallMaterial)
+        entity = entityMgr.createEnt(ent.OutterWall, pos=MyVector(5000,100,0),yaw=90)
+        entity.setMaterial(wallMaterial)
+        entity = entityMgr.createEnt(ent.OutterWall, pos=MyVector(0,100,-5000))
+        entity.setMaterial(wallMaterial)
+        entity = entityMgr.createEnt(ent.OutterWall, pos=MyVector(0,100,5000))
+        entity.setMaterial(wallMaterial)
 
     def tick(self, dt):
         pass
