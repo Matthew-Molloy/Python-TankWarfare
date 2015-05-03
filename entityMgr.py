@@ -53,13 +53,4 @@ class EntityMgr:
     def getSelected(self):
         return self.selectedEnt
 
-    def createGent(self, mid, mmesh, mpos, myaw, mmaterial):
-        e = self.sceneManager.createEntity(mid, mmesh)
-        e.setMaterialName(mmaterial)
-        fileRoot = mmesh.split('.')
-        materialName = fileRoot[0] + ".material"
-        node = self.sceneManager.getRootSceneNode().createChildSceneNode(mid + 'node', mpos)
-        node.attachObject(e)
-        return node
-
 

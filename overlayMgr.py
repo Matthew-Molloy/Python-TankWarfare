@@ -117,7 +117,6 @@ class OverlayMgr:
             gameHUD.show()
             # self.overlay.hide()
             self.showMenu = False
-            self.engine.controlMgr.initTanks()
 
         if self.engine.inputMgr.instructionsCheck == True and self.engine.inputMgr.startCheck == False:
             instructions = self.overlayMgr.getOverlayElement("InstructionScreen")

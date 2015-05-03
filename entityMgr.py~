@@ -1,6 +1,7 @@
 from vector import MyVector
 import ent
 
+
 class EntityMgr:
     def __init__(self, engine):
         print "starting ent mgr"
@@ -10,7 +11,7 @@ class EntityMgr:
         self.currentSelectedEntIndex = 0
         self.selectedEntIndecies = []
         self.selectedEnt = None
-        self.entTypes = [ent.CVN68, ent.DDG51]
+        self.entTypes = [ent.Tank]
         pass
 
     def init(self):
@@ -18,22 +19,23 @@ class EntityMgr:
         pass
 
     def tick(self, dt):
-        pass
+        for uid, ent in self.ents.items():
+            ent.tick(dt)
+            if ent.pos.z > 5000:
+                ent.destroy()
 
     def stop(self):
         pass
 
 
-    def createEnt(self, entType, pos = MyVector(0,0,0), yaw = 0):
-        ent = entType(self.nEnts, engine = self.engine, pos = pos, yaw = yaw)
-        gfxNode = self.createGent(ent.uiname + str(self.nEnts), ent.mesh, ent.pos, ent.heading)
-        ent.node = gfxNode
+    def createEnt(self, entType, pos=MyVector(0, 0, 0), yaw=0):
+        ent = entType(str(self.nEnts), engine=self.engine, pos=pos, yaw=yaw)
 
-        self.ents[self.nEnts] = ent;
+        self.ents[self.nEnts] = ent
         self.selectedEnt = ent
         self.currentSelectedEntIndex = self.nEnts;
-        if(len(self.selectedEntIndecies) > 0):
-                self.selectedEntIndecies.pop()
+        if (len(self.selectedEntIndecies) > 0):
+            self.selectedEntIndecies.pop()
         self.selectedEntIndecies.append(ent)
         self.nEnts = self.nEnts + 1
         return ent
@@ -53,9 +55,9 @@ class EntityMgr:
 
     def createGent(self, mid, mmesh, mpos, myaw, mmaterial):
         e = self.sceneManager.createEntity(mid, mmesh)
-	e.setMaterialName(mmaterial)
+        e.setMaterialName(mmaterial)
         fileRoot = mmesh.split('.')
-        materialName = fileRoot[0]+".material"
+        materialName = fileRoot[0] + ".material"
         node = self.sceneManager.getRootSceneNode().createChildSceneNode(mid + 'node', mpos)
         node.attachObject(e)
         return node

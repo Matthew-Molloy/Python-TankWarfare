@@ -25,9 +25,9 @@ class JoyButtons:  # XBox Controller, the buttons need to be checked
 class JoyAxes:  # XBox Controller
     LEFT_LEFTRIGHT = 0
     LEFT_UPDOWN = 1
-    LT = 2
-    RIGHT_LEFTRIGHT = 3
-    RIGHT_UPDOWN = 4
-    RT = 5
+    LT = 3
+    RIGHT_LEFTRIGHT = 2
+    RIGHT_UPDOWN = 5
+    RT = 4
 
 

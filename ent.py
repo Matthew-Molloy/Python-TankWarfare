@@ -19,7 +19,7 @@ class Entity:
         self.pos = pos
         self.vel = vel
         self.mesh = mesh
-        self.deltaSpeed = 5
+        self.deltaSpeed = 30
         self.deltaYaw = .5
         self.speed = 0.0
         self.heading = 0.0
@@ -27,7 +27,6 @@ class Entity:
         self.initAspects()
         self.engine = engine
         self.uiname = None
-        self.node = self.engine.gfxMgr.sceneManager.getRootSceneNode().createChildSceneNode()
 
     def setMaterial(self, material):
         self.ent.setMaterialName(material)
@@ -63,7 +62,7 @@ class Tank(Entity):
         self.uiname = 'TANK'
         self.eid = id
         self.yawOffset = 90
-        self.acceleration = 2
+        self.acceleration = 5
         self.turningRate = 0.2
         self.maxSpeed = 20
         self.desiredSpeed = 0
@@ -75,6 +74,7 @@ class Tank(Entity):
         self.health = 100
         self.oElement = "Tank " + str(id)
 
+        self.node = self.engine.gfxMgr.sceneManager.getRootSceneNode().createChildSceneNode(self.pos)
         self.ent = self.engine.gfxMgr.sceneManager.createEntity(self.eid, self.mesh)
         self.node.attachObject(self.ent)
 
@@ -95,8 +95,6 @@ class Tank(Entity):
                     self.collision = True
                     self.speed = 0
                     self.desiredSpeed = 0
-                    self.pos.x -= 2
-                    self.pos.z -= 2
 
             if target.uiname == 'CBALL' and target.tankID != self.eid:
                 if self.distance.valueDegrees() < target.checkValue:
@@ -108,7 +106,7 @@ class Tank(Entity):
 
     def shoot(self):
         ent = self.engine.entityMgr.createEnt(CannonBall, pos=MyVector(self.pos.x, 250, self.pos.z))
-	ent.setMaterial("Examples/Cannonball")
+	ent.setMaterial("Examples/Camo1")
         ent.tankID = self.eid
         ent.desiredHeading = self.desiredHeading
 
@@ -121,17 +119,17 @@ class Tank(Entity):
             self.destroy()
 
 class CannonBall(Entity):
-    def __init__(self, id, engine, tankID = 'Null', pos=MyVector(0, 0, 0), vel=MyVector(0, 0, 0), yaw=0):
+    def __init__(self, id, engine, tankID = 'Null', pos=None, vel=MyVector(0, 0, 0), yaw=0):
         Entity.__init__(self, id, engine=engine, pos=pos, vel=vel, yaw=yaw)
-        self.mesh = 'sphere.mesh'
+        self.mesh = 'Sphere20.mesh'
         self.material = "Examples/CannonBall"
         self.uiname = 'CBALL'
         self.eid = id
         self.yawOffset = 90
-        self.acceleration = 5
+        self.acceleration = 500
         self.turningRate = 0.2
         self.maxSpeed = 32
-        self.desiredSpeed = 5
+        self.desiredSpeed = 500
         self.desiredHeading = 0
         self.speed = 0
         self.heading = 0
@@ -139,6 +137,7 @@ class CannonBall(Entity):
         self.checkValue = 300
         self.tankID = tankID
 
+        self.node = self.engine.gfxMgr.sceneManager.getRootSceneNode().createChildSceneNode(self.pos)
         self.ent = self.engine.gfxMgr.sceneManager.createEntity(self.eid, self.mesh)
         self.node.attachObject(self.ent)
 

@@ -1,9 +1,11 @@
 from contextlib import contextmanager
+import pygame
+import sys
+import os
+
 import ogre.renderer.OGRE as ogre
 import ogre.io.OIS as OIS
-import platform
-import pygame
-import sys, os
+
 from xBox import JoyAxes
 from xBox import JoyButtons
 
@@ -50,8 +52,8 @@ class ControlMgr(ogre.FrameListener):
 
         self.tank = self.entityMgr.ents[0]
         self.tank1 = self.entityMgr.ents[1]
-        self.tank1.node.attachObject (self.gfx.camera1)
-        self.tank.node.attachObject (self.gfx.camera)
+        self.tank1.node.attachObject(self.gfx.camera1)
+        self.tank.node.attachObject(self.gfx.camera)
 
         pygame.init()
         pygame.joystick.init()
@@ -71,6 +73,7 @@ class ControlMgr(ogre.FrameListener):
 
     def initTanks(self):
         pass
+
     def tick(self, dt):
         pass
 
@@ -94,7 +97,7 @@ class ControlMgr(ogre.FrameListener):
             self.toggle -= frameEvent.timeSinceLastFrame
 
         if self.toggle1 >= 0:
-            self.toggle -= frameEvent.timeSinceLastFrame
+            self.toggle1 -= frameEvent.timeSinceLastFrame
 
 
         # Handle only Tab selection
@@ -103,7 +106,7 @@ class ControlMgr(ogre.FrameListener):
             if self.keyboard.isKeyDown(OIS.KC_LSHIFT) or self.keyboard.isKeyDown(OIS.KC_RSHIFT):
                 self.toggle = 0.2
                 ent = self.entityMgr.selectNextEnt()
-                #check if ent already in list
+                # check if ent already in list
                 if self.entityMgr.selectedEntIndecies.count(ent) == 0:
                     self.entityMgr.selectedEntIndecies.append(ent)
                     ent.node.showBoundingBox(True)
@@ -120,7 +123,7 @@ class ControlMgr(ogre.FrameListener):
                 print "FrameListener: Selected: ", str(ent)
                 ent.node.showBoundingBox(True)
 
-            #--------------------------------------------------------------------------------------
+                # --------------------------------------------------------------------------------------
 
         # Speed Up
         if self.toggle < 0 and self.keyboard.isKeyDown(OIS.KC_UP):
@@ -163,9 +166,14 @@ class ControlMgr(ogre.FrameListener):
                 self.tank.collision = False
                 self.tank.desiredHeading -= self.tank.deltaYaw * temp
                 if self.joyStick1.get_axis(JoyAxes.RT) > 0 and self.toggle < 0:
-                  self.toggle = 2
-                  self.sound.shoot1()
-                  self.tank.shoot()
+                    self.toggle = 2
+                    self.sound.shoot1()
+                    self.tank.shoot()
+
+                if self.joyStick1.get_button(JoyButtons.START) and self.engine.overlayMgr.showMenu is True and self.toggle < 0:
+                    self.toggle = 2
+                    self.engine.inputMgr.startCheck = True
+                    self.engine.gameMgr.loadLevel()
 
             if self.joyStick2:
                 temp = self.joyStick2.get_axis(JoyAxes.LEFT_LEFTRIGHT)
@@ -183,9 +191,9 @@ class ControlMgr(ogre.FrameListener):
 
     def frameEnded(self, evt):
         pass
-        return True;
+        return True
 
     def frameRenderingQueued(self, evt):
         pass
-        return True;
+        return True
 

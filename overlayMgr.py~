@@ -1,5 +1,6 @@
 import ogre.renderer.OGRE as ogre
 
+
 class OverlayMgr:
     def __init__(self, engine):
         self.engine = engine
@@ -10,10 +11,6 @@ class OverlayMgr:
 
     def displayMainMenu(self):
         self.entityMgr = self.engine.entityMgr
-	self.width = self.engine.gfxMgr.camera.getViewport().getActualWidth()
-	self.height = self.engine.gfxMgr.camera.getViewport().getActualHeight()
-	self.xOffset = 40
-	self.yOffset = self.height - 90
 
         # Load the font
         font = ogre.FontManager.getSingleton().getResourceIterator()
@@ -30,35 +27,7 @@ class OverlayMgr:
         self.panel = self.overlayMgr.createOverlayElement("Panel", "Menu")
         self.panel.setPosition(0, 0)
         self.panel.setDimensions(1, 1)
-        #self.panel.setMaterialName("spacePlane2")
-
-	# Create gamePlay hud
-	self.panelGame = self.overlyaMgr.createOverlayElement("Panel", "myNewPanel")
-	self.panelGame.setMetricsMode(ogre.GMM_PIXELS)
-	self.panelGame.setPosition(0,0)
-	self.panelGame.setDimensions(self.width, self.height)
-	self.panelGame.setMaterialName("ECSLENT/UI")
-
-	self.textArea = self.overlayManager.createOverlayElement("TextArea", "leftText");
-	self.panelGame.addChild(self.textArea)
-	self.textArea.setMetricsMode(ogre.GMM_PIXELS)
-        self.textArea.setCaption("Player One: 3 Lives")
-        self.textArea.setPosition( self.xOffset,  self.yOffset)
-        self.textArea.setDimensions(self.width, self.height)
-        self.textArea.setFontName("BlueHighway")
-        self.textArea.setCharHeight(self.height/20)
-        self.textArea.setColour((1.0,1.0,0.7))
-
-        self.textArea2 = self.overlayManager.createOverlayElement("TextArea", "rightText");
-	self.panelGame.addChild(self.textArea2)
-	self.textArea2.setMetricsMode(ogre.GMM_PIXELS)
-        self.textArea2.setCaption("Player Two: 3 Lives")
-        self.textArea2.setPosition( self.width - 450,  self.yOffset)
-        self.textArea2.setDimensions(self.width, self.height)
-        self.textArea2.setFontName("BlueHighway")
-        self.textArea2.setCharHeight(self.height/20)
-        self.textArea2.setColour((1.0,1.0,0.7))
-	self.panelGame.hide()
+        # self.panel.setMaterialName("spacePlane2")
 
         #  Create a button panel
         self.panel2 = self.overlayMgr.createOverlayElement("Panel", "Buttons")
@@ -123,7 +92,6 @@ class OverlayMgr:
         self.panel2.addChild(self.text)
 
         # Add the panel to the overlay
-	self.overlay.add2D(self.panelGame)
         self.overlay.add2D(self.panel)
         self.overlay.add2D(self.panel2)
         self.overlay.add2D(self.panel4)
@@ -143,11 +111,11 @@ class OverlayMgr:
         if self.engine.inputMgr.startCheck == True:
             buttons = self.overlayMgr.getOverlayElement("Buttons")
             menu = self.overlayMgr.getOverlayElement("Menu")
-	    gameHUD = self.overlayMgr.getOverlayElement("myNewPanel")
+            gameHUD = self.overlayMgr.getOverlayElement("myNewPanel")
             menu.hide()
             buttons.hide()
-	    gameHUD.show()
-            #self.overlay.hide()
+            gameHUD.show()
+            # self.overlay.hide()
             self.showMenu = False
             self.engine.controlMgr.initTanks()
 
