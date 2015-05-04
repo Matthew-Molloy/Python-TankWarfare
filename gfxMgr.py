@@ -112,10 +112,10 @@ class GfxMgr:
 
         self.viewPort.setDimensions(0, 0, 1, 0.5)
         self.camera.setPosition(ogre.Vector3(0, 500, -400))
-        self.camera.lookAt((0, 0, 800))
+        self.camera.lookAt((-4500, 0, 800))
 
         self.camera1.setPosition(ogre.Vector3(0, 500, -400))
-        self.camera1.lookAt((700, 0, 800))
+        self.camera1.lookAt((4500, 0, 800))
         viewPortOne = self.root.getAutoCreatedWindow().addViewport(self.camera1, 2, 0, 0.5, 1, 0.5)
 
     # In the end, clean everything up (= delete)

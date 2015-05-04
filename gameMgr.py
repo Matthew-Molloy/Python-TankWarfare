@@ -20,11 +20,11 @@ class GameMgr:
         x = 0
         for entType in self.engine.entityMgr.entTypes:
             print "GameMgr Creating", str(entType)
-            ent = self.engine.entityMgr.createEnt(entType, pos=Vector3(x, 0, 0))
+            ent = self.engine.entityMgr.createEnt(entType, pos=Vector3(-4500, 0, 0))
             ent.setMaterial("Examples/Camo1")
             print "GameMgr Created: ", ent.uiname, ent.eid
             x += 700
-            ent = self.engine.entityMgr.createEnt(entType, pos=Vector3(x, 0, 0))
+            ent = self.engine.entityMgr.createEnt(entType, pos=Vector3(4500, 0, 0))
             ent.setMaterial("Examples/Camo2")
             print "GameMgr Created: ", ent.uiname, ent.eid
 

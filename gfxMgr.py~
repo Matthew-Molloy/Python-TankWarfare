@@ -1,6 +1,6 @@
 import ogre.renderer.OGRE as ogre
 import ogre.io.OIS as OIS
-import platform
+
 
 class GfxMgr:
     def __init__(self, engine):
@@ -30,41 +30,41 @@ class GfxMgr:
         self.setupScene()
         self.setupInputSystem()
         self.startRenderLoop()
- 
+
     # The Root constructor for the ogre
     def createRoot(self):
         self.root = ogre.Root()
- 
+
     # Here the resources are read from the resources.cfg
     def defineResources(self):
         cf = ogre.ConfigFile()
         cf.load("resources.cfg")
- 
+
         seci = cf.getSectionIterator()
         while seci.hasMoreElements():
             secName = seci.peekNextKey()
             settings = seci.getNext()
- 
+
             for item in settings:
                 typeName = item.key
                 archName = item.value
                 ogre.ResourceGroupManager.getSingleton().addResourceLocation(archName, typeName, secName)
- 
+
     # Create and configure the rendering system (either DirectX or OpenGL) here
     def setupRenderSystem(self):
         if not self.root.restoreConfig() and not self.root.showConfigDialog():
             raise Exception("User canceled the config dialog -> Application.setupRenderSystem()")
- 
- 
+
+
     # Create the render window
     def createRenderWindow(self):
         self.renderWindow = self.root.initialise(True, "AS5")
- 
+
     # Initialize the resources here (which were read from resources.cfg in defineResources()
     def initializeResourceGroups(self):
         ogre.TextureManager.getSingleton().setDefaultNumMipmaps(5)
         ogre.ResourceGroupManager.getSingleton().initialiseAllResourceGroups()
- 
+
 
     def setupScene(self):
         self.sceneManager = self.root.createSceneManager(ogre.ST_GENERIC, "Default SceneManager")
@@ -72,19 +72,18 @@ class GfxMgr:
         self.camera = self.sceneManager.createCamera("Camera")
         self.camera1 = self.sceneManager.createCamera("Camera1")
         self.camera.setPosition(ogre.Vector3(0, 50, 500))
-        self.camera.lookAt(0,50,0)
+        self.camera.lookAt(0, 50, 0)
 
-        self.viewPort = self.root.getAutoCreatedWindow().addViewport(self.camera,1,0,0,1,1)
+        self.viewPort = self.root.getAutoCreatedWindow().addViewport(self.camera, 1, 0, 0, 1, 1)
 
-
-        self.plane = ogre.Plane ((0, 1, 0), 0)
-        meshManager = ogre.MeshManager.getSingleton ()
-        meshManager.createPlane ('Ground', 'General', self.plane, 10000, 10000, 20, 20, True, 1, 5, 5, (0, 0, 1))
+        self.plane = ogre.Plane((0, 1, 0), 0)
+        meshManager = ogre.MeshManager.getSingleton()
+        meshManager.createPlane('Ground', 'General', self.plane, 10000, 10000, 20, 20, True, 1, 5, 5, (0, 0, 1))
         ent = self.sceneManager.createEntity('GroundEntity', 'Ground')
-        self.sceneManager.getRootSceneNode().createChildSceneNode ().attachObject (ent)
-        ent.setMaterialName ("Examples/GrassFloor")
+        self.sceneManager.getRootSceneNode().createChildSceneNode().attachObject(ent)
+        ent.setMaterialName("Examples/GrassFloor")
         ent.castShadows = False
-        self.sceneManager.setSkyDome (True, "Examples/CloudySky", 5, 8)
+        self.sceneManager.setSkyDome(True, "Examples/CloudySky", 5, 8)
 
 
     # here setup the input system (OIS is the one preferred with Ogre3D)
@@ -97,13 +96,13 @@ class GfxMgr:
         t = [("x11_mouse_grab", "false"), ("x11_mouse_hide", "false")]
         paramList.extend(t)
         self.inputManager = OIS.createPythonInputSystem(paramList)
- 
+
         try:
             self.keyboard = self.inputManager.createInputObjectKeyboard(OIS.OISKeyboard, False)
             self.mouse = self.inputManager.createInputObjectMouse(OIS.OISMouse, False)
         except Exception, e:
             raise e
- 
+
     # This is the rendering loop
     def startRenderLoop(self):
         self.root.renderOneFrame()
@@ -111,14 +110,14 @@ class GfxMgr:
     def setupGameViews(self):
 
 
-        self.viewPort.setDimensions(0,0,1,0.5)
-	self.camera.setPosition(ogre.Vector3(0, 500, -400))
-        self.camera.lookAt((0,0,800))
+        self.viewPort.setDimensions(0, 0, 1, 0.5)
+        self.camera.setPosition(ogre.Vector3(0, 500, -400))
+        self.camera.lookAt((0, 0, 0))
 
-	self.camera1.setPosition(ogre.Vector3(0, 500, -400))
-        self.camera1.lookAt((0,0,800))
-        viewPortOne = self.root.getAutoCreatedWindow().addViewport(self.camera1,2,0,0.5,1,0.5)
- 
+        self.camera1.setPosition(ogre.Vector3(0, 500, -400))
+        self.camera1.lookAt((0, 0, 0))
+        viewPortOne = self.root.getAutoCreatedWindow().addViewport(self.camera1, 2, 0, 0.5, 1, 0.5)
+
     # In the end, clean everything up (= delete)
     def cleanUp(self):
         self.inputManager.destroyInputObjectKeyboard(self.keyboard)
