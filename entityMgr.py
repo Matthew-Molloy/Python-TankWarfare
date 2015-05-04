@@ -21,7 +21,7 @@ class EntityMgr:
     def tick(self, dt):
         for uid, ent in self.ents.items():
             ent.tick(dt)
-            if ent.pos.z > 5000:
+            if ent.pos.y < -2000:
                 ent.destroy()
 
     def stop(self):

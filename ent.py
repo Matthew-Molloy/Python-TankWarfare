@@ -2,7 +2,6 @@
 # Sushil Louis
 import ogre.renderer.OGRE as ogre
 
-
 from vector import MyVector
 from physics import Physics
 from render import Renderable
@@ -44,7 +43,7 @@ class Entity:
 
     def destroy(self):
         ogreObj = self.node.detachObject(self.id)
-        light = self.node.detachObject('light'+self.id)
+        light = self.node.detachObject('light' + self.id)
         self.engine.gfxMgr.sceneManager.destroyLight(light)
         self.engine.gfxMgr.sceneManager.destroyEntity(ogreObj)
         self.engine.gfxMgr.sceneManager.destroySceneNode(self.node)
@@ -52,8 +51,9 @@ class Entity:
 
     def __str__(self):
         x = "Entity: %s \nPos: %s, Vel: %s,  mesh = %s\nSpeed: %f, Heading: %f" % (
-        self.id, str(self.pos), str(self.vel), self.mesh, self.speed, self.heading)
+            self.id, str(self.pos), str(self.vel), self.mesh, self.speed, self.heading)
         return x
+
 
 class Tank(Entity):
     def __init__(self, id, engine, pos=MyVector(0, 0, 0), vel=MyVector(0, 0, 0), yaw=0):
@@ -78,7 +78,7 @@ class Tank(Entity):
         self.ent = self.engine.gfxMgr.sceneManager.createEntity(self.eid, self.mesh)
         self.node.attachObject(self.ent)
 
-        self.light = self.engine.gfxMgr.sceneManager.createLight('light'+self.id)
+        self.light = self.engine.gfxMgr.sceneManager.createLight('light' + self.id)
         self.light.type = ogre.Light.LT_POINT
         self.node.attachObject(self.light)
 
@@ -91,7 +91,6 @@ class Tank(Entity):
 
             if target.uiname == 'TANK' and target.eid is not self.eid:
                 if self.distance.valueDegrees() < target.checkValue:
-                    print "Collision"
                     self.collision = True
                     self.speed = 0
                     self.desiredSpeed = 0
@@ -99,16 +98,17 @@ class Tank(Entity):
             if target.uiname == 'CBALL' and target.tankID != self.eid:
                 if self.distance.valueDegrees() < target.checkValue:
                     self.collision = True
-                    target.pos.z += 10000
+                    target.pos.y -= 10000
                     self.health -= 10
                     ele = self.engine.widgetMgr.overlayManager.getOverlayElement(self.oElement)
                     ele.setCaption(self.oElement + " Health: " + str(self.health))
 
     def shoot(self):
         ent = self.engine.entityMgr.createEnt(CannonBall, pos=MyVector(self.pos.x, 250, self.pos.z))
-	ent.setMaterial("Examples/Camo1")
+        ent.setMaterial("Examples/Camo1")
         ent.tankID = self.eid
         ent.desiredHeading = self.desiredHeading
+
 
     def tick(self, dtime):
         for aspect in self.aspects:
@@ -118,8 +118,9 @@ class Tank(Entity):
         if self.health <= 0:
             self.destroy()
 
+
 class CannonBall(Entity):
-    def __init__(self, id, engine, tankID = 'Null', pos=None, vel=MyVector(0, 0, 0), yaw=0):
+    def __init__(self, id, engine, tankID='Null', pos=None, vel=MyVector(0, 0, 0), yaw=0):
         Entity.__init__(self, id, engine=engine, pos=pos, vel=vel, yaw=yaw)
         self.mesh = 'Sphere20.mesh'
         self.material = "Examples/CannonBall"
@@ -141,15 +142,24 @@ class CannonBall(Entity):
         self.ent = self.engine.gfxMgr.sceneManager.createEntity(self.eid, self.mesh)
         self.node.attachObject(self.ent)
 
-        self.light = self.engine.gfxMgr.sceneManager.createLight('light'+self.id)
+        self.light = self.engine.gfxMgr.sceneManager.createLight('light' + self.id)
         self.light.type = ogre.Light.LT_POINT
         self.node.attachObject(self.light)
 
     def checkCollision(self, dtime):
-        pass
+        for key, target in self.engine.entityMgr.ents.items():
+            diffZ = target.pos.z - self.pos.z
+            diffX = target.pos.x - self.pos.x
+            self.distance = ogre.Math.Sqrt(ogre.Math.Sqr(diffZ) + ogre.Math.Sqr(diffX))
+
+            if target.uiname == 'OWALL' or target.uiname == "IWALL":
+                if self.distance.valueDegrees() < target.checkValue:
+                    self.collision = True
+                    self.pos.y -= 10000
+
 
 class OutterWall(Entity):
-    def __init__(self, id, engine, tankID = 'Null', pos=None, vel=MyVector(0, 0, 0), yaw=0):
+    def __init__(self, id, engine, tankID='Null', pos=None, vel=MyVector(0, 0, 0), yaw=0):
         Entity.__init__(self, id, engine=engine, pos=pos, vel=vel, yaw=yaw)
         self.mesh = 'Wall3.mesh'
         self.material = "Examples/CannonBall"
@@ -170,17 +180,18 @@ class OutterWall(Entity):
         self.node = self.engine.gfxMgr.sceneManager.getRootSceneNode().createChildSceneNode(self.pos)
         self.ent = self.engine.gfxMgr.sceneManager.createEntity(self.eid, self.mesh)
         self.node.attachObject(self.ent)
-	self.node.rotate(ogre.Vector3(0,1,0),ogre.Math.DegreesToRadians(yaw))
+        self.node.rotate(ogre.Vector3(0, 1, 0), ogre.Math.DegreesToRadians(yaw))
 
-        self.light = self.engine.gfxMgr.sceneManager.createLight('light'+self.id)
+        self.light = self.engine.gfxMgr.sceneManager.createLight('light' + self.id)
         self.light.type = ogre.Light.LT_POINT
         self.node.attachObject(self.light)
 
     def checkCollision(self, dtime):
         pass
 
+
 class InnerWall(Entity):
-    def __init__(self, id, engine, tankID = 'Null', pos=None, vel=MyVector(0, 0, 0), yaw=0):
+    def __init__(self, id, engine, tankID='Null', pos=None, vel=MyVector(0, 0, 0), yaw=0):
         Entity.__init__(self, id, engine=engine, pos=pos, vel=vel, yaw=yaw)
         self.mesh = 'Wall4.mesh'
         self.material = "Examples/CannonBall"
@@ -201,11 +212,12 @@ class InnerWall(Entity):
         self.node = self.engine.gfxMgr.sceneManager.getRootSceneNode().createChildSceneNode(self.pos)
         self.ent = self.engine.gfxMgr.sceneManager.createEntity(self.eid, self.mesh)
         self.node.attachObject(self.ent)
-	self.node.rotate(ogre.Vector3(0,1,0),ogre.Math.DegreesToRadians(yaw))
+        self.node.rotate(ogre.Vector3(0, 1, 0), ogre.Math.DegreesToRadians(yaw))
 
-        self.light = self.engine.gfxMgr.sceneManager.createLight('light'+self.id)
+        self.light = self.engine.gfxMgr.sceneManager.createLight('light' + self.id)
         self.light.type = ogre.Light.LT_POINT
         self.node.attachObject(self.light)
+
 
     def checkCollision(self, dtime):
         pass

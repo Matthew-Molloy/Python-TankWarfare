@@ -1,476 +1,468 @@
-08:06:39: Creating resource group General
-08:06:39: Creating resource group Internal
-08:06:39: Creating resource group Autodetect
-08:06:39: SceneManagerFactory for type 'DefaultSceneManager' registered.
-08:06:39: Registering ResourceManager for type Material
-08:06:39: Registering ResourceManager for type Mesh
-08:06:39: Registering ResourceManager for type Skeleton
-08:06:39: MovableObjectFactory for type 'ParticleSystem' registered.
-08:06:39: OverlayElementFactory for type Panel registered.
-08:06:39: OverlayElementFactory for type BorderPanel registered.
-08:06:39: OverlayElementFactory for type TextArea registered.
-08:06:39: Registering ResourceManager for type Font
-08:06:39: ArchiveFactory for archive type FileSystem registered.
-08:06:39: ArchiveFactory for archive type Zip registered.
-08:06:39: DDS codec registering
-08:06:39: FreeImage version: 3.15.4
-08:06:39: This program uses FreeImage, a free, open source image library supporting all common bitmap formats. See http://freeimage.sourceforge.net for details
-08:06:39: Supported formats: bmp,ico,jpg,jif,jpeg,jpe,jng,koa,iff,lbm,mng,pbm,pbm,pcd,pcx,pgm,pgm,png,ppm,ppm,ras,tga,targa,tif,tiff,wap,wbmp,wbm,psd,cut,xbm,xpm,gif,hdr,g3,sgi,exr,j2k,j2c,jp2,pfm,pct,pict,pic,3fr,arw,bay,bmq,cap,cine,cr2,crw,cs1,dc2,dcr,drf,dsc,dng,erf,fff,ia,iiq,k25,kc2,kdc,mdc,mef,mos,mrw,nef,nrw,orf,pef,ptx,pxn,qtk,raf,raw,rdc,rw2,rwl,rwz,sr2,srf,srw,sti
-08:06:39: Registering ResourceManager for type HighLevelGpuProgram
-08:06:39: Registering ResourceManager for type Compositor
-08:06:39: MovableObjectFactory for type 'Entity' registered.
-08:06:39: MovableObjectFactory for type 'Light' registered.
-08:06:39: MovableObjectFactory for type 'BillboardSet' registered.
-08:06:39: MovableObjectFactory for type 'ManualObject' registered.
-08:06:39: MovableObjectFactory for type 'BillboardChain' registered.
-08:06:39: MovableObjectFactory for type 'RibbonTrail' registered.
-08:06:39: Loading library /usr/lib/OGRE/RenderSystem_GL
-08:06:39: Installing plugin: GL RenderSystem
-08:06:39: OpenGL Rendering Subsystem created.
-08:06:39: Plugin successfully installed
-08:06:39: Loading library /usr/lib/OGRE/Plugin_ParticleFX
-08:06:39: Installing plugin: ParticleFX
-08:06:39: Particle Emitter Type 'Point' registered
-08:06:39: Particle Emitter Type 'Box' registered
-08:06:39: Particle Emitter Type 'Ellipsoid' registered
-08:06:39: Particle Emitter Type 'Cylinder' registered
-08:06:39: Particle Emitter Type 'Ring' registered
-08:06:39: Particle Emitter Type 'HollowEllipsoid' registered
-08:06:39: Particle Affector Type 'LinearForce' registered
-08:06:39: Particle Affector Type 'ColourFader' registered
-08:06:39: Particle Affector Type 'ColourFader2' registered
-08:06:39: Particle Affector Type 'ColourImage' registered
-08:06:39: Particle Affector Type 'ColourInterpolator' registered
-08:06:39: Particle Affector Type 'Scaler' registered
-08:06:39: Particle Affector Type 'Rotator' registered
-08:06:39: Particle Affector Type 'DirectionRandomiser' registered
-08:06:39: Particle Affector Type 'DeflectorPlane' registered
-08:06:39: Plugin successfully installed
-08:06:39: Loading library /usr/lib/OGRE/Plugin_BSPSceneManager
-08:06:39: Installing plugin: BSP Scene Manager
-08:06:39: Plugin successfully installed
-08:06:39: Loading library /usr/lib/OGRE/Plugin_OctreeSceneManager
-08:06:39: Installing plugin: Octree & Terrain Scene Manager
-08:06:39: Plugin successfully installed
-08:06:39: Loading library /usr/lib/OGRE/Plugin_CgProgramManager
-08:06:39: Installing plugin: Cg Program Manager
-08:06:39: Plugin successfully installed
-08:06:39: *-*-* OGRE Initialising
-08:06:39: *-*-* Version 1.7.2 (Cthugha)
-08:06:39: Creating resource group Bootstrap
-08:06:39: Added resource location 'media/packs/OgreCore.zip' of type 'Zip' to resource group 'Bootstrap'
-08:06:39: Added resource location 'media' of type 'FileSystem' to resource group 'General'
-08:06:39: Added resource location 'media/fonts' of type 'FileSystem' to resource group 'General'
-08:06:39: Added resource location 'media/sounds' of type 'FileSystem' to resource group 'General'
-08:06:39: Added resource location 'media/Audio' of type 'FileSystem' to resource group 'General'
-08:06:39: Added resource location 'media/materials/programs' of type 'FileSystem' to resource group 'General'
-08:06:39: Added resource location 'media/materials/scripts' of type 'FileSystem' to resource group 'General'
-08:06:39: Added resource location 'media/materials/textures' of type 'FileSystem' to resource group 'General'
-08:06:39: Added resource location 'media/models' of type 'FileSystem' to resource group 'General'
-08:06:39: Added resource location 'media/overlays' of type 'FileSystem' to resource group 'General'
-08:06:39: Added resource location 'media/particle' of type 'FileSystem' to resource group 'General'
-08:06:39: Added resource location 'media/gui' of type 'FileSystem' to resource group 'General'
-08:06:39: Added resource location 'media/packs/cubemap.zip' of type 'Zip' to resource group 'General'
-08:06:39: Added resource location 'media/packs/cubemapsJS.zip' of type 'Zip' to resource group 'General'
-08:06:39: Added resource location 'media/packs/dragon.zip' of type 'Zip' to resource group 'General'
-08:06:39: Added resource location 'media/packs/fresneldemo.zip' of type 'Zip' to resource group 'General'
-08:06:39: Added resource location 'media/packs/ogretestmap.zip' of type 'Zip' to resource group 'General'
-08:06:39: Added resource location 'media/packs/skybox.zip' of type 'Zip' to resource group 'General'
-08:06:39: CPU Identifier & Features
-08:06:39: -------------------------
-08:06:39:  *   CPU ID: AuthenticAMD: AMD FX(tm)-6300 Six-Core Processor
-08:06:39:  *      SSE: yes
-08:06:39:  *     SSE2: yes
-08:06:39:  *     SSE3: yes
-08:06:39:  *      MMX: yes
-08:06:39:  *   MMXEXT: yes
-08:06:39:  *    3DNOW: no
-08:06:39:  * 3DNOWEXT: no
-08:06:39:  *     CMOV: yes
-08:06:39:  *      TSC: yes
-08:06:39:  *      FPU: yes
-08:06:39:  *      PRO: yes
-08:06:39:  *       HT: no
-08:06:39: -------------------------
-08:06:39: ******************************
+12:24:39: Creating resource group General
+12:24:39: Creating resource group Internal
+12:24:39: Creating resource group Autodetect
+12:24:39: SceneManagerFactory for type 'DefaultSceneManager' registered.
+12:24:39: Registering ResourceManager for type Material
+12:24:39: Registering ResourceManager for type Mesh
+12:24:39: Registering ResourceManager for type Skeleton
+12:24:39: MovableObjectFactory for type 'ParticleSystem' registered.
+12:24:39: OverlayElementFactory for type Panel registered.
+12:24:39: OverlayElementFactory for type BorderPanel registered.
+12:24:39: OverlayElementFactory for type TextArea registered.
+12:24:39: Registering ResourceManager for type Font
+12:24:39: ArchiveFactory for archive type FileSystem registered.
+12:24:39: ArchiveFactory for archive type Zip registered.
+12:24:39: DDS codec registering
+12:24:39: FreeImage version: 3.15.4
+12:24:39: This program uses FreeImage, a free, open source image library supporting all common bitmap formats. See http://freeimage.sourceforge.net for details
+12:24:39: Supported formats: bmp,ico,jpg,jif,jpeg,jpe,jng,koa,iff,lbm,mng,pbm,pbm,pcd,pcx,pgm,pgm,png,ppm,ppm,ras,tga,targa,tif,tiff,wap,wbmp,wbm,psd,cut,xbm,xpm,gif,hdr,g3,sgi,exr,j2k,j2c,jp2,pfm,pct,pict,pic,3fr,arw,bay,bmq,cap,cine,cr2,crw,cs1,dc2,dcr,drf,dsc,dng,erf,fff,ia,iiq,k25,kc2,kdc,mdc,mef,mos,mrw,nef,nrw,orf,pef,ptx,pxn,qtk,raf,raw,rdc,rw2,rwl,rwz,sr2,srf,srw,sti
+12:24:39: Registering ResourceManager for type HighLevelGpuProgram
+12:24:39: Registering ResourceManager for type Compositor
+12:24:39: MovableObjectFactory for type 'Entity' registered.
+12:24:39: MovableObjectFactory for type 'Light' registered.
+12:24:39: MovableObjectFactory for type 'BillboardSet' registered.
+12:24:39: MovableObjectFactory for type 'ManualObject' registered.
+12:24:39: MovableObjectFactory for type 'BillboardChain' registered.
+12:24:39: MovableObjectFactory for type 'RibbonTrail' registered.
+12:24:39: Loading library /usr/lib/OGRE/RenderSystem_GL
+12:24:39: Installing plugin: GL RenderSystem
+12:24:39: OpenGL Rendering Subsystem created.
+12:24:39: Plugin successfully installed
+12:24:39: Loading library /usr/lib/OGRE/Plugin_ParticleFX
+12:24:39: Installing plugin: ParticleFX
+12:24:39: Particle Emitter Type 'Point' registered
+12:24:39: Particle Emitter Type 'Box' registered
+12:24:39: Particle Emitter Type 'Ellipsoid' registered
+12:24:39: Particle Emitter Type 'Cylinder' registered
+12:24:39: Particle Emitter Type 'Ring' registered
+12:24:39: Particle Emitter Type 'HollowEllipsoid' registered
+12:24:39: Particle Affector Type 'LinearForce' registered
+12:24:39: Particle Affector Type 'ColourFader' registered
+12:24:39: Particle Affector Type 'ColourFader2' registered
+12:24:39: Particle Affector Type 'ColourImage' registered
+12:24:39: Particle Affector Type 'ColourInterpolator' registered
+12:24:39: Particle Affector Type 'Scaler' registered
+12:24:39: Particle Affector Type 'Rotator' registered
+12:24:39: Particle Affector Type 'DirectionRandomiser' registered
+12:24:39: Particle Affector Type 'DeflectorPlane' registered
+12:24:39: Plugin successfully installed
+12:24:39: Loading library /usr/lib/OGRE/Plugin_BSPSceneManager
+12:24:39: Installing plugin: BSP Scene Manager
+12:24:39: Plugin successfully installed
+12:24:39: Loading library /usr/lib/OGRE/Plugin_OctreeSceneManager
+12:24:39: Installing plugin: Octree & Terrain Scene Manager
+12:24:39: Plugin successfully installed
+12:24:39: Loading library /usr/lib/OGRE/Plugin_CgProgramManager
+12:24:40: Installing plugin: Cg Program Manager
+12:24:40: Plugin successfully installed
+12:24:40: *-*-* OGRE Initialising
+12:24:40: *-*-* Version 1.7.2 (Cthugha)
+12:24:40: Creating resource group Bootstrap
+12:24:40: Added resource location 'media/packs/OgreCore.zip' of type 'Zip' to resource group 'Bootstrap'
+12:24:40: Added resource location 'media' of type 'FileSystem' to resource group 'General'
+12:24:40: Added resource location 'media/fonts' of type 'FileSystem' to resource group 'General'
+12:24:40: Added resource location 'media/sounds' of type 'FileSystem' to resource group 'General'
+12:24:40: Added resource location 'media/Audio' of type 'FileSystem' to resource group 'General'
+12:24:40: Added resource location 'media/materials/programs' of type 'FileSystem' to resource group 'General'
+12:24:40: Added resource location 'media/materials/scripts' of type 'FileSystem' to resource group 'General'
+12:24:40: Added resource location 'media/materials/textures' of type 'FileSystem' to resource group 'General'
+12:24:40: Added resource location 'media/models' of type 'FileSystem' to resource group 'General'
+12:24:40: Added resource location 'media/overlays' of type 'FileSystem' to resource group 'General'
+12:24:40: Added resource location 'media/particle' of type 'FileSystem' to resource group 'General'
+12:24:40: Added resource location 'media/gui' of type 'FileSystem' to resource group 'General'
+12:24:40: Added resource location 'media/packs/cubemap.zip' of type 'Zip' to resource group 'General'
+12:24:40: Added resource location 'media/packs/cubemapsJS.zip' of type 'Zip' to resource group 'General'
+12:24:40: Added resource location 'media/packs/dragon.zip' of type 'Zip' to resource group 'General'
+12:24:40: Added resource location 'media/packs/fresneldemo.zip' of type 'Zip' to resource group 'General'
+12:24:40: Added resource location 'media/packs/ogretestmap.zip' of type 'Zip' to resource group 'General'
+12:24:40: Added resource location 'media/packs/skybox.zip' of type 'Zip' to resource group 'General'
+12:24:40: CPU Identifier & Features
+12:24:40: -------------------------
+12:24:40:  *   CPU ID: GenuineIntel: Intel(R) Core(TM) i5-4250U CPU @ 1.30GHz
+12:24:40:  *      SSE: yes
+12:24:40:  *     SSE2: yes
+12:24:40:  *     SSE3: yes
+12:24:40:  *      MMX: yes
+12:24:40:  *   MMXEXT: yes
+12:24:40:  *    3DNOW: no
+12:24:40:  * 3DNOWEXT: no
+12:24:40:  *     CMOV: yes
+12:24:40:  *      TSC: yes
+12:24:40:  *      FPU: yes
+12:24:40:  *      PRO: yes
+12:24:40:  *       HT: no
+12:24:40: -------------------------
+12:24:40: ******************************
 *** Starting GLX Subsystem ***
 ******************************
-08:06:39: GLRenderSystem::_createRenderWindow "AS5", 1024x768 windowed  miscParams: FSAA=0 displayFrequency=60 MHz gamma=No vsync=No 
-08:06:39: GLXWindow::create used FBConfigID = 212
-08:06:39: GL_VERSION = 3.0 Mesa 10.1.3
-08:06:39: GL_VENDOR = nouveau
-08:06:39: GL_RENDERER = Gallium 0.4 on NVE4
-08:06:39: GL_EXTENSIONS = GL_ARB_multisample GL_EXT_abgr GL_EXT_bgra GL_EXT_blend_color GL_EXT_blend_minmax GL_EXT_blend_subtract GL_EXT_copy_texture GL_EXT_polygon_offset GL_EXT_subtexture GL_EXT_texture_object GL_EXT_vertex_array GL_EXT_compiled_vertex_array GL_EXT_texture GL_EXT_texture3D GL_IBM_rasterpos_clip GL_ARB_point_parameters GL_EXT_draw_range_elements GL_EXT_packed_pixels GL_EXT_point_parameters GL_EXT_rescale_normal GL_EXT_separate_specular_color GL_EXT_texture_edge_clamp GL_SGIS_generate_mipmap GL_SGIS_texture_border_clamp GL_SGIS_texture_edge_clamp GL_SGIS_texture_lod GL_ARB_framebuffer_sRGB GL_ARB_multitexture GL_EXT_framebuffer_sRGB GL_IBM_multimode_draw_arrays GL_IBM_texture_mirrored_repeat GL_ARB_texture_cube_map GL_ARB_texture_env_add GL_ARB_transpose_matrix GL_EXT_blend_func_separate GL_EXT_fog_coord GL_EXT_multi_draw_arrays GL_EXT_secondary_color GL_EXT_texture_env_add GL_EXT_texture_filter_anisotropic GL_EXT_texture_lod_bias GL_INGR_blend_func_separate GL_NV_blend_square GL_NV_light_max_exponent GL_NV_texgen_reflection GL_NV_texture_env_combine4 GL_S3_s3tc GL_SUN_multi_draw_arrays GL_ARB_texture_border_clamp GL_ARB_texture_compression GL_EXT_framebuffer_object GL_EXT_texture_compression_s3tc GL_EXT_texture_env_combine GL_EXT_texture_env_dot3 GL_MESA_window_pos GL_NV_packed_depth_stencil GL_NV_texture_rectangle GL_ARB_depth_texture GL_ARB_occlusion_query GL_ARB_shadow GL_ARB_texture_env_combine GL_ARB_texture_env_crossbar GL_ARB_texture_env_dot3 GL_ARB_texture_mirrored_repeat GL_ARB_window_pos GL_EXT_stencil_two_side GL_EXT_texture_cube_map GL_NV_depth_clamp GL_NV_fog_distance GL_APPLE_packed_pixels GL_APPLE_vertex_array_object GL_ARB_draw_buffers GL_ARB_fragment_program GL_ARB_fragment_shader GL_ARB_shader_objects GL_ARB_vertex_program GL_ARB_vertex_shader GL_ATI_draw_buffers GL_ATI_texture_env_combine3 GL_ATI_texture_float GL_EXT_shadow_funcs GL_EXT_stencil_wrap GL_MESA_pack_invert GL_NV_primitive_restart GL_ARB_depth_clamp GL_ARB_fragment_program_shadow GL_ARB_half_float_pixel GL_ARB_occlusion_query2 GL_ARB_point_sprite GL_ARB_shading_language_100 GL_ARB_sync GL_ARB_texture_non_power_of_two GL_ARB_vertex_buffer_object GL_ATI_blend_equation_separate GL_EXT_blend_equation_separate GL_OES_read_format GL_ARB_color_buffer_float GL_ARB_pixel_buffer_object GL_ARB_texture_compression_rgtc GL_ARB_texture_float GL_ARB_texture_rectangle GL_ATI_texture_compression_3dc GL_EXT_packed_float GL_EXT_pixel_buffer_object GL_EXT_texture_compression_dxt1 GL_EXT_texture_compression_rgtc GL_EXT_texture_mirror_clamp GL_EXT_texture_rectangle GL_EXT_texture_sRGB GL_EXT_texture_shared_exponent GL_ARB_framebuffer_object GL_EXT_framebuffer_blit GL_EXT_framebuffer_multisample GL_EXT_packed_depth_stencil GL_ARB_vertex_array_object GL_ATI_separate_stencil GL_ATI_texture_mirror_once GL_EXT_draw_buffers2 GL_EXT_draw_instanced GL_EXT_gpu_program_parameters GL_EXT_texture_array GL_EXT_texture_compression_latc GL_EXT_texture_integer GL_EXT_texture_sRGB_decode GL_EXT_timer_query GL_OES_EGL_image GL_ARB_copy_buffer GL_ARB_depth_buffer_float GL_ARB_draw_instanced GL_ARB_half_float_vertex GL_ARB_instanced_arrays GL_ARB_map_buffer_range GL_ARB_texture_rg GL_ARB_texture_swizzle GL_ARB_vertex_array_bgra GL_EXT_texture_swizzle GL_EXT_vertex_array_bgra GL_NV_conditional_render GL_AMD_conservative_depth GL_AMD_draw_buffers_blend GL_AMD_seamless_cubemap_per_texture GL_ARB_ES2_compatibility GL_ARB_blend_func_extended GL_ARB_debug_output GL_ARB_draw_buffers_blend GL_ARB_draw_elements_base_vertex GL_ARB_explicit_attrib_location GL_ARB_fragment_coord_conventions GL_ARB_provoking_vertex GL_ARB_sampler_objects GL_ARB_seamless_cube_map GL_ARB_shader_texture_lod GL_ARB_texture_cube_map_array GL_ARB_texture_multisample GL_ARB_texture_rgb10_a2ui GL_ARB_uniform_buffer_object GL_ARB_vertex_type_2_10_10_10_rev GL_EXT_provoking_vertex GL_EXT_texture_snorm GL_MESA_texture_signed_rgba GL_NV_texture_barrier GL_ARB_get_program_binary GL_ARB_robustness GL_ARB_shader_bit_encoding GL_ARB_timer_query GL_ARB_transform_feedback2 GL_ARB_transform_feedback3 GL_NV_vdpau_interop GL_ANGLE_texture_compression_dxt3 GL_ANGLE_texture_compression_dxt5 GL_ARB_base_instance GL_ARB_conservative_depth GL_ARB_internalformat_query GL_ARB_map_buffer_alignment GL_ARB_shading_language_420pack GL_ARB_shading_language_packing GL_ARB_texture_storage GL_ARB_transform_feedback_instanced GL_EXT_framebuffer_multisample_blit_scaled GL_EXT_transform_feedback GL_AMD_shader_trinary_minmax GL_ARB_clear_buffer_object GL_ARB_invalidate_subdata GL_ARB_texture_storage_multisample GL_ARB_vertex_attrib_binding GL_KHR_debug GL_ARB_texture_mirror_clamp_to_edge 
-08:06:39: Supported GLX extensions: GLX_ARB_create_context GLX_ARB_create_context_profile GLX_ARB_fbconfig_float GLX_ARB_framebuffer_sRGB GLX_ARB_get_proc_address GLX_ARB_multisample GLX_EXT_import_context GLX_EXT_visual_info GLX_EXT_visual_rating GLX_EXT_framebuffer_sRGB GLX_EXT_create_context_es2_profile GLX_MESA_copy_sub_buffer GLX_MESA_multithread_makecurrent GLX_MESA_swap_control GLX_OML_swap_method GLX_OML_sync_control GLX_SGI_make_current_read GLX_SGI_swap_control GLX_SGI_video_sync GLX_SGIS_multisample GLX_SGIX_fbconfig GLX_SGIX_pbuffer GLX_SGIX_visual_select_group GLX_EXT_texture_from_pixmap GLX_INTEL_swap_event 
-08:06:39: ***************************
-08:06:39: *** GL Renderer Started ***
-08:06:39: ***************************
-08:06:39: Registering ResourceManager for type GpuProgram
-08:06:39: GLSL support detected
-08:06:39: GL: Using GL_EXT_framebuffer_object for rendering to textures (best)
-08:06:39: FBO PF_UNKNOWN depth/stencil support: D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
-08:06:39: FBO PF_L8 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
-08:06:39: FBO PF_L16 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
-08:06:39: FBO PF_A8 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
-08:06:39: FBO PF_R5G6B5 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
-08:06:39: FBO PF_B5G6R5 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
-08:06:39: FBO PF_A1R5G5B5 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
-08:06:39: FBO PF_R8G8B8 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
-08:06:39: FBO PF_B8G8R8 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
-08:06:39: FBO PF_A8R8G8B8 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
-08:06:39: FBO PF_B8G8R8A8 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
-08:06:39: FBO PF_A2R10G10B10 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
-08:06:39: FBO PF_A2B10G10R10 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
-08:06:39: FBO PF_FLOAT16_RGB depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
-08:06:39: FBO PF_FLOAT16_RGBA depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
-08:06:39: FBO PF_FLOAT32_RGB depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
-08:06:39: FBO PF_FLOAT32_RGBA depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
-08:06:39: FBO PF_X8R8G8B8 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
-08:06:39: FBO PF_X8B8G8R8 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
-08:06:39: FBO PF_SHORT_RGBA depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
-08:06:39: FBO PF_FLOAT16_R depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
-08:06:39: FBO PF_FLOAT32_R depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
-08:06:39: [GL] : Valid FBO targets PF_UNKNOWN PF_L8 PF_L16 PF_A8 PF_R5G6B5 PF_B5G6R5 PF_A1R5G5B5 PF_R8G8B8 PF_B8G8R8 PF_A8R8G8B8 PF_B8G8R8A8 PF_A2R10G10B10 PF_A2B10G10R10 PF_FLOAT16_RGB PF_FLOAT16_RGBA PF_FLOAT32_RGB PF_FLOAT32_RGBA PF_X8R8G8B8 PF_X8B8G8R8 PF_SHORT_RGBA PF_FLOAT16_R PF_FLOAT32_R 
-08:06:39: RenderSystem capabilities
-08:06:39: -------------------------
-08:06:39: RenderSystem Name: OpenGL Rendering Subsystem
-08:06:39: GPU Vendor: unknown
-08:06:39: Device Name: Gallium 0.4 on NVE4
-08:06:39: Driver Version: 3.0.0.0
-08:06:39:  * Fixed function pipeline: yes
-08:06:39:  * Hardware generation of mipmaps: yes
-08:06:39:  * Texture blending: yes
-08:06:39:  * Anisotropic texture filtering: yes
-08:06:39:  * Dot product texture operation: yes
-08:06:39:  * Cube mapping: yes
-08:06:39:  * Hardware stencil buffer: yes
-08:06:39:    - Stencil depth: 8
-08:06:39:    - Two sided stencil support: yes
-08:06:39:    - Wrap stencil values: yes
-08:06:39:  * Hardware vertex / index buffers: yes
-08:06:39:  * Vertex programs: yes
-08:06:39:  * Number of floating-point constants for vertex programs: 4096
-08:06:39:  * Number of integer constants for vertex programs: 0
-08:06:39:  * Number of boolean constants for vertex programs: 0
-08:06:39:  * Fragment programs: yes
-08:06:39:  * Number of floating-point constants for fragment programs: 4096
-08:06:39:  * Number of integer constants for fragment programs: 0
-08:06:39:  * Number of boolean constants for fragment programs: 0
-08:06:39:  * Geometry programs: no
-08:06:39:  * Number of floating-point constants for geometry programs: 0
-08:06:39:  * Number of integer constants for geometry programs: 0
-08:06:39:  * Number of boolean constants for geometry programs: 0
-08:06:39:  * Supported Shader Profiles: arbfp1 arbvp1 glsl
-08:06:39:  * Texture Compression: yes
-08:06:39:    - DXT: yes
-08:06:39:    - VTC: no
-08:06:39:    - PVRTC: no
-08:06:39:  * Scissor Rectangle: yes
-08:06:39:  * Hardware Occlusion Query: yes
-08:06:39:  * User clip planes: yes
-08:06:39:  * VET_UBYTE4 vertex element type: yes
-08:06:39:  * Infinite far plane projection: yes
-08:06:39:  * Hardware render-to-texture: yes
-08:06:39:  * Floating point textures: yes
-08:06:39:  * Non-power-of-two textures: yes
-08:06:39:  * Volume textures: yes
-08:06:39:  * Multiple Render Targets: 8
-08:06:39:    - With different bit depths: yes
-08:06:39:  * Point Sprites: yes
-08:06:39:  * Extended point parameters: yes
-08:06:39:  * Max Point Size: 63.375
-08:06:39:  * Vertex texture fetch: yes
-08:06:39:  * Number of world matrices: 0
-08:06:39:  * Number of texture units: 16
-08:06:39:  * Stencil buffer depth: 8
-08:06:39:  * Number of vertex blend matrices: 0
-08:06:39:    - Max vertex textures: 16
-08:06:39:    - Vertex textures shared: yes
-08:06:39:  * Render to Vertex Buffer : no
-08:06:39:  * GL 1.5 without VBO workaround: no
-08:06:39:  * Frame Buffer objects: yes
-08:06:39:  * Frame Buffer objects (ARB extension): no
-08:06:39:  * Frame Buffer objects (ATI extension): no
-08:06:39:  * PBuffer support: yes
-08:06:39:  * GL 1.5 without HW-occlusion workaround: no
-08:06:39: Registering ResourceManager for type Texture
-08:06:39: DefaultWorkQueue('Root') initialising on thread 7f79baf43740.
-08:06:39: DefaultWorkQueue('Root')::WorkerFunc - thread 7f7998dfe700 starting.
-08:06:39: DefaultWorkQueue('Root')::WorkerFunc - thread 7f7996dbb700 starting.
-08:06:39: DefaultWorkQueue('Root')::WorkerFunc - thread 7f7995db9700 starting.
-08:06:39: DefaultWorkQueue('Root')::WorkerFunc - thread 7f79965ba700 starting.
-08:06:39: Particle Renderer Type 'billboard' registered
-08:06:39: DefaultWorkQueue('Root')::WorkerFunc - thread 7f79955b8700 starting.
-08:06:39: DefaultWorkQueue('Root')::WorkerFunc - thread 7f7994db7700 starting.
-08:06:39: SceneManagerFactory for type 'BspSceneManager' registered.
-08:06:39: Registering ResourceManager for type BspLevel
-08:06:39: SceneManagerFactory for type 'OctreeSceneManager' registered.
-08:06:39: SceneManagerFactory for type 'TerrainSceneManager' registered.
-08:06:39: Parsing scripts for resource group Autodetect
-08:06:39: Finished parsing scripts for resource group Autodetect
-08:06:39: Parsing scripts for resource group Bootstrap
-08:06:39: Parsing script OgreCore.material
-08:06:39: Parsing script OgreProfiler.material
-08:06:39: Parsing script Ogre.fontdef
-08:06:39: Parsing script OgreDebugPanel.overlay
-08:06:39: Texture: New_Ogre_Border_Center.png: Loading 1 faces(PF_A8R8G8B8,256x128x1) with 5 hardware generated mipmaps from Image. Internal format is PF_A8R8G8B8,256x128x1.
-08:06:39: Texture: New_Ogre_Border.png: Loading 1 faces(PF_A8R8G8B8,256x256x1) with 5 hardware generated mipmaps from Image. Internal format is PF_A8R8G8B8,256x256x1.
-08:06:39: Texture: New_Ogre_Border_Break.png: Loading 1 faces(PF_A8R8G8B8,32x32x1) with 5 hardware generated mipmaps from Image. Internal format is PF_A8R8G8B8,32x32x1.
-08:06:39: Texture: ogretext.png: Loading 1 faces(PF_A8R8G8B8,256x128x1) with 5 hardware generated mipmaps from Image. Internal format is PF_A8R8G8B8,256x128x1.
-08:06:39: Parsing script OgreLoadingPanel.overlay
-08:06:39: Finished parsing scripts for resource group Bootstrap
-08:06:39: Parsing scripts for resource group General
-08:06:39: Parsing script StdQuad_vp.program
-08:06:39: Parsing script Examples.program
-08:06:39: GLSL compiled : Ogre/BasicVertexPrograms/AmbientOneTextureGLSL
-08:06:39: GLSL compiled : Ogre/HardwareSkinningTwoWeightsGLSL
-08:06:39: Parsing script hdr.material
-08:06:39: GLSL compiled : Ogre/Compositor/HDR/downscale2x2LuminenceGLSL_fp
-08:06:39: GLSL compiled : Ogre/Compositor/StdQuad_GLSL_vp
-08:06:39: GLSL compiled : Ogre/Compositor/HDR/downscale3x3GLSL_fp
-08:06:39: GLSL compiled : Ogre/Compositor/HDR/utils_fp
-08:06:39: GLSL compiled : Ogre/Compositor/HDR/downscale3x3brightpassGLSL_fp
-08:06:39: GLSL compiled : Ogre/Compositor/HDR/bloomGLSL_fp
-08:06:39: GLSL compiled : Ogre/Compositor/HDR/utils_fp
-08:06:39: GLSL compiled : Ogre/Compositor/HDR/finaltonemappingGLSL_fp
-08:06:39: Parsing script OldMovie.material
-08:06:39: Parsing script Glass.material
-08:06:39: Parsing script HeatVision.material
-08:06:39: Parsing script Examples-Advanced.material
-08:06:39: Compiler error: object unsupported by render system in Examples-Advanced.material(381)
-08:06:39: Parsing script facial.material
-08:06:39: Parsing script Hurt.material
-08:06:39: Parsing script smoke.material
-08:06:39: Parsing script MotionBlur.material
-08:06:39: Parsing script Laplace.material
-08:06:39: Parsing script Halftone.material
-08:06:39: Parsing script VarianceShadowmap.material
-08:06:40: Parsing script Posterize.material
-08:06:40: Parsing script pssm.material
-08:06:40: Parsing script SharpenEdges.material
-08:06:40: Parsing script Example-DynTex.material
-08:06:40: Parsing script Example.material
-08:06:40: OGRE EXCEPTION(2:InvalidParametersException): Parameter called camObjPos does not exist.  in GpuProgramParameters::_findNamedConstantDefinition at /home/anderen2/build/ogre/OgreMain/src/OgreGpuProgramParams.cpp (line 1433)
-08:06:40: Compiler error: invalid parameters in Example.material(804): setting of constant failed
-08:06:40: GLSL compiled : Ogre/HardwareSkinningTwoWeightsShadowCasterGLSL
-08:06:40: Parsing script RZR-002.material
-08:06:40: Parsing script Ocean.material
-08:06:40: GLSL compiled : GLSL/OceanVS
-08:06:40: GLSL compiled : GLSL/OceanFS
-08:06:40: GLSL compiled : GLSL/Ocean2VS
-08:06:40: GLSL compiled : GLSL/Ocean2FS
-08:06:40: Parsing script DepthShadowmap.material
-08:06:40: GLSL compiled : Ogre/DepthShadowmap/CasterVP_GLSL
-08:06:40: GLSL compiled : Ogre/DepthShadowmap/CasterFP_GLSL
-08:06:40: GLSL compiled : Ogre/DepthShadowmap/ReceiverVP_GLSL
-08:06:40: GLSL compiled : Ogre/DepthShadowmap/ReceiverFP_GLSL
-08:06:40: GLSL compiled : Ogre/DepthShadowmap/ReceiverFPPCF_GLSL
-08:06:40: GLSL compiled : Ogre/DepthShadowmap/NormalMapReceiverVP_GLSL
-08:06:40: GLSL compiled : Ogre/DepthShadowmap/NormalMapReceiverFP_GLSL
-08:06:40: GLSL compiled : Ogre/DepthShadowmap/NormalMapReceiverFPPCF_GLSL
-08:06:40: Parsing script Dither.material
-08:06:40: Parsing script IsoSurf.material
-08:06:40: Parsing script BlackAndWhite.material
-08:06:40: Parsing script ASCII.material
-08:06:40: Parsing script Invert.material
-08:06:40: Parsing script Example-Water.material
-08:06:40: Parsing script ui.material
-08:06:40: Parsing script NightVision.material
-08:06:40: Parsing script Bloom2.material
-08:06:40: GLSL compiled : Bloom2_ps20_glsl
-08:06:40: Parsing script Embossed.material
-08:06:40: Parsing script MRTtest.material
-08:06:40: GLSL compiled : Ogre/MRTtest/scenefp/GLSL
-08:06:40: GLSL compiled : Ogre/MRTtest/quadfp/GLSL
-08:06:40: Parsing script Tiling.material
-08:06:40: Parsing script instancing.material
-08:06:40: GLSL compiled : InstancingGLSL
-08:06:40: GLSL compiled : InstancingShadowCasterGLSL
-08:06:40: GLSL compiled : CrowdGLSL
-08:06:40: GLSL compiled : CrowdShadowCasterGLSL
-08:06:40: Parsing script Ogre.material
-08:06:40: Parsing script RadialBlur.material
-08:06:40: Parsing script OldTV.material
-08:06:40: Parsing script CGSwizzle.material
-08:06:40: Parsing script ASMSwizzle.material
-08:06:40: Compiler error: object unsupported by render system in ASMSwizzle.material(1)
-08:06:40: Parsing script GLSLSwizzle.material
-08:06:40: GLSL compiled : Ogre/GPTest/Passthrough_VP_GLSL
-08:06:40: Parsing script ParticleGS.material
-08:06:40: Parsing script Bloom.material
-08:06:40: GLSL compiled : Blur_ps_glsl
-08:06:40: GLSL compiled : Blur0_vs_glsl
-08:06:40: GLSL compiled : Blur1_vs_glsl
-08:06:40: Parsing script DOF.material
-08:06:40: Parsing script OffsetMapping.material
-08:06:40: Compiler error: object unsupported by render system in OffsetMapping.material(18)
-08:06:40: GLSL compiled : Examples/OffsetMappingIntegratedShadowsFPglsl
-08:06:40: GLSL compiled : Examples/OffsetMappingIntegratedShadowsVPglsl
-08:06:40: Parsing script PythonOgreDebugPanel.material
-08:06:40: Parsing script RomanBath.material
-08:06:40: Parsing script emitted_emitter.particle
-08:06:40: Parsing script smoke.particle
-08:06:40: Parsing script Example.particle
-08:06:40: Parsing script Example-Water.particle
-08:06:40: Parsing script Examples.compositor
-08:06:40: Parsing script sample.fontdef
-08:06:40: Parsing script Compositor.overlay
-08:06:40: Parsing script Example-CubeMapping.overlay
-08:06:40: Parsing script PythonOgreDebugPanel.overlay
-08:06:40: Texture: popanel.png: Loading 1 faces(PF_A8R8G8B8,638x90x1) with 5 hardware generated mipmaps from Image. Internal format is PF_A8R8G8B8,638x90x1.
-08:06:40: Parsing script Example-Water.overlay
-08:06:40: Parsing script shipInfo.overlay
-08:06:40: Parsing script Example-DynTex.overlay
-08:06:40: Parsing script DP3.overlay
-08:06:40: Parsing script Shadows.overlay
-08:06:40: Finished parsing scripts for resource group General
-08:06:40: Parsing scripts for resource group Internal
-08:06:40: Finished parsing scripts for resource group Internal
-08:06:40: Font BlueHighwayusing texture size 512x512
-08:06:40: Info: Freetype returned null for character 127 in font BlueHighway
-08:06:40: Info: Freetype returned null for character 128 in font BlueHighway
-08:06:40: Info: Freetype returned null for character 129 in font BlueHighway
-08:06:40: Info: Freetype returned null for character 130 in font BlueHighway
-08:06:40: Info: Freetype returned null for character 131 in font BlueHighway
-08:06:40: Info: Freetype returned null for character 132 in font BlueHighway
-08:06:40: Info: Freetype returned null for character 133 in font BlueHighway
-08:06:40: Info: Freetype returned null for character 134 in font BlueHighway
-08:06:40: Info: Freetype returned null for character 135 in font BlueHighway
-08:06:40: Info: Freetype returned null for character 136 in font BlueHighway
-08:06:40: Info: Freetype returned null for character 137 in font BlueHighway
-08:06:40: Info: Freetype returned null for character 138 in font BlueHighway
-08:06:40: Info: Freetype returned null for character 139 in font BlueHighway
-08:06:40: Info: Freetype returned null for character 140 in font BlueHighway
-08:06:40: Info: Freetype returned null for character 141 in font BlueHighway
-08:06:40: Info: Freetype returned null for character 142 in font BlueHighway
-08:06:40: Info: Freetype returned null for character 143 in font BlueHighway
-08:06:40: Info: Freetype returned null for character 144 in font BlueHighway
-08:06:40: Info: Freetype returned null for character 145 in font BlueHighway
-08:06:40: Info: Freetype returned null for character 146 in font BlueHighway
-08:06:40: Info: Freetype returned null for character 147 in font BlueHighway
-08:06:40: Info: Freetype returned null for character 148 in font BlueHighway
-08:06:40: Info: Freetype returned null for character 149 in font BlueHighway
-08:06:40: Info: Freetype returned null for character 150 in font BlueHighway
-08:06:40: Info: Freetype returned null for character 151 in font BlueHighway
-08:06:40: Info: Freetype returned null for character 152 in font BlueHighway
-08:06:40: Info: Freetype returned null for character 153 in font BlueHighway
-08:06:40: Info: Freetype returned null for character 154 in font BlueHighway
-08:06:40: Info: Freetype returned null for character 155 in font BlueHighway
-08:06:40: Info: Freetype returned null for character 156 in font BlueHighway
-08:06:40: Info: Freetype returned null for character 157 in font BlueHighway
-08:06:40: Info: Freetype returned null for character 158 in font BlueHighway
-08:06:40: Info: Freetype returned null for character 159 in font BlueHighway
-08:06:40: Info: Freetype returned null for character 160 in font BlueHighway
-08:06:40: Texture: BlueHighwayTexture: Loading 1 faces(PF_BYTE_LA,512x512x1) with  hardware generated mipmaps from Image. Internal format is PF_BYTE_LA,512x512x1.
-08:06:40: Font StarWarsusing texture size 512x512
-08:06:40: Info: Freetype returned null for character 35 in font StarWars
-08:06:40: Info: Freetype returned null for character 37 in font StarWars
-08:06:40: Info: Freetype returned null for character 38 in font StarWars
-08:06:40: Info: Freetype returned null for character 42 in font StarWars
-08:06:40: Info: Freetype returned null for character 43 in font StarWars
-08:06:40: Info: Freetype returned null for character 60 in font StarWars
-08:06:40: Info: Freetype returned null for character 62 in font StarWars
-08:06:40: Info: Freetype returned null for character 64 in font StarWars
-08:06:40: Info: Freetype returned null for character 94 in font StarWars
-08:06:40: Info: Freetype returned null for character 96 in font StarWars
-08:06:40: Info: Freetype returned null for character 126 in font StarWars
-08:06:40: Info: Freetype returned null for character 127 in font StarWars
-08:06:40: Info: Freetype returned null for character 128 in font StarWars
-08:06:40: Info: Freetype returned null for character 129 in font StarWars
-08:06:40: Info: Freetype returned null for character 130 in font StarWars
-08:06:40: Info: Freetype returned null for character 131 in font StarWars
-08:06:40: Info: Freetype returned null for character 132 in font StarWars
-08:06:40: Info: Freetype returned null for character 133 in font StarWars
-08:06:40: Info: Freetype returned null for character 134 in font StarWars
-08:06:40: Info: Freetype returned null for character 135 in font StarWars
-08:06:40: Info: Freetype returned null for character 136 in font StarWars
-08:06:40: Info: Freetype returned null for character 137 in font StarWars
-08:06:40: Info: Freetype returned null for character 138 in font StarWars
-08:06:40: Info: Freetype returned null for character 139 in font StarWars
-08:06:40: Info: Freetype returned null for character 140 in font StarWars
-08:06:40: Info: Freetype returned null for character 141 in font StarWars
-08:06:40: Info: Freetype returned null for character 142 in font StarWars
-08:06:40: Info: Freetype returned null for character 143 in font StarWars
-08:06:40: Info: Freetype returned null for character 144 in font StarWars
-08:06:40: Info: Freetype returned null for character 145 in font StarWars
-08:06:40: Info: Freetype returned null for character 146 in font StarWars
-08:06:40: Info: Freetype returned null for character 147 in font StarWars
-08:06:40: Info: Freetype returned null for character 148 in font StarWars
-08:06:40: Info: Freetype returned null for character 149 in font StarWars
-08:06:40: Info: Freetype returned null for character 150 in font StarWars
-08:06:40: Info: Freetype returned null for character 151 in font StarWars
-08:06:40: Info: Freetype returned null for character 152 in font StarWars
-08:06:40: Info: Freetype returned null for character 153 in font StarWars
-08:06:40: Info: Freetype returned null for character 154 in font StarWars
-08:06:40: Info: Freetype returned null for character 155 in font StarWars
-08:06:40: Info: Freetype returned null for character 156 in font StarWars
-08:06:40: Info: Freetype returned null for character 157 in font StarWars
-08:06:40: Info: Freetype returned null for character 158 in font StarWars
-08:06:40: Info: Freetype returned null for character 159 in font StarWars
-08:06:40: Info: Freetype returned null for character 160 in font StarWars
-08:06:40: Info: Freetype returned null for character 161 in font StarWars
-08:06:40: Info: Freetype returned null for character 162 in font StarWars
-08:06:40: Info: Freetype returned null for character 163 in font StarWars
-08:06:40: Info: Freetype returned null for character 164 in font StarWars
-08:06:40: Info: Freetype returned null for character 165 in font StarWars
-08:06:40: Info: Freetype returned null for character 166 in font StarWars
-08:06:40: Texture: StarWarsTexture: Loading 1 faces(PF_BYTE_LA,512x512x1) with  hardware generated mipmaps from Image. Internal format is PF_BYTE_LA,512x512x1.
-08:06:40: Texture: grass_1024.jpg: Loading 1 faces(PF_R8G8B8,1024x1024x1) with 5 hardware generated mipmaps from Image. Internal format is PF_X8R8G8B8,1024x1024x1.
-08:06:40: Texture: clouds.jpg: Loading 1 faces(PF_R8G8B8,256x256x1) with 5 hardware generated mipmaps from Image. Internal format is PF_X8R8G8B8,256x256x1.
-08:06:41: Texture: ecslentUI3.png: Loading 1 faces(PF_A8R8G8B8,1024x768x1) with 5 hardware generated mipmaps from Image. Internal format is PF_A8R8G8B8,1024x768x1.
-08:06:41: Mesh: Loading tank.mesh.
-08:06:41: Can't assign material Material #26 to SubEntity of 0 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:06:41: Can't assign material Material #25 to SubEntity of 0 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:06:41: Can't assign material Material #27 to SubEntity of 0 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:06:41: Can't assign material Material #28 to SubEntity of 0 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:06:41: Texture: camo-white.jpg: Loading 1 faces(PF_R8G8B8,3000x1500x1) with 5 hardware generated mipmaps from Image. Internal format is PF_X8R8G8B8,3000x1500x1.
-08:06:41: Can't assign material Material #26 to SubEntity of 1 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:06:41: Can't assign material Material #25 to SubEntity of 1 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:06:41: Can't assign material Material #27 to SubEntity of 1 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:06:41: Can't assign material Material #28 to SubEntity of 1 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:06:41: Texture: M1_ABRAM.bmp: Loading 1 faces(PF_R8G8B8,1024x1024x1) with 5 hardware generated mipmaps from Image. Internal format is PF_X8R8G8B8,1024x1024x1.
-08:06:41: Mesh: Loading Wall3.mesh.
-08:06:41: Can't assign material Material to SubEntity of 2 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:06:41: Texture: egyptrockyfull.jpg: Loading 1 faces(PF_R8G8B8,512x512x1) with 5 hardware generated mipmaps from Image. Internal format is PF_X8R8G8B8,512x512x1.
-08:06:41: Can't assign material Material to SubEntity of 3 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:06:41: Can't assign material Material to SubEntity of 4 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:06:41: Can't assign material Material to SubEntity of 5 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:06:41: Mesh: Loading Wall4.mesh.
-08:06:41: Can't assign material _missing_material_ to SubEntity of 6 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:06:41: Can't assign material _missing_material_ to SubEntity of 7 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:06:41: Can't assign material _missing_material_ to SubEntity of 8 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:06:41: Can't assign material _missing_material_ to SubEntity of 9 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:06:41: Can't assign material _missing_material_ to SubEntity of 10 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:06:41: Can't assign material _missing_material_ to SubEntity of 11 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:06:41: Can't assign material _missing_material_ to SubEntity of 12 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:06:41: Can't assign material _missing_material_ to SubEntity of 13 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:06:41: Can't assign material _missing_material_ to SubEntity of 14 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:06:44: Mesh: Loading Sphere20.mesh.
-08:06:44: Can't assign material _missing_material_ to SubEntity of 15 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:06:46: Can't assign material _missing_material_ to SubEntity of 16 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:06:48: Can't assign material _missing_material_ to SubEntity of 17 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:06:50: Can't assign material _missing_material_ to SubEntity of 18 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:06:52: Can't assign material _missing_material_ to SubEntity of 19 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:06:54: Can't assign material _missing_material_ to SubEntity of 20 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:06:56: Can't assign material _missing_material_ to SubEntity of 21 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:06:58: Can't assign material _missing_material_ to SubEntity of 22 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:07:00: Can't assign material _missing_material_ to SubEntity of 23 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:07:02: Can't assign material _missing_material_ to SubEntity of 24 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:07:04: Can't assign material _missing_material_ to SubEntity of 25 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:07:06: Can't assign material _missing_material_ to SubEntity of 26 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:07:08: Can't assign material _missing_material_ to SubEntity of 27 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:07:10: Can't assign material _missing_material_ to SubEntity of 28 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:07:12: Can't assign material _missing_material_ to SubEntity of 29 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:07:14: Can't assign material _missing_material_ to SubEntity of 30 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:07:16: Can't assign material _missing_material_ to SubEntity of 31 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:07:18: Can't assign material _missing_material_ to SubEntity of 32 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:07:22: Can't assign material _missing_material_ to SubEntity of 33 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:07:26: Can't assign material _missing_material_ to SubEntity of 34 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:07:29: Can't assign material _missing_material_ to SubEntity of 35 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:07:31: Can't assign material _missing_material_ to SubEntity of 36 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:07:33: Can't assign material _missing_material_ to SubEntity of 37 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:07:38: Can't assign material _missing_material_ to SubEntity of 38 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:07:49: Can't assign material _missing_material_ to SubEntity of 39 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:07:55: Can't assign material _missing_material_ to SubEntity of 40 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:07:57: Can't assign material _missing_material_ to SubEntity of 41 because this Material does not exist. Have you forgotten to define it in a .material script?
-08:08:02: Can't assign material _missing_material_ to SubEntity of 42 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:24:40: GLRenderSystem::_createRenderWindow "AS5", 1024x768 windowed  miscParams: FSAA=0 displayFrequency=60 MHz gamma=No vsync=No 
+12:24:40: GLXWindow::create used FBConfigID = 163
+12:24:40: GL_VERSION = 2.1 Mesa 10.1.3
+12:24:40: GL_VENDOR = VMware, Inc.
+12:24:40: GL_RENDERER = Gallium 0.4 on SVGA3D; build: RELEASE;  
+12:24:40: GL_EXTENSIONS = GL_ARB_multisample GL_EXT_abgr GL_EXT_bgra GL_EXT_blend_color GL_EXT_blend_minmax GL_EXT_blend_subtract GL_EXT_copy_texture GL_EXT_polygon_offset GL_EXT_subtexture GL_EXT_texture_object GL_EXT_vertex_array GL_EXT_compiled_vertex_array GL_EXT_texture GL_EXT_texture3D GL_IBM_rasterpos_clip GL_ARB_point_parameters GL_EXT_draw_range_elements GL_EXT_packed_pixels GL_EXT_point_parameters GL_EXT_rescale_normal GL_EXT_separate_specular_color GL_EXT_texture_edge_clamp GL_SGIS_generate_mipmap GL_SGIS_texture_border_clamp GL_SGIS_texture_edge_clamp GL_SGIS_texture_lod GL_ARB_framebuffer_sRGB GL_ARB_multitexture GL_EXT_framebuffer_sRGB GL_IBM_multimode_draw_arrays GL_IBM_texture_mirrored_repeat GL_ARB_texture_cube_map GL_ARB_texture_env_add GL_ARB_transpose_matrix GL_EXT_blend_func_separate GL_EXT_fog_coord GL_EXT_multi_draw_arrays GL_EXT_secondary_color GL_EXT_texture_env_add GL_EXT_texture_filter_anisotropic GL_EXT_texture_lod_bias GL_INGR_blend_func_separate GL_NV_blend_square GL_NV_light_max_exponent GL_NV_texgen_reflection GL_NV_texture_env_combine4 GL_S3_s3tc GL_SUN_multi_draw_arrays GL_ARB_texture_border_clamp GL_ARB_texture_compression GL_EXT_framebuffer_object GL_EXT_texture_compression_s3tc GL_EXT_texture_env_combine GL_EXT_texture_env_dot3 GL_MESA_window_pos GL_NV_packed_depth_stencil GL_NV_texture_rectangle GL_ARB_depth_texture GL_ARB_occlusion_query GL_ARB_shadow GL_ARB_texture_env_combine GL_ARB_texture_env_crossbar GL_ARB_texture_env_dot3 GL_ARB_texture_mirrored_repeat GL_ARB_window_pos GL_EXT_stencil_two_side GL_EXT_texture_cube_map GL_NV_fog_distance GL_APPLE_packed_pixels GL_APPLE_vertex_array_object GL_ARB_draw_buffers GL_ARB_fragment_program GL_ARB_fragment_shader GL_ARB_shader_objects GL_ARB_vertex_program GL_ARB_vertex_shader GL_ATI_draw_buffers GL_ATI_texture_env_combine3 GL_ATI_texture_float GL_EXT_shadow_funcs GL_EXT_stencil_wrap GL_MESA_pack_invert GL_NV_primitive_restart GL_ARB_fragment_program_shadow GL_ARB_half_float_pixel GL_ARB_occlusion_query2 GL_ARB_point_sprite GL_ARB_shading_language_100 GL_ARB_sync GL_ARB_texture_non_power_of_two GL_ARB_vertex_buffer_object GL_ATI_blend_equation_separate GL_EXT_blend_equation_separate GL_OES_read_format GL_ARB_color_buffer_float GL_ARB_pixel_buffer_object GL_ARB_texture_float GL_ARB_texture_rectangle GL_EXT_pixel_buffer_object GL_EXT_texture_compression_dxt1 GL_EXT_texture_rectangle GL_EXT_texture_sRGB GL_ARB_framebuffer_object GL_EXT_framebuffer_blit GL_EXT_packed_depth_stencil GL_ARB_vertex_array_object GL_ATI_separate_stencil GL_EXT_gpu_program_parameters GL_EXT_texture_sRGB_decode GL_OES_EGL_image GL_ARB_copy_buffer GL_ARB_half_float_vertex GL_ARB_map_buffer_range GL_ARB_texture_swizzle GL_ARB_vertex_array_bgra GL_EXT_texture_swizzle GL_EXT_vertex_array_bgra GL_ARB_ES2_compatibility GL_ARB_debug_output GL_ARB_draw_elements_base_vertex GL_ARB_explicit_attrib_location GL_ARB_fragment_coord_conventions GL_ARB_provoking_vertex GL_ARB_sampler_objects GL_ARB_shader_texture_lod GL_EXT_provoking_vertex GL_ARB_get_program_binary GL_ARB_robustness GL_NV_vdpau_interop GL_ANGLE_texture_compression_dxt3 GL_ANGLE_texture_compression_dxt5 GL_ARB_internalformat_query GL_ARB_map_buffer_alignment GL_ARB_texture_storage GL_AMD_shader_trinary_minmax GL_ARB_clear_buffer_object GL_ARB_invalidate_subdata GL_ARB_vertex_attrib_binding GL_KHR_debug 
+12:24:40: Supported GLX extensions: GLX_ARB_create_context GLX_ARB_create_context_profile GLX_ARB_fbconfig_float GLX_ARB_framebuffer_sRGB GLX_ARB_get_proc_address GLX_ARB_multisample GLX_EXT_import_context GLX_EXT_visual_info GLX_EXT_visual_rating GLX_EXT_framebuffer_sRGB GLX_EXT_create_context_es2_profile GLX_MESA_copy_sub_buffer GLX_MESA_multithread_makecurrent GLX_MESA_swap_control GLX_OML_swap_method GLX_SGI_make_current_read GLX_SGI_video_sync GLX_SGIS_multisample GLX_SGIX_fbconfig GLX_SGIX_pbuffer GLX_SGIX_visual_select_group GLX_EXT_texture_from_pixmap 
+12:24:40: ***************************
+12:24:40: *** GL Renderer Started ***
+12:24:40: ***************************
+12:24:40: Registering ResourceManager for type GpuProgram
+12:24:40: GLSL support detected
+12:24:40: GL: Using GL_EXT_framebuffer_object for rendering to textures (best)
+12:24:40: FBO PF_UNKNOWN depth/stencil support: D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
+12:24:40: FBO PF_A4L4 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
+12:24:40: FBO PF_BYTE_LA depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
+12:24:40: FBO PF_R5G6B5 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
+12:24:40: FBO PF_B5G6R5 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
+12:24:40: FBO PF_A4R4G4B4 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
+12:24:40: FBO PF_A1R5G5B5 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
+12:24:40: FBO PF_R8G8B8 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
+12:24:40: FBO PF_B8G8R8 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
+12:24:40: FBO PF_A8R8G8B8 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
+12:24:40: FBO PF_B8G8R8A8 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
+12:24:40: FBO PF_A2R10G10B10 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
+12:24:40: FBO PF_A2B10G10R10 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
+12:24:40: FBO PF_FLOAT16_RGB depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
+12:24:40: FBO PF_FLOAT16_RGBA depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
+12:24:40: FBO PF_FLOAT32_RGB depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
+12:24:40: FBO PF_FLOAT32_RGBA depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
+12:24:40: FBO PF_X8R8G8B8 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
+12:24:40: FBO PF_X8B8G8R8 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
+12:24:40: FBO PF_SHORT_RGBA depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
+12:24:40: FBO PF_R3G3B2 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
+12:24:40: FBO PF_FLOAT16_R depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
+12:24:40: FBO PF_FLOAT32_R depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
+12:24:40: FBO PF_SHORT_GR depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
+12:24:40: FBO PF_FLOAT16_GR depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
+12:24:40: FBO PF_FLOAT32_GR depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
+12:24:40: FBO PF_SHORT_RGB depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8 
+12:24:40: [GL] : Valid FBO targets PF_UNKNOWN PF_A4L4 PF_BYTE_LA PF_R5G6B5 PF_B5G6R5 PF_A4R4G4B4 PF_A1R5G5B5 PF_R8G8B8 PF_B8G8R8 PF_A8R8G8B8 PF_B8G8R8A8 PF_A2R10G10B10 PF_A2B10G10R10 PF_FLOAT16_RGB PF_FLOAT16_RGBA PF_FLOAT32_RGB PF_FLOAT32_RGBA PF_X8R8G8B8 PF_X8B8G8R8 PF_SHORT_RGBA PF_R3G3B2 PF_FLOAT16_R PF_FLOAT32_R PF_SHORT_GR PF_FLOAT16_GR PF_FLOAT32_GR PF_SHORT_RGB 
+12:24:40: RenderSystem capabilities
+12:24:40: -------------------------
+12:24:40: RenderSystem Name: OpenGL Rendering Subsystem
+12:24:40: GPU Vendor: unknown
+12:24:40: Device Name: Gallium 0.4 on SVGA3D; build: RELEASE;  
+12:24:40: Driver Version: 2.1.0.0
+12:24:40:  * Fixed function pipeline: yes
+12:24:40:  * Hardware generation of mipmaps: yes
+12:24:40:  * Texture blending: yes
+12:24:40:  * Anisotropic texture filtering: yes
+12:24:40:  * Dot product texture operation: yes
+12:24:40:  * Cube mapping: yes
+12:24:40:  * Hardware stencil buffer: yes
+12:24:40:    - Stencil depth: 8
+12:24:40:    - Two sided stencil support: yes
+12:24:40:    - Wrap stencil values: yes
+12:24:40:  * Hardware vertex / index buffers: yes
+12:24:40:  * Vertex programs: yes
+12:24:40:  * Number of floating-point constants for vertex programs: 256
+12:24:40:  * Number of integer constants for vertex programs: 0
+12:24:40:  * Number of boolean constants for vertex programs: 0
+12:24:40:  * Fragment programs: yes
+12:24:40:  * Number of floating-point constants for fragment programs: 224
+12:24:40:  * Number of integer constants for fragment programs: 0
+12:24:40:  * Number of boolean constants for fragment programs: 0
+12:24:40:  * Geometry programs: no
+12:24:40:  * Number of floating-point constants for geometry programs: 0
+12:24:40:  * Number of integer constants for geometry programs: 0
+12:24:40:  * Number of boolean constants for geometry programs: 0
+12:24:40:  * Supported Shader Profiles: arbfp1 arbvp1 glsl
+12:24:40:  * Texture Compression: yes
+12:24:40:    - DXT: yes
+12:24:40:    - VTC: no
+12:24:40:    - PVRTC: no
+12:24:40:  * Scissor Rectangle: yes
+12:24:40:  * Hardware Occlusion Query: yes
+12:24:40:  * User clip planes: yes
+12:24:40:  * VET_UBYTE4 vertex element type: yes
+12:24:40:  * Infinite far plane projection: yes
+12:24:40:  * Hardware render-to-texture: yes
+12:24:40:  * Floating point textures: yes
+12:24:40:  * Non-power-of-two textures: yes
+12:24:40:  * Volume textures: yes
+12:24:40:  * Multiple Render Targets: 4
+12:24:40:    - With different bit depths: yes
+12:24:40:  * Point Sprites: yes
+12:24:40:  * Extended point parameters: yes
+12:24:40:  * Max Point Size: 80
+12:24:40:  * Vertex texture fetch: no
+12:24:40:  * Number of world matrices: 0
+12:24:40:  * Number of texture units: 16
+12:24:40:  * Stencil buffer depth: 8
+12:24:40:  * Number of vertex blend matrices: 0
+12:24:40:  * Render to Vertex Buffer : no
+12:24:40:  * GL 1.5 without VBO workaround: no
+12:24:40:  * Frame Buffer objects: yes
+12:24:40:  * Frame Buffer objects (ARB extension): no
+12:24:40:  * Frame Buffer objects (ATI extension): no
+12:24:40:  * PBuffer support: yes
+12:24:40:  * GL 1.5 without HW-occlusion workaround: no
+12:24:40: Registering ResourceManager for type Texture
+12:24:40: DefaultWorkQueue('Root') initialising on thread 7fd0a0dfb740.
+12:24:40: DefaultWorkQueue('Root')::WorkerFunc - thread 7fd07c2de700 starting.
+12:24:40: DefaultWorkQueue('Root')::WorkerFunc - thread 7fd07e0ef700 starting.
+12:24:40: Particle Renderer Type 'billboard' registered
+12:24:40: SceneManagerFactory for type 'BspSceneManager' registered.
+12:24:40: Registering ResourceManager for type BspLevel
+12:24:40: SceneManagerFactory for type 'OctreeSceneManager' registered.
+12:24:40: SceneManagerFactory for type 'TerrainSceneManager' registered.
+12:24:41: Parsing scripts for resource group Autodetect
+12:24:41: Finished parsing scripts for resource group Autodetect
+12:24:41: Parsing scripts for resource group Bootstrap
+12:24:41: Parsing script OgreCore.material
+12:24:41: Parsing script OgreProfiler.material
+12:24:41: Parsing script Ogre.fontdef
+12:24:41: Parsing script OgreDebugPanel.overlay
+12:24:41: Texture: New_Ogre_Border_Center.png: Loading 1 faces(PF_A8R8G8B8,256x128x1) with 5 hardware generated mipmaps from Image. Internal format is PF_A8R8G8B8,256x128x1.
+12:24:41: Texture: New_Ogre_Border.png: Loading 1 faces(PF_A8R8G8B8,256x256x1) with 5 hardware generated mipmaps from Image. Internal format is PF_A8R8G8B8,256x256x1.
+12:24:41: Texture: New_Ogre_Border_Break.png: Loading 1 faces(PF_A8R8G8B8,32x32x1) with 5 hardware generated mipmaps from Image. Internal format is PF_A8R8G8B8,32x32x1.
+12:24:41: Texture: ogretext.png: Loading 1 faces(PF_A8R8G8B8,256x128x1) with 5 hardware generated mipmaps from Image. Internal format is PF_A8R8G8B8,256x128x1.
+12:24:41: Parsing script OgreLoadingPanel.overlay
+12:24:41: Finished parsing scripts for resource group Bootstrap
+12:24:41: Parsing scripts for resource group General
+12:24:41: Parsing script StdQuad_vp.program
+12:24:41: Parsing script Examples.program
+12:24:41: GLSL compiled : Ogre/BasicVertexPrograms/AmbientOneTextureGLSL
+12:24:41: GLSL compiled : Ogre/HardwareSkinningTwoWeightsGLSL
+12:24:41: Parsing script RZR-002.material
+12:24:41: Parsing script BlackAndWhite.material
+12:24:41: Parsing script OldMovie.material
+12:24:41: Parsing script Invert.material
+12:24:41: Parsing script Glass.material
+12:24:41: Parsing script Bloom.material
+12:24:41: GLSL compiled : Blur_ps_glsl
+12:24:41: GLSL compiled : Blur0_vs_glsl
+12:24:41: GLSL compiled : Blur1_vs_glsl
+12:24:41: Parsing script ASMSwizzle.material
+12:24:41: Compiler error: object unsupported by render system in ASMSwizzle.material(1)
+12:24:41: Parsing script ParticleGS.material
+12:24:42: Parsing script Halftone.material
+12:24:42: Parsing script NightVision.material
+12:24:42: Parsing script Dither.material
+12:24:42: Parsing script Laplace.material
+12:24:42: Parsing script OldTV.material
+12:24:42: Parsing script Example.material
+12:24:42: OGRE EXCEPTION(2:InvalidParametersException): Parameter called camObjPos does not exist.  in GpuProgramParameters::_findNamedConstantDefinition at /home/anderen2/build/ogre/OgreMain/src/OgreGpuProgramParams.cpp (line 1433)
+12:24:42: Compiler error: invalid parameters in Example.material(804): setting of constant failed
+12:24:42: GLSL compiled : Ogre/HardwareSkinningTwoWeightsShadowCasterGLSL
+12:24:42: Parsing script ASCII.material
+12:24:42: Parsing script DepthShadowmap.material
+12:24:42: GLSL compiled : Ogre/DepthShadowmap/CasterVP_GLSL
+12:24:42: GLSL compiled : Ogre/DepthShadowmap/CasterFP_GLSL
+12:24:42: GLSL compiled : Ogre/DepthShadowmap/ReceiverVP_GLSL
+12:24:42: GLSL compiled : Ogre/DepthShadowmap/ReceiverFP_GLSL
+12:24:42: GLSL compiled : Ogre/DepthShadowmap/ReceiverFPPCF_GLSL
+12:24:42: GLSL compiled : Ogre/DepthShadowmap/NormalMapReceiverVP_GLSL
+12:24:42: GLSL compiled : Ogre/DepthShadowmap/NormalMapReceiverFP_GLSL
+12:24:42: GLSL compiled : Ogre/DepthShadowmap/NormalMapReceiverFPPCF_GLSL
+12:24:42: Parsing script Ogre.material
+12:24:42: Parsing script GLSLSwizzle.material
+12:24:42: GLSL compiled : Ogre/GPTest/Passthrough_VP_GLSL
+12:24:42: Parsing script Example-DynTex.material
+12:24:42: Parsing script Examples-Advanced.material
+12:24:42: Compiler error: object unsupported by render system in Examples-Advanced.material(381)
+12:24:42: Parsing script Tiling.material
+12:24:42: Parsing script OffsetMapping.material
+12:24:42: Compiler error: object unsupported by render system in OffsetMapping.material(18)
+12:24:42: GLSL compiled : Examples/OffsetMappingIntegratedShadowsFPglsl
+12:24:42: GLSL compiled : Examples/OffsetMappingIntegratedShadowsVPglsl
+12:24:42: Parsing script CGSwizzle.material
+12:24:42: Parsing script VarianceShadowmap.material
+12:24:42: Parsing script Embossed.material
+12:24:42: Parsing script MRTtest.material
+12:24:42: GLSL compiled : Ogre/MRTtest/scenefp/GLSL
+12:24:42: GLSL compiled : Ogre/MRTtest/quadfp/GLSL
+12:24:42: GLSL compiled : Ogre/Compositor/StdQuad_GLSL_vp
+12:24:42: Parsing script IsoSurf.material
+12:24:42: Parsing script pssm.material
+12:24:42: Parsing script RadialBlur.material
+12:24:42: Parsing script smoke.material
+12:24:42: Parsing script SharpenEdges.material
+12:24:42: Parsing script ui.material
+12:24:42: Parsing script instancing.material
+12:24:42: GLSL compiled : InstancingGLSL
+12:24:42: GLSL compiled : InstancingShadowCasterGLSL
+12:24:42: GLSL compiled : CrowdGLSL
+12:24:42: GLSL compiled : CrowdShadowCasterGLSL
+12:24:42: Parsing script Posterize.material
+12:24:42: Parsing script Ocean.material
+12:24:42: GLSL compiled : GLSL/OceanVS
+12:24:42: GLSL compiled : GLSL/OceanFS
+12:24:42: GLSL compiled : GLSL/Ocean2VS
+12:24:42: GLSL compiled : GLSL/Ocean2FS
+12:24:42: Parsing script DOF.material
+12:24:42: Parsing script Bloom2.material
+12:24:42: GLSL compiled : Bloom2_ps20_glsl
+12:24:42: Parsing script MotionBlur.material
+12:24:42: Parsing script HeatVision.material
+12:24:42: Parsing script Example-Water.material
+12:24:42: Parsing script Hurt.material
+12:24:42: Parsing script hdr.material
+12:24:42: GLSL compiled : Ogre/Compositor/HDR/downscale2x2LuminenceGLSL_fp
+12:24:42: GLSL compiled : Ogre/Compositor/HDR/downscale3x3GLSL_fp
+12:24:42: GLSL compiled : Ogre/Compositor/HDR/utils_fp
+12:24:42: GLSL compiled : Ogre/Compositor/HDR/downscale3x3brightpassGLSL_fp
+12:24:42: GLSL compiled : Ogre/Compositor/HDR/bloomGLSL_fp
+12:24:42: GLSL compiled : Ogre/Compositor/HDR/utils_fp
+12:24:42: GLSL compiled : Ogre/Compositor/HDR/finaltonemappingGLSL_fp
+12:24:42: Parsing script facial.material
+12:24:42: Parsing script PythonOgreDebugPanel.material
+12:24:42: Parsing script RomanBath.material
+12:24:42: Parsing script Example.particle
+12:24:42: Parsing script Example-Water.particle
+12:24:42: Parsing script emitted_emitter.particle
+12:24:42: Parsing script smoke.particle
+12:24:42: Parsing script Examples.compositor
+12:24:42: Parsing script sample.fontdef
+12:24:42: Parsing script Shadows.overlay
+12:24:42: Parsing script PythonOgreDebugPanel.overlay
+12:24:42: Texture: popanel.png: Loading 1 faces(PF_A8R8G8B8,638x90x1) with 5 hardware generated mipmaps from Image. Internal format is PF_A8R8G8B8,638x90x1.
+12:24:42: Parsing script Compositor.overlay
+12:24:42: Parsing script Example-Water.overlay
+12:24:42: Parsing script shipInfo.overlay
+12:24:42: Parsing script Example-CubeMapping.overlay
+12:24:42: Parsing script DP3.overlay
+12:24:42: Parsing script Example-DynTex.overlay
+12:24:42: Finished parsing scripts for resource group General
+12:24:42: Parsing scripts for resource group Internal
+12:24:42: Finished parsing scripts for resource group Internal
+12:24:42: Font BlueHighwayusing texture size 512x512
+12:24:42: Info: Freetype returned null for character 127 in font BlueHighway
+12:24:42: Info: Freetype returned null for character 128 in font BlueHighway
+12:24:42: Info: Freetype returned null for character 129 in font BlueHighway
+12:24:42: Info: Freetype returned null for character 130 in font BlueHighway
+12:24:42: Info: Freetype returned null for character 131 in font BlueHighway
+12:24:42: Info: Freetype returned null for character 132 in font BlueHighway
+12:24:42: Info: Freetype returned null for character 133 in font BlueHighway
+12:24:42: Info: Freetype returned null for character 134 in font BlueHighway
+12:24:42: Info: Freetype returned null for character 135 in font BlueHighway
+12:24:42: Info: Freetype returned null for character 136 in font BlueHighway
+12:24:42: Info: Freetype returned null for character 137 in font BlueHighway
+12:24:42: Info: Freetype returned null for character 138 in font BlueHighway
+12:24:42: Info: Freetype returned null for character 139 in font BlueHighway
+12:24:42: Info: Freetype returned null for character 140 in font BlueHighway
+12:24:42: Info: Freetype returned null for character 141 in font BlueHighway
+12:24:42: Info: Freetype returned null for character 142 in font BlueHighway
+12:24:42: Info: Freetype returned null for character 143 in font BlueHighway
+12:24:42: Info: Freetype returned null for character 144 in font BlueHighway
+12:24:42: Info: Freetype returned null for character 145 in font BlueHighway
+12:24:42: Info: Freetype returned null for character 146 in font BlueHighway
+12:24:42: Info: Freetype returned null for character 147 in font BlueHighway
+12:24:42: Info: Freetype returned null for character 148 in font BlueHighway
+12:24:42: Info: Freetype returned null for character 149 in font BlueHighway
+12:24:42: Info: Freetype returned null for character 150 in font BlueHighway
+12:24:42: Info: Freetype returned null for character 151 in font BlueHighway
+12:24:42: Info: Freetype returned null for character 152 in font BlueHighway
+12:24:42: Info: Freetype returned null for character 153 in font BlueHighway
+12:24:42: Info: Freetype returned null for character 154 in font BlueHighway
+12:24:42: Info: Freetype returned null for character 155 in font BlueHighway
+12:24:42: Info: Freetype returned null for character 156 in font BlueHighway
+12:24:42: Info: Freetype returned null for character 157 in font BlueHighway
+12:24:42: Info: Freetype returned null for character 158 in font BlueHighway
+12:24:42: Info: Freetype returned null for character 159 in font BlueHighway
+12:24:42: Info: Freetype returned null for character 160 in font BlueHighway
+12:24:42: Texture: BlueHighwayTexture: Loading 1 faces(PF_BYTE_LA,512x512x1) with  hardware generated mipmaps from Image. Internal format is PF_BYTE_LA,512x512x1.
+12:24:42: Font StarWarsusing texture size 512x512
+12:24:42: Info: Freetype returned null for character 35 in font StarWars
+12:24:42: Info: Freetype returned null for character 37 in font StarWars
+12:24:42: Info: Freetype returned null for character 38 in font StarWars
+12:24:42: Info: Freetype returned null for character 42 in font StarWars
+12:24:42: Info: Freetype returned null for character 43 in font StarWars
+12:24:42: Info: Freetype returned null for character 60 in font StarWars
+12:24:42: Info: Freetype returned null for character 62 in font StarWars
+12:24:42: Info: Freetype returned null for character 64 in font StarWars
+12:24:42: Info: Freetype returned null for character 94 in font StarWars
+12:24:42: Info: Freetype returned null for character 96 in font StarWars
+12:24:42: Info: Freetype returned null for character 126 in font StarWars
+12:24:42: Info: Freetype returned null for character 127 in font StarWars
+12:24:42: Info: Freetype returned null for character 128 in font StarWars
+12:24:42: Info: Freetype returned null for character 129 in font StarWars
+12:24:42: Info: Freetype returned null for character 130 in font StarWars
+12:24:42: Info: Freetype returned null for character 131 in font StarWars
+12:24:42: Info: Freetype returned null for character 132 in font StarWars
+12:24:42: Info: Freetype returned null for character 133 in font StarWars
+12:24:42: Info: Freetype returned null for character 134 in font StarWars
+12:24:42: Info: Freetype returned null for character 135 in font StarWars
+12:24:42: Info: Freetype returned null for character 136 in font StarWars
+12:24:42: Info: Freetype returned null for character 137 in font StarWars
+12:24:42: Info: Freetype returned null for character 138 in font StarWars
+12:24:42: Info: Freetype returned null for character 139 in font StarWars
+12:24:42: Info: Freetype returned null for character 140 in font StarWars
+12:24:42: Info: Freetype returned null for character 141 in font StarWars
+12:24:42: Info: Freetype returned null for character 142 in font StarWars
+12:24:42: Info: Freetype returned null for character 143 in font StarWars
+12:24:42: Info: Freetype returned null for character 144 in font StarWars
+12:24:42: Info: Freetype returned null for character 145 in font StarWars
+12:24:42: Info: Freetype returned null for character 146 in font StarWars
+12:24:42: Info: Freetype returned null for character 147 in font StarWars
+12:24:42: Info: Freetype returned null for character 148 in font StarWars
+12:24:42: Info: Freetype returned null for character 149 in font StarWars
+12:24:42: Info: Freetype returned null for character 150 in font StarWars
+12:24:42: Info: Freetype returned null for character 151 in font StarWars
+12:24:42: Info: Freetype returned null for character 152 in font StarWars
+12:24:42: Info: Freetype returned null for character 153 in font StarWars
+12:24:42: Info: Freetype returned null for character 154 in font StarWars
+12:24:42: Info: Freetype returned null for character 155 in font StarWars
+12:24:42: Info: Freetype returned null for character 156 in font StarWars
+12:24:42: Info: Freetype returned null for character 157 in font StarWars
+12:24:42: Info: Freetype returned null for character 158 in font StarWars
+12:24:42: Info: Freetype returned null for character 159 in font StarWars
+12:24:42: Info: Freetype returned null for character 160 in font StarWars
+12:24:42: Info: Freetype returned null for character 161 in font StarWars
+12:24:42: Info: Freetype returned null for character 162 in font StarWars
+12:24:42: Info: Freetype returned null for character 163 in font StarWars
+12:24:42: Info: Freetype returned null for character 164 in font StarWars
+12:24:42: Info: Freetype returned null for character 165 in font StarWars
+12:24:42: Info: Freetype returned null for character 166 in font StarWars
+12:24:42: Texture: StarWarsTexture: Loading 1 faces(PF_BYTE_LA,512x512x1) with  hardware generated mipmaps from Image. Internal format is PF_BYTE_LA,512x512x1.
+12:24:42: Texture: grass_1024.jpg: Loading 1 faces(PF_R8G8B8,1024x1024x1) with 5 hardware generated mipmaps from Image. Internal format is PF_X8R8G8B8,1024x1024x1.
+12:24:43: Texture: clouds.jpg: Loading 1 faces(PF_R8G8B8,256x256x1) with 5 hardware generated mipmaps from Image. Internal format is PF_X8R8G8B8,256x256x1.
+12:24:48: Texture: ecslentUI3.png: Loading 1 faces(PF_A8R8G8B8,1024x768x1) with 5 hardware generated mipmaps from Image. Internal format is PF_A8R8G8B8,1024x768x1.
+12:24:48: Mesh: Loading tank.mesh.
+12:24:48: Can't assign material Material #26 to SubEntity of 0 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:24:48: Can't assign material Material #25 to SubEntity of 0 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:24:48: Can't assign material Material #27 to SubEntity of 0 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:24:48: Can't assign material Material #28 to SubEntity of 0 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:24:48: Texture: camo-white.jpg: Loading 1 faces(PF_R8G8B8,3000x1500x1) with 5 hardware generated mipmaps from Image. Internal format is PF_X8R8G8B8,3000x1500x1.
+12:24:49: Can't assign material Material #26 to SubEntity of 1 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:24:49: Can't assign material Material #25 to SubEntity of 1 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:24:49: Can't assign material Material #27 to SubEntity of 1 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:24:49: Can't assign material Material #28 to SubEntity of 1 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:24:49: Texture: M1_ABRAM.bmp: Loading 1 faces(PF_R8G8B8,1024x1024x1) with 5 hardware generated mipmaps from Image. Internal format is PF_X8R8G8B8,1024x1024x1.
+12:24:49: Mesh: Loading Wall3.mesh.
+12:24:49: Can't assign material Material to SubEntity of 2 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:24:50: Texture: egyptrockyfull.jpg: Loading 1 faces(PF_R8G8B8,512x512x1) with 5 hardware generated mipmaps from Image. Internal format is PF_X8R8G8B8,512x512x1.
+12:24:50: Can't assign material Material to SubEntity of 3 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:24:50: Can't assign material Material to SubEntity of 4 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:24:50: Can't assign material Material to SubEntity of 5 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:24:50: Mesh: Loading Wall4.mesh.
+12:24:50: Can't assign material _missing_material_ to SubEntity of 6 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:24:50: Can't assign material _missing_material_ to SubEntity of 7 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:24:50: Can't assign material _missing_material_ to SubEntity of 8 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:24:50: Can't assign material _missing_material_ to SubEntity of 9 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:24:50: Can't assign material _missing_material_ to SubEntity of 10 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:24:50: Can't assign material _missing_material_ to SubEntity of 11 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:24:50: Can't assign material _missing_material_ to SubEntity of 12 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:24:50: Can't assign material _missing_material_ to SubEntity of 13 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:24:50: Can't assign material _missing_material_ to SubEntity of 14 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:24:56: Mesh: Loading Sphere20.mesh.
+12:24:56: Can't assign material _missing_material_ to SubEntity of 15 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:24:58: Can't assign material _missing_material_ to SubEntity of 16 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:25:00: Can't assign material _missing_material_ to SubEntity of 17 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:25:02: Can't assign material _missing_material_ to SubEntity of 18 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:25:04: Can't assign material _missing_material_ to SubEntity of 19 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:25:06: Can't assign material _missing_material_ to SubEntity of 20 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:25:09: Can't assign material _missing_material_ to SubEntity of 21 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:25:11: Can't assign material _missing_material_ to SubEntity of 22 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:25:13: Can't assign material _missing_material_ to SubEntity of 23 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:25:15: Can't assign material _missing_material_ to SubEntity of 24 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:25:18: Can't assign material _missing_material_ to SubEntity of 25 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:25:20: Can't assign material _missing_material_ to SubEntity of 26 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:25:24: Can't assign material _missing_material_ to SubEntity of 27 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:25:26: Can't assign material _missing_material_ to SubEntity of 28 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:25:28: Can't assign material _missing_material_ to SubEntity of 29 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:25:30: Can't assign material _missing_material_ to SubEntity of 30 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:25:33: Can't assign material _missing_material_ to SubEntity of 31 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:25:35: Can't assign material _missing_material_ to SubEntity of 32 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:25:37: Can't assign material _missing_material_ to SubEntity of 33 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:25:39: Can't assign material _missing_material_ to SubEntity of 34 because this Material does not exist. Have you forgotten to define it in a .material script?
+12:25:41: Can't assign material _missing_material_ to SubEntity of 35 because this Material does not exist. Have you forgotten to define it in a .material script?
