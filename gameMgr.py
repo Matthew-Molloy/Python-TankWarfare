@@ -45,6 +45,26 @@ class GameMgr:
         entity = entityMgr.createEnt(ent.OutterWall, pos=MyVector(0,100,5000))
         entity.setMaterial(wallMaterial)
 
+	#Create 9 extra walls
+	entity = entityMgr.createEnt(ent.InnerWall, pos=MyVector(0,100,0),yaw=0)
+        entity.setMaterial(wallMaterial)
+	entity = entityMgr.createEnt(ent.InnerWall, pos=MyVector(0,100,3000),yaw=90)
+        entity.setMaterial(wallMaterial)
+	entity = entityMgr.createEnt(ent.InnerWall, pos=MyVector(0,100,-3000),yaw=90)
+        entity.setMaterial(wallMaterial)
+	entity = entityMgr.createEnt(ent.InnerWall, pos=MyVector(3000,100,3000),yaw=90)
+        entity.setMaterial(wallMaterial)
+	entity = entityMgr.createEnt(ent.InnerWall, pos=MyVector(-3000,100,3000),yaw=90)
+        entity.setMaterial(wallMaterial)
+	entity = entityMgr.createEnt(ent.InnerWall, pos=MyVector(3000,100,-3000),yaw=90)
+        entity.setMaterial(wallMaterial)
+	entity = entityMgr.createEnt(ent.InnerWall, pos=MyVector(-3000,100,-3000),yaw=90)
+        entity.setMaterial(wallMaterial)
+	entity = entityMgr.createEnt(ent.InnerWall, pos=MyVector(2000,100,0),yaw=90)
+        entity.setMaterial(wallMaterial)
+	entity = entityMgr.createEnt(ent.InnerWall, pos=MyVector(-2000,100,0),yaw=90)
+        entity.setMaterial(wallMaterial)
+
     def tick(self, dt):
         pass
 

@@ -179,4 +179,35 @@ class OutterWall(Entity):
     def checkCollision(self, dtime):
         pass
 
+class InnerWall(Entity):
+    def __init__(self, id, engine, tankID = 'Null', pos=None, vel=MyVector(0, 0, 0), yaw=0):
+        Entity.__init__(self, id, engine=engine, pos=pos, vel=vel, yaw=yaw)
+        self.mesh = 'Wall4.mesh'
+        self.material = "Examples/CannonBall"
+        self.uiname = 'IWALL'
+        self.eid = id
+        self.yawOffset = 0
+        self.acceleration = 0
+        self.turningRate = 0
+        self.maxSpeed = 0
+        self.desiredSpeed = 0
+        self.desiredHeading = 0
+        self.speed = 0
+        self.heading = 0
+        self.engine = engine
+        self.checkValue = 300
+        self.tankID = tankID
+
+        self.node = self.engine.gfxMgr.sceneManager.getRootSceneNode().createChildSceneNode(self.pos)
+        self.ent = self.engine.gfxMgr.sceneManager.createEntity(self.eid, self.mesh)
+        self.node.attachObject(self.ent)
+	self.node.rotate(ogre.Vector3(0,1,0),ogre.Math.DegreesToRadians(yaw))
+
+        self.light = self.engine.gfxMgr.sceneManager.createLight('light'+self.id)
+        self.light.type = ogre.Light.LT_POINT
+        self.node.attachObject(self.light)
+
+    def checkCollision(self, dtime):
+        pass
+
 
