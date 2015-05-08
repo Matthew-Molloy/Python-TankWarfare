@@ -17,6 +17,22 @@ class GameMgr:
     def loadLevel(self):
         self.engine.gfxMgr.setupGameViews()
 
+    def makeWall(self, direction, size, x, z):
+	entityMgr = self.engine.entityMgr
+        wallMaterial = "Examples/CannonBall"
+
+	for count in range(1, size+1):
+	    if direction == 'V':
+		xpos = x
+		zpos = (count * 200)+100+z
+		
+            else:
+		xpos = (count * 200)+100+x
+		zpos = z
+
+	    if xpos < 5000 and xpos > -5000 and zpos < 5000 and zpos > -5000:
+		    entity = entityMgr.createEnt(ent.InnerWall, pos=MyVector(xpos,150,zpos),yaw=0)
+		    entity.setMaterial(wallMaterial)
 
     def game1(self):
         x = 0
@@ -46,25 +62,17 @@ class GameMgr:
         entity.setMaterial(wallMaterial)
 
 	#Create 9 extra walls
-	entity = entityMgr.createEnt(ent.InnerWall, pos=MyVector(0,100,0),yaw=0)
-        entity.setMaterial(wallMaterial)
-	entity = entityMgr.createEnt(ent.InnerWall, pos=MyVector(0,100,3000),yaw=90)
-        entity.setMaterial(wallMaterial)
-	entity = entityMgr.createEnt(ent.InnerWall, pos=MyVector(0,100,-3000),yaw=90)
-        entity.setMaterial(wallMaterial)
-	entity = entityMgr.createEnt(ent.InnerWall, pos=MyVector(3000,100,3000),yaw=90)
-        entity.setMaterial(wallMaterial)
-	entity = entityMgr.createEnt(ent.InnerWall, pos=MyVector(-3000,100,3000),yaw=90)
-        entity.setMaterial(wallMaterial)
-	entity = entityMgr.createEnt(ent.InnerWall, pos=MyVector(3000,100,-3000),yaw=90)
-        entity.setMaterial(wallMaterial)
-	entity = entityMgr.createEnt(ent.InnerWall, pos=MyVector(-3000,100,-3000),yaw=90)
-        entity.setMaterial(wallMaterial)
-	entity = entityMgr.createEnt(ent.InnerWall, pos=MyVector(2000,100,0),yaw=90)
-        entity.setMaterial(wallMaterial)
-	entity = entityMgr.createEnt(ent.InnerWall, pos=MyVector(-2000,100,0),yaw=90)
-        entity.setMaterial(wallMaterial)
-
+	self.size = 10
+	self.makeWall(direction = 'H', size = self.size,x = -1000,z=0)
+	self.makeWall(direction = 'V', size = self.size,x = -2000,z=-1000)
+	self.makeWall(direction = 'V', size = self.size,x = 2000,z=-1000)
+	self.makeWall(direction = 'V', size = self.size,x = 3000,z=-4000)
+	self.makeWall(direction = 'V', size = self.size,x = 0,z=-4000)
+	self.makeWall(direction = 'V', size = self.size,x = -3000,z=-4000)
+	self.makeWall(direction = 'V', size = self.size,x = 3000,z=2000)
+	self.makeWall(direction = 'V', size = self.size,x = 0,z=2000)
+	self.makeWall(direction = 'V', size = self.size,x = -3000,z=2000)
+	
     def tick(self, dt):
         pass
 

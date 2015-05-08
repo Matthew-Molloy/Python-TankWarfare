@@ -95,11 +95,17 @@ class Tank(Entity):
                     self.speed = 0
                     self.desiredSpeed = 0
 
+            if target.uiname == 'IWALL' and target.eid is not self.eid:
+                if self.distance.valueDegrees() < target.checkValue:
+                    self.collision = True
+                    self.speed = 0
+                    self.desiredSpeed = 0
+	     	   
             if target.uiname == 'CBALL' and target.tankID != self.eid:
                 if self.distance.valueDegrees() < target.checkValue:
                     self.collision = True
                     target.pos.y -= 10000
-                    self.health -= 10
+                    self.health -= 5
                     ele = self.engine.widgetMgr.overlayManager.getOverlayElement(self.oElement)
                     ele.setCaption(self.oElement + " Health: " + str(self.health))
 
@@ -174,7 +180,7 @@ class OutterWall(Entity):
         self.speed = 0
         self.heading = 0
         self.engine = engine
-        self.checkValue = 300
+        self.checkValue = 400
         self.tankID = tankID
 
         self.node = self.engine.gfxMgr.sceneManager.getRootSceneNode().createChildSceneNode(self.pos)
@@ -193,7 +199,7 @@ class OutterWall(Entity):
 class InnerWall(Entity):
     def __init__(self, id, engine, tankID='Null', pos=None, vel=MyVector(0, 0, 0), yaw=0):
         Entity.__init__(self, id, engine=engine, pos=pos, vel=vel, yaw=yaw)
-        self.mesh = 'Wall4.mesh'
+        self.mesh = 'wallCube.mesh'
         self.material = "Examples/CannonBall"
         self.uiname = 'IWALL'
         self.eid = id
