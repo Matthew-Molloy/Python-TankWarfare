@@ -12,6 +12,11 @@ class EntityMgr:
         self.selectedEntIndecies = []
         self.selectedEnt = None
         self.entTypes = [ent.Tank]
+        self.tank1Camo = ["Examples/Camo1","Examples/sandStorm_t1","Examples/up_t1","Examples/Camo1","Examples/1000_t1"]
+        self.tank2Camo = ["Examples/Camo2","Examples/sandStorm_t2","Examples/up_t2","Examples/Camo2","Examples/1000_t2"]
+        self.walls = ["Examples/CannonBall","Examples/sandStorm_walls","Examples/up_walls","Examples/CannonBall","Examples/1000_walls"]
+        self.ground = ["Examples/GrassFloor","Examples/sandStorm_ground","Examples/up_ground","Examples/getLow_ground","Examples/1000_ground"]
+        self.sky = []
         pass
 
     def init(self):
@@ -52,5 +57,22 @@ class EntityMgr:
 
     def getSelected(self):
         return self.selectedEnt
+
+    def nextTheme(self):
+       self.tank1Camo = self.tank1Camo[1:] + [self.tank1Camo[0]]
+       self.tank2Camo = self.tank2Camo[1:] + [self.tank2Camo[0]]
+       self.walls = self.walls[1:] + [self.walls[0]]
+       self.ground = self.ground[1:] + [self.ground[0]]
+
+       self.ents[0].setMaterial(self.tank1Camo[0])
+       self.ents[1].setMaterial(self.tank2Camo[0])
+       self.engine.gfxMgr.ground.setMaterialName(self.ground[0])
+       i = 0
+       for wall in self.ents:
+          if i <= 1:
+            pass
+          else:
+            self.ents[i].setMaterial(self.walls[0])
+          i += 1
 
 

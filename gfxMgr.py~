@@ -83,7 +83,7 @@ class GfxMgr:
         self.sceneManager.getRootSceneNode().createChildSceneNode().attachObject(self.ground)
         self.ground.setMaterialName("Examples/GrassFloor")
         self.ground.castShadows = False
-        self.sceneManager.setSkyBox(True, "Examples/StormySkyBox",1100,False)
+        self.sceneManager.setSkyBox(True, "Examples/StormySkyBox",11000,False)
 
 
     # here setup the input system (OIS is the one preferred with Ogre3D)

@@ -86,12 +86,13 @@ class ControlMgr(ogre.FrameListener):
 
         for event in pygame.event.get():
             if self.joyStick1:
-                temp = self.joyStick1.get_axis(JoyAxes.LEFT_LEFTRIGHT)
-                temp1 = self.joyStick1.get_axis(JoyAxes.LEFT_UPDOWN)
-                self.tank.desiredSpeed = self.tank.deltaSpeed * -temp1
-                self.tank.collision = False
-                self.tank.desiredHeading -= self.tank.deltaYaw * temp
-                if self.joyStick1.get_axis(JoyAxes.RT) > 0 and self.toggle < 0:
+                if self.engine.overlayMgr.showMenu is False:
+                    temp = self.joyStick1.get_axis(JoyAxes.LEFT_LEFTRIGHT)
+                    temp1 = self.joyStick1.get_axis(JoyAxes.LEFT_UPDOWN)
+                    self.tank.desiredSpeed = self.tank.deltaSpeed * -temp1
+                    self.tank.collision = False
+                    self.tank.desiredHeading -= self.tank.deltaYaw * temp
+                if self.joyStick1.get_axis(JoyAxes.RT) > 0 and self.toggle < 0 and self.engine.overlayMgr.showMenu is False:
                     self.toggle = 2
                     self.sound.shoot1()
                     self.tank.shoot()
@@ -105,19 +106,19 @@ class ControlMgr(ogre.FrameListener):
                    self.mtoggle = 2
                    self.engine.soundMgr.play_next_song()
                    self.gfx.ground.setMaterialName("Examples/RustySteel")
-                   self.gfx.sceneManager.setSkyBox(True,"Examples/CloudyNoonSkyBox")
 
             if self.joyStick2:
-                temp = self.joyStick2.get_axis(JoyAxes.LEFT_LEFTRIGHT)
-                temp1 = self.joyStick2.get_axis(JoyAxes.LEFT_UPDOWN)
-                self.tank1.desiredSpeed = self.tank1.deltaSpeed * -temp1
-                self.tank1.collision = False
-                self.tank1.desiredHeading -= self.tank1.deltaYaw * temp
+                if self.engine.overlayMgr.showMenu is False:
+                    temp = self.joyStick2.get_axis(JoyAxes.LEFT_LEFTRIGHT)
+                    temp1 = self.joyStick2.get_axis(JoyAxes.LEFT_UPDOWN)
+                    self.tank1.desiredSpeed = self.tank1.deltaSpeed * -temp1
+                    self.tank1.collision = False
+                    self.tank1.desiredHeading -= self.tank1.deltaYaw * temp
 
-                if self.joyStick2.get_axis(JoyAxes.RT) > 0 and self.toggle1 < 0:
-                    self.toggle1 = 2
-                    self.sound.shoot2()
-                    self.tank1.shoot()
+                    if self.joyStick2.get_axis(JoyAxes.RT) > 0 and self.toggle1 < 0:
+                        self.toggle1 = 2
+                        self.sound.shoot2()
+                        self.tank1.shoot()
 
         return True
 

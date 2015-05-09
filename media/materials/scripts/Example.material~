@@ -154,7 +154,40 @@ material Examples/CloudySky
 		}
 	}
 }
+material Examples/sandStorm_sky
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			depth_write off
 
+			texture_unit
+			{
+				texture sandStorm_sky.jpg
+				scroll_anim 0.15 0
+			}
+		}
+	}
+}
+material Examples/up_sky
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			depth_write off
+
+			texture_unit
+			{
+				texture up_sky.jpg
+				scroll_anim 0.15 0
+			}
+		}
+	}
+}
 material Examples/CloudyNoon
 {
 	technique
@@ -166,7 +199,7 @@ material Examples/CloudyNoon
 
 			texture_unit
 			{
-				texture cloudy_noon.jpg separateUV
+				cubic_texture cloudy_noon.jpg separateUV
 				scroll_anim 0.15 0
 			}
 		}
@@ -324,7 +357,188 @@ material Examples/EveningSkyBox
 		}
 	}
 }
+material Examples/1000_t1
+{
+	technique
+	{
+		pass
+		{
 
+			texture_unit
+			{
+				texture 1000_t1.jpg
+			}
+		}
+	}
+}
+material Examples/1000_t2
+{
+	technique
+	{
+		pass
+		{
+
+			texture_unit
+			{
+				texture 1000_t2.jpg
+			}
+		}
+	}
+}
+material Examples/sandStorm_t1
+{
+	technique
+	{
+		pass
+		{
+
+			texture_unit
+			{
+				texture sandStorm_t1.jpg
+			}
+		}
+	}
+}
+material Examples/sandStorm_t2
+{
+	technique
+	{
+		pass
+		{
+
+			texture_unit
+			{
+				texture sandStorm_t2.jpeg
+			}
+		}
+	}
+}
+material Examples/up_t1
+{
+	technique
+	{
+		pass
+		{
+
+			texture_unit
+			{
+				texture up_t1.jpg
+			}
+		}
+	}
+}
+material Examples/up_t2
+{
+	technique
+	{
+		pass
+		{
+
+			texture_unit
+			{
+				texture up_t2.jpg
+			}
+		}
+	}
+}
+material Examples/1000_walls
+{
+	technique
+	{
+		pass
+		{
+
+			texture_unit
+			{
+				texture 1000_walls.jpg
+			}
+		}
+	}
+}
+material Examples/up_walls
+{
+	technique
+	{
+		pass
+		{
+
+			texture_unit
+			{
+				texture up_walls.jpg
+			}
+		}
+	}
+}
+material Examples/sandStorm_walls
+{
+	technique
+	{
+		pass
+		{
+
+			texture_unit
+			{
+				texture sandStorm_walls.jpg
+			}
+		}
+	}
+}
+material Examples/1000_ground
+{
+	technique
+	{
+		pass
+		{
+
+			texture_unit
+			{
+				texture 1000_ground.jpg
+			}
+		}
+	}
+}
+material Examples/up_ground
+{
+	technique
+	{
+		pass
+		{
+
+			texture_unit
+			{
+				texture up_ground.jpg
+			}
+		}
+	}
+}
+material Examples/getLow_ground
+{
+	technique
+	{
+		pass
+		{
+
+			texture_unit
+			{
+				texture getLow_ground.jpg
+			}
+		}
+	}
+}
+material Examples/sandStorm_ground
+{
+	technique
+	{
+		pass
+		{
+
+			texture_unit
+			{
+				texture sandStorm_ground.jpg
+			}
+		}
+	}
+}
 material Examples/Camo1
 {
 	technique
