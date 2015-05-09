@@ -10,7 +10,41 @@ material ECSLENT/UI
 
 			texture_unit
 			{
-				texture deal-with-it.png
+				texture ecslentUI3.png
+			}
+		}
+	}
+}
+material END/UI
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture p1.png
+			}
+		}
+	}
+}
+material END1/UI
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture p2.png
 			}
 		}
 	}

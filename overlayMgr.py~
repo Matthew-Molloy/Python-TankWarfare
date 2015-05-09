@@ -9,8 +9,12 @@ class OverlayMgr:
         self.overlayMgr = False
         self.showMenu = True
 
+    def stop(self):
+     pass
+
     def displayMainMenu(self):
         self.entityMgr = self.engine.entityMgr
+	
 
         # Load the font
         font = ogre.FontManager.getSingleton().getResourceIterator()
@@ -28,7 +32,7 @@ class OverlayMgr:
         self.panel.setPosition(0, 0)
         self.panel.setDimensions(1, 1)
         # self.panel.setMaterialName("spacePlane2")
-
+        
         #  Create a button panel
         self.panel2 = self.overlayMgr.createOverlayElement("Panel", "Buttons")
         self.panel2.setPosition(.363, .5)
@@ -97,6 +101,7 @@ class OverlayMgr:
         self.overlay.add2D(self.panel4)
         self.overlay.add2D(self.panel5)
 
+
         # Show the overlay
         self.overlay.show()
 
@@ -106,6 +111,20 @@ class OverlayMgr:
         credits = self.overlayMgr.getOverlayElement("CreditScreen")
         credits.hide()
 
+    def end(self):
+	gameHUD = self.overlayMgr.getOverlayElement("myNewPanel")
+	
+	if(self.engine.loser == '0'):
+	    gameHUD.setMaterialName("END1/UI")
+	    
+	else:
+	    gameHUD.setMaterialName("END/UI")
+	self.engine.soundMgr.Background.stop()
+	self.engine.soundMgr.win.play(-1)
+	
+
+	
+	
     def tick(self, dt):
 
         if self.engine.inputMgr.startCheck == True:
@@ -117,7 +136,6 @@ class OverlayMgr:
             gameHUD.show()
             # self.overlay.hide()
             self.showMenu = False
-            self.engine.controlMgr.initTanks()
 
         if self.engine.inputMgr.instructionsCheck == True and self.engine.inputMgr.startCheck == False:
             instructions = self.overlayMgr.getOverlayElement("InstructionScreen")
@@ -130,3 +148,4 @@ class OverlayMgr:
             credits.show()
             buttons = self.engine.guiMgr.overlayMgr.getOverlayElement("Buttons")
             buttons.hide()
+	

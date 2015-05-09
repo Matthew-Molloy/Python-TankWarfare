@@ -15,3 +15,37 @@ material ECSLENT/UI
 		}
 	}
 }
+material END/UI
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture p1.png
+			}
+		}
+	}
+}
+material END1/UI
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture p2.png
+			}
+		}
+	}
+}

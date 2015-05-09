@@ -21,6 +21,7 @@ class Physics:
         self.ent.vel.z = math.degrees(math.sin(math.radians(-self.ent.heading + self.ent.yawOffset))) * self.ent.speed
         self.ent.vel.y = 0
 
+        self.ent.oldpos = self.ent.pos
         self.ent.pos = self.ent.pos + (self.ent.vel * dtime)
 
         #------------heading----------------------------------

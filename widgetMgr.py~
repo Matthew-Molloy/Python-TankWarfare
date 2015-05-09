@@ -22,7 +22,6 @@ class WidgetMgr:
         self.textArea = self.overlayManager.createOverlayElement("TextArea", "leftText");
         self.panel.addChild(self.textArea)
         self.textArea.setMetricsMode(ogre.GMM_PIXELS)
-        self.textArea.setCaption("Player One: " + "Lives")
         self.textArea.setPosition(self.xOffset, (self.yOffset / 2) - 50)
         self.textArea.setDimensions(self.width, self.height)
         self.textArea.setFontName("BlueHighway")
@@ -32,7 +31,6 @@ class WidgetMgr:
         self.textArea2 = self.overlayManager.createOverlayElement("TextArea", "rightText");
         self.panel.addChild(self.textArea2)
         self.textArea2.setMetricsMode(ogre.GMM_PIXELS)
-        self.textArea2.setCaption("Player Two: " + "Lives")
         self.textArea2.setPosition(self.width - 450, (self.yOffset / 2) - 50)
         self.textArea2.setDimensions(self.width, self.height)
         self.textArea2.setFontName("BlueHighway")
@@ -58,6 +56,16 @@ class WidgetMgr:
         self.text.setColour(( 1, 1, 1 ))
         self.text.setSpaceWidth(.01)
         self.panel.addChild(self.text)
+
+	self.text1 = self.overlayManager.createOverlayElement("TextArea", "textEnd")
+        self.text1.setPosition(.15, .15)
+        self.text1.setDimensions(1, 1)
+        self.text1.setCaption("")
+        self.text1.setCharHeight(.1)
+        self.text1.setFontName("StarWars")
+        self.text1.setColourTop((0.05, 0.05, 0.05))
+        self.text1.setColourBottom((0.7, 0.7, 0.9))
+	self.panel.addChild(self.text1)
 
 
         self.overlay = self.overlayManager.create("myOverlay")

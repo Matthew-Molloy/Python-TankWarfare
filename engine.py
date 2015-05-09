@@ -6,7 +6,7 @@ class Engine(object):
     '''
 
     def __init__(self):
-        pass
+        self.loser = -1
 
     def init(self):
         import overlayMgr

@@ -16,6 +16,7 @@ class Entity:
         self.yawOffset = 0
         self.collision = False
         self.pos = pos
+        self.oldpos = pos
         self.vel = vel
         self.mesh = mesh
         self.deltaSpeed = 30
@@ -94,20 +95,31 @@ class Tank(Entity):
                     self.collision = True
                     self.speed = 0
                     self.desiredSpeed = 0
+                    self.pos = self.oldpos
 
             if target.uiname == 'IWALL' and target.eid is not self.eid:
                 if self.distance.valueDegrees() < target.checkValue:
                     self.collision = True
                     self.speed = 0
                     self.desiredSpeed = 0
+                    self.pos = self.oldpos
 	     	   
             if target.uiname == 'CBALL' and target.tankID != self.eid:
                 if self.distance.valueDegrees() < target.checkValue:
                     self.collision = True
                     target.pos.y -= 10000
-                    self.health -= 5
+                    self.health -= 10
                     ele = self.engine.widgetMgr.overlayManager.getOverlayElement(self.oElement)
                     ele.setCaption(self.oElement + " Health: " + str(self.health))
+                    if self.health <= 0:
+                        #self.engine.keepRunning = False
+			self.engine.loser = self.eid
+			print self.eid
+			self.engine.overlayMgr.end()
+            if self.pos.z > 5000 or self.pos.z < -5000 or self.pos.x > 5000 or self.pos.x < -5000:
+               self.pos = self.oldpos
+
+
 
     def shoot(self):
         ent = self.engine.entityMgr.createEnt(CannonBall, pos=MyVector(self.pos.x, 250, self.pos.z))

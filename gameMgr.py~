@@ -46,7 +46,7 @@ class GameMgr:
             entity.setMaterial("Examples/Camo2")
             print "GameMgr Created: ", entity.uiname, entity.eid
 
-        self.loadMap()
+        #self.loadMap()
 
     def loadMap(self):
         entityMgr = self.engine.entityMgr
@@ -72,26 +72,7 @@ class GameMgr:
 	self.makeWall(direction = 'V', size = self.size,x = 3000,z=2000)
 	self.makeWall(direction = 'V', size = self.size,x = 0,z=2000)
 	self.makeWall(direction = 'V', size = self.size,x = -3000,z=2000)
-	'''
-	entity = entityMgr.createEnt(ent.InnerWall, pos=MyVector(0,150,0),yaw=0)
-	entity.setMaterial(wallMaterial)
-	entity = entityMgr.createEnt(ent.InnerWall, pos=MyVector(0,150,3000),yaw=90)
-        entity.setMaterial(wallMaterial)
-	entity = entityMgr.createEnt(ent.InnerWall, pos=MyVector(0,150,-3000),yaw=90)
-        entity.setMaterial(wallMaterial)
-	entity = entityMgr.createEnt(ent.InnerWall, pos=MyVector(3000,150,3000),yaw=90)
-        entity.setMaterial(wallMaterial)
-	entity = entityMgr.createEnt(ent.InnerWall, pos=MyVector(-3000,150,3000),yaw=90)
-        entity.setMaterial(wallMaterial)
-	entity = entityMgr.createEnt(ent.InnerWall, pos=MyVector(3000,150,-3000),yaw=90)
-        entity.setMaterial(wallMaterial)
-	entity = entityMgr.createEnt(ent.InnerWall, pos=MyVector(-3000,150,-3000),yaw=90)
-        entity.setMaterial(wallMaterial)
-	entity = entityMgr.createEnt(ent.InnerWall, pos=MyVector(2000,150,0),yaw=90)
-        entity.setMaterial(wallMaterial)
-	entity = entityMgr.createEnt(ent.InnerWall, pos=MyVector(-2000,150 ,0),yaw=90)
-        entity.setMaterial(wallMaterial)
-	'''
+	
     def tick(self, dt):
         pass
 

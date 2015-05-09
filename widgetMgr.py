@@ -57,7 +57,6 @@ class WidgetMgr:
         self.text.setSpaceWidth(.01)
         self.panel.addChild(self.text)
 
-
         self.overlay = self.overlayManager.create("myOverlay")
         self.overlay.add2D(self.panel)
         self.textArea.show()
