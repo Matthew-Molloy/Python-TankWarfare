@@ -464,7 +464,7 @@ material Examples/up_walls
 
 			texture_unit
 			{
-				texture up_walls.jpg
+				texture disco.jpg
 			}
 		}
 	}
@@ -492,7 +492,7 @@ material Examples/1000_ground
 
 			texture_unit
 			{
-				texture 1000_ground.jpg
+				texture BeachStones.jpg
 			}
 		}
 	}

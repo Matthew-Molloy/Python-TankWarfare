@@ -16,7 +16,7 @@ class EntityMgr:
         self.tank2Camo = ["Examples/Camo2","Examples/sandStorm_t2","Examples/up_t2","Examples/Camo2","Examples/1000_t2"]
         self.walls = ["Examples/CannonBall","Examples/sandStorm_walls","Examples/up_walls","Examples/CannonBall","Examples/1000_walls"]
         self.ground = ["Examples/GrassFloor","Examples/sandStorm_ground","Examples/up_ground","Examples/getLow_ground","Examples/1000_ground"]
-        self.sky = []
+        self.sky = ["Examples/CloudySky","Examples/sandStorm_sky","Examples/up_sky","Examples/CloudySky","Examples/CloudySky"]
         pass
 
     def init(self):
@@ -62,17 +62,17 @@ class EntityMgr:
        self.tank1Camo = self.tank1Camo[1:] + [self.tank1Camo[0]]
        self.tank2Camo = self.tank2Camo[1:] + [self.tank2Camo[0]]
        self.walls = self.walls[1:] + [self.walls[0]]
+       self.currentWall = self.walls[0]
        self.ground = self.ground[1:] + [self.ground[0]]
+       self.sky = self.sky[1:] + [self.sky[0]]
 
        self.ents[0].setMaterial(self.tank1Camo[0])
        self.ents[1].setMaterial(self.tank2Camo[0])
        self.engine.gfxMgr.ground.setMaterialName(self.ground[0])
-       i = 0
-       for wall in self.ents:
-          if i <= 1:
-            pass
-          else:
-            self.ents[i].setMaterial(self.walls[0])
-          i += 1
+       self.engine.gfxMgr.sceneManager.setSkyDome(True, self.sky[0], 5, 8)
+       
+       for i in range(6,96):
+          self.ents[i].setMaterial(self.currentWall)
+         
 
 
