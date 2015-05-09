@@ -34,6 +34,7 @@ class ControlMgr(ogre.FrameListener):
         # Key and mouse state tracking.
         self.toggle = 0
         self.toggle1 = 0
+        self.mtoggle = 0
         self.mouseDown = False
         # Set the rotation and movement speed.
 
@@ -77,6 +78,9 @@ class ControlMgr(ogre.FrameListener):
         if self.toggle1 >= 0:
             self.toggle1 -= frameEvent.timeSinceLastFrame
 
+        if self.mtoggle >= 0:
+            self.mtoggle -= frameEvent.timeSinceLastFrame
+
 
                 # -------------------------------------------------------------------------------------
 
@@ -96,6 +100,10 @@ class ControlMgr(ogre.FrameListener):
                     self.toggle = 2
                     self.engine.inputMgr.startCheck = True
                     self.engine.gameMgr.loadLevel()
+
+                if self.joyStick1.get_button(JoyButtons.A) and self.mtoggle < 0:
+                   self.mtoggle = 2
+                   self.engine.soundMgr.play_next_song()
 
             if self.joyStick2:
                 temp = self.joyStick2.get_axis(JoyAxes.LEFT_LEFTRIGHT)

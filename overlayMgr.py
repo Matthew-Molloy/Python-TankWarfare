@@ -119,7 +119,7 @@ class OverlayMgr:
 	    
 	else:
 	    gameHUD.setMaterialName("END/UI")
-	self.engine.soundMgr.Background.stop()
+	self.engine.soundMgr.PlayList.stop()
 	self.engine.soundMgr.win.play(loops=-1)
 	
 
