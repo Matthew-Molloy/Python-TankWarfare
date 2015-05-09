@@ -79,11 +79,11 @@ class GfxMgr:
         self.plane = ogre.Plane((0, 1, 0), 0)
         meshManager = ogre.MeshManager.getSingleton()
         meshManager.createPlane('Ground', 'General', self.plane, 10000, 10000, 20, 20, True, 1, 5, 5, (0, 0, 1))
-        ent = self.sceneManager.createEntity('GroundEntity', 'Ground')
-        self.sceneManager.getRootSceneNode().createChildSceneNode().attachObject(ent)
-        ent.setMaterialName("Examples/GrassFloor")
-        ent.castShadows = False
-        self.sceneManager.setSkyDome(True, "Examples/CloudySky", 5, 8)
+        self.ground = self.sceneManager.createEntity('GroundEntity', 'Ground')
+        self.sceneManager.getRootSceneNode().createChildSceneNode().attachObject(self.ground)
+        self.ground.setMaterialName("Examples/GrassFloor")
+        self.ground.castShadows = False
+        self.sceneManager.setSkyBox(True, "Examples/StormySkyBox",11000,False)
 
 
     # here setup the input system (OIS is the one preferred with Ogre3D)

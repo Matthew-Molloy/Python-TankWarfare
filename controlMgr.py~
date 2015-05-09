@@ -104,6 +104,8 @@ class ControlMgr(ogre.FrameListener):
                 if self.joyStick1.get_button(JoyButtons.A) and self.mtoggle < 0:
                    self.mtoggle = 2
                    self.engine.soundMgr.play_next_song()
+                   self.gfx.ground.setMaterialName("Examples/RustySteel")
+                   self.gfx.sceneManager.setSkyBox(True,"Examples/CloudyNoonSkyBox")
 
             if self.joyStick2:
                 temp = self.joyStick2.get_axis(JoyAxes.LEFT_LEFTRIGHT)
