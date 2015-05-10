@@ -82,7 +82,7 @@ class ControlMgr(ogre.FrameListener):
 
         if self.t2Cannon >= 0:
             self.t2Cannon -= frameEvent.timeSinceLastFrame
-            if self.t1Cannon <= 0:
+            if self.t2Cannon <= 0:
                self.tank1.cannon = True
 
         if self.t1Missile >= 0:
@@ -121,7 +121,7 @@ class ControlMgr(ogre.FrameListener):
                     self.engine.inputMgr.startCheck = True
                     self.engine.gameMgr.loadLevel()
 
-                if self.joyStick1.get_button(JoyButtons.A) and self.mtoggle < 0:
+                if self.joyStick1.get_button(JoyButtons.A) and self.mtoggle < 0 and self.end:
                    self.mtoggle = 2
                    self.engine.soundMgr.play_next_song()
                    self.engine.entityMgr.nextTheme()
@@ -144,10 +144,10 @@ class ControlMgr(ogre.FrameListener):
                     self.tank1.cannon = False
                     self.t2Cannon = 2
                     self.sound.shoot2()
-                    self.tank.shoot()
+                    self.tank1.shoot()
 
 
-                if self.joyStick1.get_button(3)  and self.t2Missile < 0 and self.end:
+                if self.joyStick2.get_button(3)  and self.t2Missile < 0 and self.end:
                     self.tank1.missile = False
                     self.t2Missile = 2
                     self.sound.shoot2()

@@ -455,6 +455,20 @@ material Examples/1000_walls
 		}
 	}
 }
+material Examples/Missile
+{
+	technique
+	{
+		pass
+		{
+
+			texture_unit
+			{
+				texture missile_texture.jpg
+			}
+		}
+	}
+}
 material Examples/up_walls
 {
 	technique

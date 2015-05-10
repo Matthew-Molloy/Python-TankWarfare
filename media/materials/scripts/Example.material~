@@ -492,7 +492,7 @@ material Examples/1000_ground
 
 			texture_unit
 			{
-				texture BeachStones.jpg
+				texture road.jpeg
 			}
 		}
 	}

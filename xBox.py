@@ -9,14 +9,14 @@ class JoyEvent:
 
 
 class JoyButtons:  # XBox Controller, the buttons need to be checked
-    A = 1
+    A = 0
     B = 1
     X = 2
     Y = 3
     LB = 4
     RB = 5
     BACK = 6
-    START = 0
+    START = 9
     XBOX = 8
     LC = 7
     RC = 10

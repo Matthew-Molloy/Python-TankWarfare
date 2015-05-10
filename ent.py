@@ -140,7 +140,7 @@ class Tank(Entity):
                     self.health -= 10
                     ele = self.engine.widgetMgr.overlayManager.getOverlayElement(self.oElement)
                     ele.setCaption(self.oElement + " Health: " + str(self.health))
-                    if self.health <= 0:
+                    if self.health <= 0 and self.engine.controlMgr.end == True:
                         self.engine.controlMgr.end = False
 			self.engine.loser = self.eid
 			self.engine.overlayMgr.end()
@@ -160,7 +160,7 @@ class Tank(Entity):
 
     def shootMissile(self):
         ent = self.engine.entityMgr.createEnt(Missile, pos=MyVector(self.pos.x, 250, self.pos.z))
-        ent.setMaterial("Examples/Camo1")
+        ent.setMaterial("Examples/Missile")
         ent.tankID = self.eid
         ent.desiredHeading = self.desiredHeading
 
@@ -279,7 +279,7 @@ class InnerWall(Entity):
 class Missile(Entity):
     def __init__(self, id, engine, tankID='Null', pos=None, vel=MyVector(0, 0, 0), yaw=0, prey = None):
         Entity.__init__(self, id, engine=engine, pos=pos, vel=vel, yaw=yaw)
-        self.mesh = 'Sphere20.mesh'
+        self.mesh = 'missile.mesh'
         self.material = "Examples/CannonBall"
         self.uiname = 'MISSILE'
         self.eid = id
