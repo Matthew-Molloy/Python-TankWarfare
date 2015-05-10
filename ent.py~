@@ -146,7 +146,7 @@ class Tank(Entity):
 			self.engine.overlayMgr.end()
 
 
-            if self.pos.z > 5000 or self.pos.z < -5000 or self.pos.x > 5000 or self.pos.x < -5000:
+            if self.pos.z > 4900 or self.pos.z < -4900 or self.pos.x > 4900 or self.pos.x < -4900:
                self.pos = self.oldpos
 
 
@@ -160,7 +160,7 @@ class Tank(Entity):
 
     def shootMissile(self):
         ent = self.engine.entityMgr.createEnt(Missile, pos=MyVector(self.pos.x, 250, self.pos.z))
-        ent.setMaterial("Examples/Camo1")
+        ent.setMaterial("Examples/Missile")
         ent.tankID = self.eid
         ent.desiredHeading = self.desiredHeading
 

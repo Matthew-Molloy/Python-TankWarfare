@@ -146,7 +146,7 @@ class Tank(Entity):
 			self.engine.overlayMgr.end()
 
 
-            if self.pos.z > 5000 or self.pos.z < -5000 or self.pos.x > 5000 or self.pos.x < -5000:
+            if self.pos.z > 4800 or self.pos.z < -4800 or self.pos.x > 4800 or self.pos.x < -4800:
                self.pos = self.oldpos
 
 

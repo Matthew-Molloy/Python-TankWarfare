@@ -94,22 +94,40 @@ class OverlayMgr:
         self.text.setColour(( 1, 1, 1 ))
         self.text.setSpaceWidth(.01)
         self.panel2.addChild(self.text)
+	
+	self.intro = self.overlayMgr.createOverlayElement("Panel", "intro")
+        self.intro.setPosition(.36, .54)
+        self.intro.setDimensions(0.1, 0.15)
+        self.intro.setMaterialName("INTRO/UI")
+	
+
+	self.credits = self.overlayMgr.createOverlayElement("Panel", "introCredits")
+        self.credits.setPosition(.325, .25)
+        self.credits.setDimensions(.35, .50)
+        self.credits.setMaterialName("CREDITS/UI")
+	self.credits.hide()
+
+	self.instructions = self.overlayMgr.createOverlayElement("Panel", "introInstructions")
+        self.instructions.setPosition(.118, .12)
+        self.instructions.setDimensions(.75, .75)
+        self.instructions.setMaterialName("INSTRUCTIONS/UI")
+	self.instructions.hide()
+	
 
         # Add the panel to the overlay
         self.overlay.add2D(self.panel)
         self.overlay.add2D(self.panel2)
         self.overlay.add2D(self.panel4)
         self.overlay.add2D(self.panel5)
+	self.overlay.add2D(self.credits)
+	self.overlay.add2D(self.instructions)
+	self.overlay.add2D(self.intro)
+	
 
 
         # Show the overlay
         self.overlay.show()
 
-        instructions = self.overlayMgr.getOverlayElement("InstructionScreen")
-        instructions.hide()
-
-        credits = self.overlayMgr.getOverlayElement("CreditScreen")
-        credits.hide()
 
     def end(self):
 	gameHUD = self.overlayMgr.getOverlayElement("myNewPanel")
@@ -137,11 +155,6 @@ class OverlayMgr:
             # self.overlay.hide()
             self.showMenu = False
 
-        if self.engine.inputMgr.instructionsCheck == True and self.engine.inputMgr.startCheck == False:
-            instructions = self.overlayMgr.getOverlayElement("InstructionScreen")
-            instructions.show()
-            buttons = self.engine.guiMgr.overlayMgr.getOverlayElement("Buttons")
-            buttons.hide()
 
         if self.engine.inputMgr.creditsCheck == True and self.engine.inputMgr.startCheck == True:
             credits = self.overlayMgr.getOverlayElement("CreditScreen")

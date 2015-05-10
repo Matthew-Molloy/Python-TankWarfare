@@ -119,18 +119,48 @@ class ControlMgr(ogre.FrameListener):
                 if self.joyStick1.get_button(JoyButtons.START) and self.engine.overlayMgr.showMenu is True and self.mtoggle < 0:
                     self.mtoggle = 2
                     self.engine.inputMgr.startCheck = True
+                    self.engine.overlayMgr.intro.hide()
+                    self.engine.overlayMgr.credits.hide()
+                    self.engine.overlayMgr.instructions.hide()
                     self.engine.gameMgr.loadLevel()
 
-                if self.joyStick1.get_button(JoyButtons.A) and self.mtoggle < 0:
+                if self.joyStick1.get_button(13) and self.mtoggle < 0 and self.end:
                    self.mtoggle = 2
                    self.engine.soundMgr.play_next_song()
                    self.engine.entityMgr.nextTheme()
 
-                if self.joyStick1.get_button(3)  and self.t1Missile < 0 and self.end:
+                if self.joyStick1.get_button(2)  and self.t1Missile < 0 and self.end and self.engine.overlayMgr.showMenu is False:
                     self.tank.missile = False
                     self.t1Missile = 2
                     self.sound.shoot1()
                     self.tank.shootMissile()
+
+
+                if self.joyStick1.get_button(0) and self.engine.overlayMgr.showMenu is True and self.mtoggle < 0:
+                    self.mtoggle = 2
+                    if( self.engine.inputMgr.creditsCheck is False ):
+                        self.engine.overlayMgr.credits.show()
+                        self.engine.overlayMgr.intro.hide()
+                        self.engine.overlayMgr.instructions.hide()
+                        self.engine.inputMgr.creditsCheck = True
+                    else:
+                        self.engine.overlayMgr.credits.hide()
+                        self.engine.overlayMgr.instructions.hide()
+                        self.engine.overlayMgr.intro.show()
+                        self.engine.inputMgr.creditsCheck = False
+
+                if self.joyStick1.get_button(3) and self.engine.overlayMgr.showMenu is True and self.mtoggle < 0:
+                    self.mtoggle = 2
+                    if( self.engine.inputMgr.instructionsCheck is False ):
+                        self.engine.overlayMgr.instructions.show()
+                        self.engine.overlayMgr.intro.hide()
+                        self.engine.overlayMgr.credits.hide()
+                        self.engine.inputMgr.instructionsCheck = True
+                    else:
+                        self.engine.overlayMgr.instructions.hide()
+                        self.engine.overlayMgr.credits.hide()
+                        self.engine.overlayMgr.intro.show()
+                        self.engine.inputMgr.instructionsCheck = False
 
             if self.joyStick2:
                 if self.engine.overlayMgr.showMenu is False:
@@ -147,7 +177,7 @@ class ControlMgr(ogre.FrameListener):
                     self.tank1.shoot()
 
 
-                if self.joyStick2.get_button(3)  and self.t2Missile < 0 and self.end:
+                if self.joyStick2.get_button(2)  and self.t2Missile < 0 and self.end and self.engine.overlayMgr.showMenu is False:
                     self.tank1.missile = False
                     self.t2Missile = 2
                     self.sound.shoot2()

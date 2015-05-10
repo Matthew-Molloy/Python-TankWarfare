@@ -49,3 +49,54 @@ material END1/UI
 		}
 	}
 }
+material CREDITS/UI
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture credits.png
+			}
+		}
+	}
+}
+material INSTRUCTIONS/UI
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture instructions.png
+			}
+		}
+	}
+}
+material INTRO/UI
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture OverlayButtons.png
+			}
+		}
+	}
+}
