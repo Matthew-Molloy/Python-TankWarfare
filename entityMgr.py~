@@ -71,7 +71,7 @@ class EntityMgr:
        self.engine.gfxMgr.ground.setMaterialName(self.ground[0])
        self.engine.gfxMgr.sceneManager.setSkyDome(True, self.sky[0], 5, 8)
        
-       for i in range(4,96):
+       for i in range(6,96):
           self.ents[i].setMaterial(self.currentWall)
          
 

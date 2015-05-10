@@ -59,6 +59,7 @@ class EntityMgr:
         return self.selectedEnt
 
     def nextTheme(self):
+     if self.engine.controlMgr.end:
        self.tank1Camo = self.tank1Camo[1:] + [self.tank1Camo[0]]
        self.tank2Camo = self.tank2Camo[1:] + [self.tank2Camo[0]]
        self.walls = self.walls[1:] + [self.walls[0]]

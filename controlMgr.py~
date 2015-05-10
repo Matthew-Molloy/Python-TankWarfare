@@ -32,14 +32,17 @@ class ControlMgr(ogre.FrameListener):
         self.mouseDown = False
 
         # Key and mouse state tracking.
-        self.toggle = 0
-        self.toggle1 = 0
+        self.t1Cannon = 0
+        self.t2Cannon = 0
+        self.t1Missile = 0
+        self.t2Missile = 0
         self.mtoggle = 0
+        self.end = True
         self.mouseDown = False
         # Set the rotation and movement speed.
 
-        self.tank = self.entityMgr.ents[0]
-        self.tank1 = self.entityMgr.ents[1]
+        self.tank = self.entityMgr.ents[1]
+        self.tank1 = self.entityMgr.ents[0]
         self.tank1.node.attachObject(self.gfx.camera1)
         self.tank.node.attachObject(self.gfx.camera)
 
@@ -71,12 +74,26 @@ class ControlMgr(ogre.FrameListener):
         self.keyboard.capture()
         self.mouse.capture()
 
-        # Update the toggle timer.
-        if self.toggle >= 0:
-            self.toggle -= frameEvent.timeSinceLastFrame
+        # Update the toggle timers.
+        if self.t1Cannon >= 0:
+            self.t1Cannon -= frameEvent.timeSinceLastFrame
+            if self.t1Cannon <= 0:
+               self.tank.cannon = True
 
-        if self.toggle1 >= 0:
-            self.toggle1 -= frameEvent.timeSinceLastFrame
+        if self.t2Cannon >= 0:
+            self.t2Cannon -= frameEvent.timeSinceLastFrame
+            if self.t1Cannon <= 0:
+               self.tank1.cannon = True
+
+        if self.t1Missile >= 0:
+            self.t1Missile -= frameEvent.timeSinceLastFrame
+            if self.t1Missile <= 0:
+               self.tank.missile = True
+
+        if self.t2Missile >= 0:
+            self.t2Missile -= frameEvent.timeSinceLastFrame
+            if self.t2Missile <= 0:
+               self.tank1.missile = True
 
         if self.mtoggle >= 0:
             self.mtoggle -= frameEvent.timeSinceLastFrame
@@ -92,20 +109,28 @@ class ControlMgr(ogre.FrameListener):
                     self.tank.desiredSpeed = self.tank.deltaSpeed * -temp1
                     self.tank.collision = False
                     self.tank.desiredHeading -= self.tank.deltaYaw * temp
-                if self.joyStick1.get_axis(JoyAxes.RT) > 0 and self.toggle < 0 and self.engine.overlayMgr.showMenu is False:
-                    self.toggle = 2
+
+                if self.joyStick1.get_axis(JoyAxes.RT) > 0 and self.t1Cannon < 0 and self.engine.overlayMgr.showMenu is False:
+                    self.tank.cannon = False
+                    self.t1Cannon = 2
                     self.sound.shoot1()
                     self.tank.shoot()
 
-                if self.joyStick1.get_button(JoyButtons.START) and self.engine.overlayMgr.showMenu is True and self.toggle < 0:
-                    self.toggle = 2
+                if self.joyStick1.get_button(JoyButtons.START) and self.engine.overlayMgr.showMenu is True and self.mtoggle < 0:
+                    self.mtoggle = 2
                     self.engine.inputMgr.startCheck = True
                     self.engine.gameMgr.loadLevel()
 
                 if self.joyStick1.get_button(JoyButtons.A) and self.mtoggle < 0:
                    self.mtoggle = 2
                    self.engine.soundMgr.play_next_song()
-                   self.gfx.ground.setMaterialName("Examples/RustySteel")
+                   self.engine.entityMgr.nextTheme()
+
+                if self.joyStick1.get_button(3)  and self.t1Missile < 0 and self.end:
+                    self.tank.missile = False
+                    self.t1Missile = 2
+                    self.sound.shoot1()
+                    self.tank.shootMissile()
 
             if self.joyStick2:
                 if self.engine.overlayMgr.showMenu is False:
@@ -115,10 +140,18 @@ class ControlMgr(ogre.FrameListener):
                     self.tank1.collision = False
                     self.tank1.desiredHeading -= self.tank1.deltaYaw * temp
 
-                    if self.joyStick2.get_axis(JoyAxes.RT) > 0 and self.toggle1 < 0:
-                        self.toggle1 = 2
-                        self.sound.shoot2()
-                        self.tank1.shoot()
+                if self.joyStick2.get_axis(JoyAxes.RT) > 0 and self.t2Cannon < 0 and self.engine.overlayMgr.showMenu is False:
+                    self.tank1.cannon = False
+                    self.t2Cannon = 2
+                    self.sound.shoot2()
+                    self.tank.shoot()
+
+
+                if self.joyStick1.get_button(3)  and self.t2Missile < 0 and self.end:
+                    self.tank1.missile = False
+                    self.t2Missile = 2
+                    self.sound.shoot2()
+                    self.tank1.shootMissile()
 
         return True
 

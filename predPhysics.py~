@@ -1,0 +1,23 @@
+import math
+
+import utils
+
+
+class Predator:
+    def __init__(self, ent,engine):
+        self.ent = ent
+        self.engine = engine
+
+    def tick(self, dtime):
+        # ----------position-----------------------------------
+
+       if  self.ent.tankID == '0':
+           self.prey = self.engine.entityMgr.ents[1]
+
+       else:
+           self.prey = self.engine.entityMgr.ents[0]
+
+       self.diff = self.prey.pos - self.ent.pos
+
+       if self.diff.z != 0:
+          self.ent.desiredHeading = math.degrees(math.atan2(self.diff.x,self.diff.z))
