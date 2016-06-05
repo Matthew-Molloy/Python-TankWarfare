@@ -1,0 +1,98 @@
+material ECSLENT/UI
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture ecslentUI3.png
+			}
+		}
+	}
+}
+material END/UI
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture p1.png
+			}
+		}
+	}
+}
+material END1/UI
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture p2.png
+			}
+		}
+	}
+}
+material CREDITS/UI
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture credits.png
+			}
+		}
+	}
+}
+material INSTRUCTIONS/UI
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture instructions.png
+			}
+		}
+	}
+}
+material INTRO/UI
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture OverlayButtons.png
+			}
+		}
+	}
+}

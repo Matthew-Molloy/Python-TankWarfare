@@ -1,0 +1,45 @@
+#!/usr/bin/env python
+# This code is Public Domain and was written for Python-Ogre 1.0.
+"""Python-Ogre Basic Tutorial 03: Terrain, Sky, Fog, and the Root Object."""
+ 
+import ogre.renderer.OGRE as ogre
+import SampleFramework as sf
+ 
+ 
+class TutorialApplication (sf.Application):
+    """Application class."""
+ 
+    def _createScene (self):
+        # Create a scene with terrain, sky and fog.
+ 
+        # Setup the fog.
+        fadeColour = (.15,.62,.40)
+        self.renderWindow.getViewport (0).backgroundColour = fadeColour
+        self.sceneManager.setFog (ogre.FOG_EXP2, fadeColour, 0.0, -500, 700)
+	#fadeColour = (.14,.37,.62)
+	#self.sceneManager.setFog (ogre.FOG_LINEAR, fadeColour, 0.0, 50, 500)
+        # Create the terrain
+        self.sceneManager.setWorldGeometry ("terrain.cfg")
+
+
+
+
+ 
+        # Setup a sky plane.
+        plane = ogre.Plane ((0, -1, 0), -10)
+        self.sceneManager.setSkyBox( True, "Examples/SpaceSkyBox" )
+ 
+	sunParticle = self.sceneManager.createParticleSystem("Sun", "Space/Sun")
+	particleNode = self.sceneManager.getRootSceneNode().createChildSceneNode("Particle")
+	particleNode.attachObject(sunParticle)
+	particleNode.scale(400,400,400)
+
+
+    def _chooseSceneManager (self):
+        # Select the terrain scene manager.
+        self.sceneManager = self.root.createSceneManager (ogre.ST_EXTERIOR_CLOSE,
+                                                         'TerrainSM')
+ 
+if __name__ == '__main__':
+    ta = TutorialApplication ()
+    ta.go ()

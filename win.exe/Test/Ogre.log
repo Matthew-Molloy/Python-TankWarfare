@@ -1,0 +1,78 @@
+02:54:24: Creating resource group General
+02:54:24: Creating resource group Internal
+02:54:24: Creating resource group Autodetect
+02:54:24: SceneManagerFactory for type 'DefaultSceneManager' registered.
+02:54:24: Registering ResourceManager for type Material
+02:54:24: Registering ResourceManager for type Mesh
+02:54:24: Registering ResourceManager for type Skeleton
+02:54:24: MovableObjectFactory for type 'ParticleSystem' registered.
+02:54:24: OverlayElementFactory for type Panel registered.
+02:54:24: OverlayElementFactory for type BorderPanel registered.
+02:54:24: OverlayElementFactory for type TextArea registered.
+02:54:24: Registering ResourceManager for type Font
+02:54:24: ArchiveFactory for archive type FileSystem registered.
+02:54:24: ArchiveFactory for archive type Zip registered.
+02:54:24: DDS codec registering
+02:54:24: FreeImage version: 3.15.4
+02:54:24: This program uses FreeImage, a free, open source image library supporting all common bitmap formats. See http://freeimage.sourceforge.net for details
+02:54:24: Supported formats: bmp,ico,jpg,jif,jpeg,jpe,jng,koa,iff,lbm,mng,pbm,pbm,pcd,pcx,pgm,pgm,png,ppm,ppm,ras,tga,targa,tif,tiff,wap,wbmp,wbm,psd,cut,xbm,xpm,gif,hdr,g3,sgi,exr,j2k,j2c,jp2,pfm,pct,pict,pic,3fr,arw,bay,bmq,cap,cine,cr2,crw,cs1,dc2,dcr,drf,dsc,dng,erf,fff,ia,iiq,k25,kc2,kdc,mdc,mef,mos,mrw,nef,nrw,orf,pef,ptx,pxn,qtk,raf,raw,rdc,rw2,rwl,rwz,sr2,srf,srw,sti
+02:54:24: Registering ResourceManager for type HighLevelGpuProgram
+02:54:24: Registering ResourceManager for type Compositor
+02:54:24: MovableObjectFactory for type 'Entity' registered.
+02:54:24: MovableObjectFactory for type 'Light' registered.
+02:54:24: MovableObjectFactory for type 'BillboardSet' registered.
+02:54:24: MovableObjectFactory for type 'ManualObject' registered.
+02:54:24: MovableObjectFactory for type 'BillboardChain' registered.
+02:54:24: MovableObjectFactory for type 'RibbonTrail' registered.
+02:54:24: Loading library /usr/lib/OGRE/RenderSystem_GL
+02:54:24: Installing plugin: GL RenderSystem
+02:54:24: OpenGL Rendering Subsystem created.
+02:54:24: Plugin successfully installed
+02:54:24: Loading library /usr/lib/OGRE/Plugin_ParticleFX
+02:54:24: Installing plugin: ParticleFX
+02:54:24: Particle Emitter Type 'Point' registered
+02:54:24: Particle Emitter Type 'Box' registered
+02:54:24: Particle Emitter Type 'Ellipsoid' registered
+02:54:24: Particle Emitter Type 'Cylinder' registered
+02:54:24: Particle Emitter Type 'Ring' registered
+02:54:24: Particle Emitter Type 'HollowEllipsoid' registered
+02:54:24: Particle Affector Type 'LinearForce' registered
+02:54:24: Particle Affector Type 'ColourFader' registered
+02:54:24: Particle Affector Type 'ColourFader2' registered
+02:54:24: Particle Affector Type 'ColourImage' registered
+02:54:24: Particle Affector Type 'ColourInterpolator' registered
+02:54:24: Particle Affector Type 'Scaler' registered
+02:54:24: Particle Affector Type 'Rotator' registered
+02:54:24: Particle Affector Type 'DirectionRandomiser' registered
+02:54:24: Particle Affector Type 'DeflectorPlane' registered
+02:54:24: Plugin successfully installed
+02:54:24: Loading library /usr/lib/OGRE/Plugin_BSPSceneManager
+02:54:24: Installing plugin: BSP Scene Manager
+02:54:24: Plugin successfully installed
+02:54:24: Loading library /usr/lib/OGRE/Plugin_OctreeSceneManager
+02:54:24: Installing plugin: Octree & Terrain Scene Manager
+02:54:24: Plugin successfully installed
+02:54:24: Loading library /usr/lib/OGRE/Plugin_CgProgramManager
+02:54:24: Installing plugin: Cg Program Manager
+02:54:24: Plugin successfully installed
+02:54:24: *-*-* OGRE Initialising
+02:54:24: *-*-* Version 1.7.2 (Cthugha)
+02:54:24: Creating resource group Bootstrap
+02:54:24: Added resource location 'media/packs/OgreCore.zip' of type 'Zip' to resource group 'Bootstrap'
+02:54:24: Added resource location 'media' of type 'FileSystem' to resource group 'General'
+02:54:24: Added resource location 'media/fonts' of type 'FileSystem' to resource group 'General'
+02:54:24: Added resource location 'media/sounds' of type 'FileSystem' to resource group 'General'
+02:54:24: Added resource location 'media/Audio' of type 'FileSystem' to resource group 'General'
+02:54:24: Added resource location 'media/materials/programs' of type 'FileSystem' to resource group 'General'
+02:54:24: Added resource location 'media/materials/scripts' of type 'FileSystem' to resource group 'General'
+02:54:24: Added resource location 'media/materials/textures' of type 'FileSystem' to resource group 'General'
+02:54:24: Added resource location 'media/models' of type 'FileSystem' to resource group 'General'
+02:54:24: Added resource location 'media/overlays' of type 'FileSystem' to resource group 'General'
+02:54:24: Added resource location 'media/particle' of type 'FileSystem' to resource group 'General'
+02:54:24: Added resource location 'media/gui' of type 'FileSystem' to resource group 'General'
+02:54:24: Added resource location 'media/packs/cubemap.zip' of type 'Zip' to resource group 'General'
+02:54:24: Added resource location 'media/packs/cubemapsJS.zip' of type 'Zip' to resource group 'General'
+02:54:24: Added resource location 'media/packs/dragon.zip' of type 'Zip' to resource group 'General'
+02:54:24: Added resource location 'media/packs/fresneldemo.zip' of type 'Zip' to resource group 'General'
+02:54:24: Added resource location 'media/packs/ogretestmap.zip' of type 'Zip' to resource group 'General'
+02:54:24: Added resource location 'media/packs/skybox.zip' of type 'Zip' to resource group 'General'
